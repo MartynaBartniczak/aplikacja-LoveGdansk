@@ -6,7 +6,7 @@ import React from 'react'
 export default class EventCategories extends React.Component {
   render() {
     return (
-
+      <h1>EventCategories</h1>
     )
   }
 }

@@ -3,10 +3,10 @@
  */
 import React from 'react'
 
-export default class LocationSlider extends React.Component {
+export default class DetailsIntro extends React.Component {
   render() {
     return (
-      <h1>LocationSlider</h1>
+      <h1>DetailsIntro</h1>
     )
   }
 }

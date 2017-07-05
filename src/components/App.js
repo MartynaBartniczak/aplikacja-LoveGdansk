@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 import MainMenu from './MainMenu'
 import SearchEngine from './SearchEngine'
 import TimeSlider from './TimeSlider'
-import LocationSlider from "./LocationSlider";
-import SearchResults from "./SearchResults";
-import EventCategories from "./EventCategories";
+import LocationSlider from './LocationSlider'
+import SearchResults from './SearchResults'
+import EventCategories from './EventCategories'
+import EventCalendar from "./EventCalendar";
 
-class App extends Component {
+export default class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -22,4 +23,4 @@ class App extends Component {
   }
 }
 
-export default App;
+

@@ -6,7 +6,7 @@ import React from 'react'
 export default class TimeSlider extends React.Component {
   render() {
     return (
-
+        <h1>TimeSlider</h1>
     )
   }
 }
