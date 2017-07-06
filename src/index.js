@@ -7,5 +7,5 @@ import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 import EventCategories from "./components/EventCategories";
 
-ReactDOM.render(<EventCategories/>, document.getElementById('root'))
+ReactDOM.render(<App/>, document.getElementById('root'))
 registerServiceWorker()

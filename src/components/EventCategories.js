@@ -21,7 +21,7 @@ export default class EventCategories extends React.Component {
           <Row>
             <ButtonToolbar>
               <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Blues</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Drum&Base</Button></Col>
+              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Drum&Bass</Button></Col>
               <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Hip-Hop</Button></Col>
             </ButtonToolbar>
           </Row>
