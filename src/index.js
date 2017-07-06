@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css'
 import './index.css'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
+import EventCategories from "./components/EventCategories";
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<EventCategories/>, document.getElementById('root'))
 registerServiceWorker()
