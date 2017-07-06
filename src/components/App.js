@@ -7,17 +7,24 @@ import LocationSlider from './LocationSlider'
 import SearchResults from './SearchResults'
 import EventCategories from './EventCategories'
 import EventCalendar from "./EventCalendar";
+import {Grid,
+  Row,
+  Col,} from 'react-bootstrap'
 
 export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <SearchEngine />
-        <TimeSlider/>
-        <LocationSlider/>
-        <SearchResults/>
+        <Grid>
+          <Row>
+            <SearchEngine />
+            <TimeSlider/>
+            <LocationSlider/>
+            <SearchResults/>
         <EventCategories/>
         <MainMenu />
+          </Row>
+        </Grid>
       </div>
     );
   }
