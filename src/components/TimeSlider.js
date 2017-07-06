@@ -11,7 +11,9 @@ import {Grid,
 export default class TimeSlider extends React.Component {
   render() {
     return (
-      <Col xs={6}><h2>Wybierz datę</h2><Slider/></Col>
+      <Col xs={12} sm={6}><h2>Wybierz datę</h2>
+        <Slider/>
+      </Col>
     )
   }
 }

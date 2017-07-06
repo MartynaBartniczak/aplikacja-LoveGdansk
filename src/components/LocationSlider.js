@@ -11,7 +11,7 @@ import {Grid,
 export default class LocationSlider extends React.Component {
   render() {
     return (
-      <Col xs={6}><h2>Wybierz odległość</h2><Slider/></Col>
+      <Col xs={12} sm={6}><h2>Wybierz odległość</h2><Slider/></Col>
     )
   }
 }

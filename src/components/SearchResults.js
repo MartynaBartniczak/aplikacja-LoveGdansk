@@ -15,43 +15,43 @@ export default class SearchResults extends React.Component {
     return (
       <Grid>
         <Row>
-          <Col xs={6} md={6}>
+          <Col xs={12} md={6}>
             <Thumbnail src={balloonImg} alt="242x200">
               <h3>Szalona impreza z balonami</h3>
-              <p>Description</p>
+              <p>Ballons party hard</p>
               <p>
-                <Button bsStyle="primary">Button</Button>&nbsp;
-                <Button bsStyle="default">Button</Button>
+                <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
+                <Button bsStyle="default">Dodaj do kalendarza</Button>
               </p>
             </Thumbnail>
           </Col>
-          <Col xs={6} md={6}>
+          <Col xs={12} md={6}>
             <Thumbnail src={balloonImg} alt="242x200">
               <h3>Szalona impreza z balonami 2</h3>
-              <p>Description</p>
+              <p>Ballons party hard</p>
               <p>
-                <Button bsStyle="primary">Button</Button>&nbsp;
-                <Button bsStyle="default">Button</Button>
+                <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
+                <Button bsStyle="default">Dodaj do kalendarza</Button>
               </p>
             </Thumbnail>
           </Col>
-          <Col xs={6} md={6}>
+          <Col xs={12} md={6}>
             <Thumbnail src={balloonImg} alt="242x200">
               <h3>Szalona impreza z balonami 3</h3>
-              <p>Description</p>
+              <p>Ballons party hard</p>
               <p>
-                <Button bsStyle="primary">Button</Button>&nbsp;
-                <Button bsStyle="default">Button</Button>
+                <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
+                <Button bsStyle="default">Dodaj do kalendarza</Button>
               </p>
             </Thumbnail>
           </Col>
-          <Col xs={6} md={6}>
+          <Col xs={12} md={6}>
             <Thumbnail src={balloonImg} alt="242x200">
               <h3>Szalona impreza z balonami 4</h3>
-              <p>Description</p>
+              <p>Ballons party hard</p>
               <p>
-                <Button bsStyle="primary">Button</Button>&nbsp;
-                <Button bsStyle="default">Button</Button>
+                <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
+                <Button bsStyle="default">Dodaj do kalendarza</Button>
               </p>
             </Thumbnail>
           </Col>
