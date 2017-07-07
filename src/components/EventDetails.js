@@ -16,6 +16,8 @@ export default class EventDetails extends React.Component {
     return (
       <div className="EventDetails">
       <DetailsIntro/>
+
+
         <DetailsDescription/>
               <div>
                 <p>Today is <Time value={now} format="YYYY/MM/DD" /></p>
