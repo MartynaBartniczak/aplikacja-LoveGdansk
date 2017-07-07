@@ -18,8 +18,8 @@ export default class TimeSlider extends React.Component {
 
   render() {
     return (
-      <Col xs={12} sm={6}><h3>Wybierz datę {moment().add(this.state.sliderValue, 'days').calendar()}</h3>
-        <Slider min={0} max={10} value={this.state.sliderValue} onChange={this.handleChange} boolean={false}/>
+      <Col xs={12} sm={6}><h3>Wybierz datę:</h3><p>{moment().add(this.state.sliderValue, 'days').format('L')}</p>
+        <Slider min={0} max={10} value={this.state.sliderValue} onChange={this.handleChange} />
       </Col>
     )
   }
