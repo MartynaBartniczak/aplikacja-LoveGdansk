@@ -8,6 +8,7 @@ import SearchResults from './SearchResults'
 import EventCategories from './EventCategories'
 import EventCalendar from "./EventCalendar";
 import DetailsMap from "./DetailsMap";
+import Geolocation from "./Geolocation";
 
 export default class App extends React.Component {
   render() {
@@ -15,11 +16,10 @@ export default class App extends React.Component {
       <div className="App">
       <SearchEngine />
         <TimeSlider/>
-
         <LocationSlider/>
         <SearchResults/>
-
-        <div style={{width:1000, height:1000}}> <DetailsMap/></div>
+        <div style={{width:600, height:600,}}> <DetailsMap/></div>
+        <Geolocation/>
         <EventCategories/>
         <MainMenu />
       </div>
