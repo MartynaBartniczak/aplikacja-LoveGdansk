@@ -2,6 +2,8 @@
  * Created by tomaszwojcik on 05.07.17.
  */
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap'
 import {Navbar,
         Nav,
         NavItem,

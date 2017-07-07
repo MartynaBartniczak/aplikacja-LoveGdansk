@@ -8,7 +8,7 @@ import DetailsMap from "./DetailsMap";
 import EventCalendar from "./EventCalendar";
 import MainMenu from "./MainMenu"
 import Time from 'react-time'
-import { Button } from 'react-bootstrap'
+import { PageHeader } from 'react-bootstrap'
 
 export default class EventDetails extends React.Component {
   render() {
@@ -16,15 +16,11 @@ export default class EventDetails extends React.Component {
     return (
       <div className="EventDetails">
       <DetailsIntro/>
-          <Jumbotron>
-            <h1>Hello, world!</h1>
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p><Button bsStyle="primary">Learn more</Button></p>
-          </Jumbotron>
+        <div>
+          <p>Dzisiaj jest  <Time value={now} format="YYYY/MM/DD" /></p>
+        </div>
+        <PageHeader>Jesteś w Trójmieście <small>zobacz co się dzieje</small></PageHeader>
         <DetailsDescription/>
-              <div>
-                <p>Today is <Time value={now} format="YYYY/MM/DD" /></p>
-              </div>
         <DetailsMap/>
         <EventCalendar/>
         <MainMenu />
