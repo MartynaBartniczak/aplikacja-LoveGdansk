@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './MainMenu.css'
+import Img from 'react-image'
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap'
 import {
   Navbar,
@@ -10,11 +11,13 @@ import {
   NavDropdown
 } from 'react-bootstrap'
 
-const MainMenu = (props) => (
+const MainMenu = (props) =>
+
+  (
   <Navbar className="navbar-fixed-top">
     <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/">LOGOTYPE</Link>
+        <Link to="/">LOGOTYPE  </Link>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav>
@@ -36,6 +39,7 @@ const MainMenu = (props) => (
       </NavDropdown>
     </Nav>
   </Navbar>
+
 )
 
 export default MainMenu
