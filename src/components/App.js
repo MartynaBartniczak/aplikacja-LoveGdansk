@@ -10,6 +10,7 @@ import TimeSlider from './TimeSlider'
 import LocationSlider from './LocationSlider'
 import SearchResults from './SearchResults'
 import EventCategories from './EventCategories'
+import EventCalendar from './EventCalendar'
 import {Grid,
   Row,
   Col,} from 'react-bootstrap'
@@ -17,25 +18,22 @@ import {Grid,
 const App = () => (
       <Router>
       <div className="App">
+        <div>
+          <MainMenu/>
+          <Route path="/kategorie" component={EventCategories}/>
+          <Route path="/kalendarz" component={EventCalendar}/>
+          <Route path="/szukaj" component={SearchEngine}/>
+          <Route path="/wydarzenia" component={EventCategories}/>
+        </div>
         <Grid>
           <Row>
-            <SearchEngine />
             <TimeSlider/>
             <LocationSlider/>
             <SearchResults/>
         <EventCategories/>
-        <MainMenu />
           </Row>
         </Grid>
-        <div>
-          <Route exact path="/wyszukane" component={SearchEngine}/>
-          <Route path="/timeslider" component={TimeSlider}/>
-          <Route path="/location slider" component={LocationSlider}/>
-          <Route path="/searchresult" component={SearchResults}/>
-          <Route path="/wydarzenia" component={EventCategories}/>
-          <hr/>
-          <MainMenu/>
-        </div>
+
       </div>
       </Router>
     )
