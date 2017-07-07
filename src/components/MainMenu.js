@@ -1,41 +1,45 @@
-/**
- * Created by tomaszwojcik on 05.07.17.
- */
 import React from 'react'
-import {Navbar,
-        Nav,
-        NavItem,
-        NavDropdown,
-        MenuItem} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import './MainMenu.css'
+import Img from 'react-image'
+import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap'
+import {
+  Navbar,
+  Nav,
+  MenuItem,
+  NavItem,
+  NavDropdown
+} from 'react-bootstrap'
 
-export default class MainMenu extends React.Component {
-  render() {
-    return (
-      <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#">React-Bootstrap</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="#">Link</NavItem>
-            <NavItem eventKey={2} href="#">Link</NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
-            </NavDropdown>
-          </Nav>
-          <Nav pullRight>
-            <NavItem eventKey={1} href="#">Link Right</NavItem>
-            <NavItem eventKey={2} href="#">Link Right</NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    )
-  }
-}
+const MainMenu = (props) =>
+
+  (
+  <Navbar className="navbar-fixed-top">
+    <Navbar.Header>
+      <Navbar.Brand>
+        <Link to="/">LOGOTYPE  </Link>
+      </Navbar.Brand>
+    </Navbar.Header>
+    <Nav>
+      <IndexLinkContainer to="/">
+        <NavItem>Home</NavItem>
+      </IndexLinkContainer>
+      <LinkContainer to="/kategorie">
+        <NavItem>Kategorie</NavItem>
+      </LinkContainer>
+      <LinkContainer to="/kalendarz">
+        <NavItem>Twój kalendarz</NavItem>
+      </LinkContainer>
+      <LinkContainer to="/szukaj">
+        <NavItem>Szukaj w pobliżu</NavItem>
+      </LinkContainer>
+      <NavDropdown eventKey={3} title="Konto" id="basic-nav-dropdown">
+        <MenuItem eventKey={3.1}>Moje imprezy</MenuItem>
+        <MenuItem eventKey={3.2}>Historia</MenuItem>
+      </NavDropdown>
+    </Nav>
+  </Navbar>
+
+)
+
+export default MainMenu
