@@ -6,6 +6,7 @@ import './index.css'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 import EventCategories from "./components/EventCategories";
+import EventDetails from "./components/EventDetails";
 
-ReactDOM.render(<App/>, document.getElementById('root'))
+ReactDOM.render(<EventDetails/>, document.getElementById('root'))
 registerServiceWorker()
