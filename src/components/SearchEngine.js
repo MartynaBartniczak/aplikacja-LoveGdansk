@@ -4,28 +4,16 @@
 import React from 'react'
 import {Navbar,
         FormGroup,
-        FormControl,
-        Button} from 'react-bootstrap'
+        FormControl} from 'react-bootstrap'
+import './SearchEngine.css'
 
 export default class SearchEngine extends React.Component {
   render() {
     return (
       <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#">Brand</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Navbar.Form pullLeft>
-            <FormGroup>
+            <FormGroup className="searchbar">
               <FormControl type="text" placeholder="Search" />
             </FormGroup>
-            {' '}
-            <Button type="submit">Submit</Button>
-          </Navbar.Form>
-        </Navbar.Collapse>
       </Navbar>
     )
   }

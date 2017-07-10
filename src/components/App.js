@@ -1,4 +1,8 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 import './App.css'
 import MainMenu from './MainMenu'
 import SearchEngine from './SearchEngine'
@@ -6,25 +10,38 @@ import TimeSlider from './TimeSlider'
 import LocationSlider from './LocationSlider'
 import SearchResults from './SearchResults'
 import EventCategories from './EventCategories'
-import EventCalendar from "./EventCalendar";
+import EventDetails from './EventDetails'
 import DetailsMap from "./DetailsMap";
 import Geolocation from "./Geolocation";
+import EventCalendar from './EventCalendar'
+import {Grid,
+  Row,
+  Col,} from 'react-bootstrap'
 
-export default class App extends React.Component {
-  render() {
-    return (
+const App = () => (
+      <Router>
       <div className="App">
-      <SearchEngine />
-        <TimeSlider/>
-        <LocationSlider/>
-        <SearchResults/>
-        <div> <DetailsMap/></div>
-        <Geolocation/>
+        <div>
+          <MainMenu/>
+          <Route path="/kategorie" component={EventCategories}/>
+          <Route path="/kalendarz" component={EventCalendar}/>
+          <Route path="/szukaj" component={SearchEngine}/>
+          <Route path="/wydarzenia" component={EventCategories}/>
+          <Route path="/detale" component={EventDetails}/>
+        </div>
+        <Grid>
+          <Row>
+            <TimeSlider/>
+            <LocationSlider/>
+            <div> <DetailsMap/></div>
+            <Geolocation/>
+            <SearchResults/>
         <EventCategories/>
-        <MainMenu />
+          </Row>
+        </Grid>
+
       </div>
-    );
-  }
-}
+      </Router>
+    )
 
-
+export default App
