@@ -14,7 +14,7 @@ import {
 const MainMenu = (props) =>
 
   (
-  <Navbar className="navbar-fixed-top">
+  <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
         <Link to="/">LOGOTYPE  </Link>
