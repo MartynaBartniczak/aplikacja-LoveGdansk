@@ -11,7 +11,10 @@ const categories = {
   house: 'House',
   blues: 'Blues',
   drumnbase: 'Drum&Base',
-  hipHop: 'HipHop'
+  hipHop: 'HipHop',
+  disco: 'Disco',
+  pop: 'Pop',
+  metal: 'Metal'
 }
 
 export default class EventCategories extends React.Component {
