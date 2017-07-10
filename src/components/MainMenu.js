@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './MainMenu.css'
-import Img from 'react-image'
 import LogoImg from './img/LOGO_TITLE_HORIZONTAL.png';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 import {
   Navbar,
   Nav,
@@ -13,7 +12,6 @@ import {
 } from 'react-bootstrap'
 
 const MainMenu = (props) =>
-
   (
   <Navbar>
     <Navbar.Header>
@@ -21,10 +19,7 @@ const MainMenu = (props) =>
         <Link to="/"><img src={LogoImg} height={25}/></Link>
       </Navbar.Brand>
     </Navbar.Header>
-    <Nav>
-      <IndexLinkContainer to="/">
-        <NavItem>Home</NavItem>
-      </IndexLinkContainer>
+    <Nav pullRight>
       <LinkContainer to="/kategorie">
         <NavItem>Kategorie</NavItem>
       </LinkContainer>
@@ -48,6 +43,5 @@ const MainMenu = (props) =>
   </Navbar>
 
 )
-
 
 export default MainMenu

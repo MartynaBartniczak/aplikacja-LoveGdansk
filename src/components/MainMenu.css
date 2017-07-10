@@ -8,7 +8,6 @@
     border-color: #fc4a1a;
     border-radius: 0px;
     font-size: 18px;
-    height: 3em;
 }
 
 .navbar-default .navbar-nav > li > a
@@ -24,11 +23,15 @@
 
 
 .navbar-default .navbar-nav > li > a:hover{
-    border-bottom: 2px solid white;
-    transition: 1s ease;
+    border-bottom: 1px solid white;
+    transition: 0.5s ease;
 }
-
 
 .navbar-nav > li > a {
     padding-bottom: 0.2em;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    background-image: url('./img/baloons.jpg');
+    border-radius:30px;
 }

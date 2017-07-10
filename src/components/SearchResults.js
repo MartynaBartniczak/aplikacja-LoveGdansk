@@ -7,8 +7,6 @@ import {Grid,
         Col,
         Thumbnail,
         Button} from 'react-bootstrap'
-
-import balloonImg from './img/baloons.jpg';
 import './SearchResults.css'
 
 export default class SearchResults extends React.Component {
