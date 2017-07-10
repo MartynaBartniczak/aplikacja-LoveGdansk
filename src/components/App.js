@@ -18,7 +18,7 @@ export default class App extends React.Component {
         <TimeSlider/>
         <LocationSlider/>
         <SearchResults/>
-        <div style={{width:600, height:600,}}> <DetailsMap/></div>
+        <div> <DetailsMap/></div>
         <Geolocation/>
         <EventCategories/>
         <MainMenu />
