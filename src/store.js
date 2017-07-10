@@ -1,13 +1,7 @@
-import {createStore} from 'redux'
+import { createStore } from 'redux'
 
-const reducer = (state, action) => {
-  console.log(state, action)
-  return state
-}
-const store = createStore (reducer)
+import counter from './state/counter'
 
-store.dispatch ({
-  type: 'HELLO'
-})
+const store = createStore(event)
 
 export default store
