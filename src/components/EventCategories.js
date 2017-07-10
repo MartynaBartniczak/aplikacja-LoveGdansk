@@ -2,40 +2,59 @@
  * Created by tomaszwojcik on 05.07.17.
  */
 import React from 'react'
-import {ButtonToolbar, Button,Grid, Row, Col} from 'react-bootstrap'
+import {ButtonToolbar, Button, Grid, Row, Col} from 'react-bootstrap'
 import './EventCategories.css'
 
+const categories = {
+  techno: 'Techno',
+  rock: 'Rock',
+  house: 'House',
+  blues: 'Blues',
+  drumnbase: 'Drum&Base',
+  hipHop: 'HipHop',
+  disco: 'Disco',
+  pop: 'Pop',
+  metal: 'Metal'
+}
+
 export default class EventCategories extends React.Component {
+
+  state = {
+    activeFilterNames: []
+  }
+
+  handleClick = (event) => this.setState({
+    activeFilterNames: this.state.activeFilterNames.includes(event.target.dataset.category) ?
+      this.state.activeFilterNames.filter(item => item !== event.target.dataset.category) :
+      this.state.activeFilterNames.concat(event.target.dataset.category)
+  })
+
+
   render() {
     return (
       <div className="EventCategories">
         <Grid>
           <Row>
-            <ButtonToolbar>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Techno</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Rock</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>House</Button></Col>
-
-            </ButtonToolbar>
-          </Row>
-          <Row>
-            <ButtonToolbar>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Blues</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Drum&Bass</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Hip-Hop</Button></Col>
-            </ButtonToolbar>
-          </Row>
-          <Row>
-            <ButtonToolbar>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Disco Polo</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Metal</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active>Alternative</Button></Col>
-            </ButtonToolbar>
+            {
+              Object.keys(categories).map(
+                key => (
+                  <Col xs={4} className="padded">
+                    <Button
+                      onClick ={this.handleClick}
+                      bsClass="btn-block btn-warning btn-lg"
+                      active ={this.state.activeFilterNames.includes(key)}
+                      data-category={key}
+                    >
+                      {categories[key]}
+                    </Button>
+                  </Col>
+                )
+              )
+            }
           </Row>
         </Grid>
       </div>
     )
   }
 }
-
 
