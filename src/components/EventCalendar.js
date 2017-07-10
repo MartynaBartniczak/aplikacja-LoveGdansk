@@ -11,7 +11,7 @@ BigCalendar.momentLocalizer(moment);
 export default class EventCalendar extends React.Component {
   render() {
     return (
-      <div>
+      <div style={{height:500}}>
         <BigCalendar
           events={[]}
         />

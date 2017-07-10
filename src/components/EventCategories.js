@@ -28,28 +28,26 @@ export default class EventCategories extends React.Component {
               <Col xs={4}>
                 <Button
                   onClick={this.handleClick}
-                  bsClass="btn-block btn-warning btn-lg"
-                  active={this.state.activeFilterNames.includes("Rock")}
-                >
+                  bsClass="btn-block btn-warning btn-lg">
                   Rock
                 </Button>
               </Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active={this.state.activeFilterNames.includes("House")}>House</Button></Col>
+              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg">House</Button></Col>
 
             </ButtonToolbar>
           </Row>
           <Row>
             <ButtonToolbar>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active={this.state.activeFilterNames.includes("Blues")}>Blues</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active={this.state.activeFilterNames.includes("Drum&Bass")}>Drum&Bass</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active={this.state.activeFilterNames.includes("Hip-Hop")}>Hip-Hop</Button></Col>
+              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" >Blues</Button></Col>
+              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" >Drum&Bass</Button></Col>
+              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" >Hip-Hop</Button></Col>
             </ButtonToolbar>
           </Row>
           <Row>
             <ButtonToolbar>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active={this.state.activeFilterNames.includes("Disco Polo")}>Disco Polo</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active={this.state.activeFilterNames.includes("Metal")}>Metal</Button></Col>
-              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" active={this.state.activeFilterNames.includes("Alternative")}>Alternative</Button></Col>
+              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg">Disco Polo</Button></Col>
+              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" >Metal</Button></Col>
+              <Col xs={4}><Button bsClass="btn-block btn-warning btn-lg" >Alternative</Button></Col>
             </ButtonToolbar>
           </Row>
         </Grid>
