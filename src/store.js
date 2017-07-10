@@ -4,10 +4,6 @@ import {
 } from 'redux'
 import details from './state/details'
 
-
-
-
-
 const reducer = combineReducers({
   details
 })
