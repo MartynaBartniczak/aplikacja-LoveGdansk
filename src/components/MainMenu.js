@@ -36,6 +36,9 @@ const MainMenu = (props) =>
       <LinkContainer to="/detale">
         <NavItem>detale</NavItem>
       </LinkContainer>
+      <LinkContainer to="/mapa">
+        <NavItem>mapa</NavItem>
+      </LinkContainer>
       <NavDropdown eventKey={3} title="Konto" id="basic-nav-dropdown">
         <MenuItem eventKey={3.1}>Moje imprezy</MenuItem>
         <MenuItem eventKey={3.2}>Historia</MenuItem>
@@ -44,5 +47,6 @@ const MainMenu = (props) =>
   </Navbar>
 
 )
+
 
 export default MainMenu

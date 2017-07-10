@@ -28,13 +28,12 @@ const App = () => (
           <Route path="/szukaj" component={SearchEngine}/>
           <Route path="/wydarzenia" component={EventCategories}/>
           <Route path="/detale" component={EventDetails}/>
+          <Route path="/mapa" component={DetailsMap}/>
         </div>
         <Grid>
           <Row>
             <TimeSlider/>
             <LocationSlider/>
-            <div> <DetailsMap/></div>
-            <Geolocation/>
             <SearchResults/>
         <EventCategories/>
           </Row>

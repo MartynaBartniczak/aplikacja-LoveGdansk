@@ -26,6 +26,8 @@ export default class DetailsMap extends React.Component {
           text={''}
         />
       </GoogleMapReact>
+
+
       </div>
 
     )
