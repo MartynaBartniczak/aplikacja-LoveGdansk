@@ -10,7 +10,6 @@ import MainMenu from "./MainMenu"
 import Time from 'react-time'
 import { PageHeader } from 'react-bootstrap'
 import { connect } from 'react-redux'
-
 // export default class EventDetails extends React.Component {
 //   render() {
 //     let now = new Date()
