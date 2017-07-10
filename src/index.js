@@ -11,7 +11,7 @@ import EventCalendar from "./components/EventCalendar";
 
 ReactDOM.render(
   <Provider store={store}>
-    <EventCalendar/>
+    <App/>
   </Provider>,
   document.getElementById('root')
 )
