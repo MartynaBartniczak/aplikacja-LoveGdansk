@@ -33,6 +33,9 @@ const MainMenu = (props) =>
       <LinkContainer to="/szukaj">
         <NavItem>Szukaj w pobliżu</NavItem>
       </LinkContainer>
+      <LinkContainer to="/detale">
+        <NavItem>detale</NavItem>
+      </LinkContainer>
       <NavDropdown eventKey={3} title="Konto" id="basic-nav-dropdown">
         <MenuItem eventKey={3.1}>Moje imprezy</MenuItem>
         <MenuItem eventKey={3.2}>Historia</MenuItem>
