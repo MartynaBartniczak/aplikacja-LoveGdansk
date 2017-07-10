@@ -11,6 +11,8 @@ import LocationSlider from './LocationSlider'
 import SearchResults from './SearchResults'
 import EventCategories from './EventCategories'
 import EventDetails from './EventDetails'
+import DetailsMap from "./DetailsMap";
+import Geolocation from "./Geolocation";
 import EventCalendar from './EventCalendar'
 import {Grid,
   Row,
@@ -26,6 +28,7 @@ const App = () => (
           <Route path="/szukaj" component={SearchEngine}/>
           <Route path="/wydarzenia" component={EventCategories}/>
           <Route path="/detale" component={EventDetails}/>
+          <Route path="/mapa" component={DetailsMap}/>
         </div>
         <Grid>
           <Row>
