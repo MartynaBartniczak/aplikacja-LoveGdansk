@@ -11,6 +11,8 @@ import LocationSlider from './LocationSlider'
 import SearchResults from './SearchResults'
 import EventCategories from './EventCategories'
 import EventDetails from './EventDetails'
+import DetailsMap from "./DetailsMap";
+import Geolocation from "./Geolocation";
 import EventCalendar from './EventCalendar'
 import {Grid,
   Row,
@@ -31,6 +33,8 @@ const App = () => (
           <Row>
             <TimeSlider/>
             <LocationSlider/>
+            <div> <DetailsMap/></div>
+            <Geolocation/>
             <SearchResults/>
         <EventCategories/>
           </Row>
