@@ -40,9 +40,9 @@ export default class EventCategories extends React.Component {
                 key => (
                   <Col xs={4} className="padded">
                     <Button
-                      onClick={this.handleClick}
+                      onClick ={this.handleClick}
                       bsClass="btn-block btn-warning btn-lg"
-                      active={this.state.activeFilterNames.includes(key)}
+                      active ={this.state.activeFilterNames.includes(key)}
                       data-category={key}
                     >
                       {categories[key]}
