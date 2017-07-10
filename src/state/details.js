@@ -1,6 +1,3 @@
-import React from 'react'
-import { connect } from 'react-redux'
-
 // initial state
 const initialState = {
   value: 0
