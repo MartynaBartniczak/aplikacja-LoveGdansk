@@ -34,12 +34,12 @@ export default class SearchResults extends React.Component {
         <Row>
               { this.state === null ? <p>Fetching data ....</p> : null}
               {
-                this.state !== null && this.state.events.slice(1,10).map(
+                this.state !== null && this.state.events.slice(1,11).map(
                   event => (
                       <Col xs={12} md={6}>
-                        <Thumbnail src={balloonImg} alt="242x200">
-                      {event.category}
-                          <p>Ballons party hard</p>
+                        <Thumbnail src={event.image} alt="242x200">
+                          <h2>{event.first_name}</h2>
+                          <p>{event.category}</p>
                           <p>
                             <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
                             <Button bsStyle="default">Dodaj do kalendarza</Button>
