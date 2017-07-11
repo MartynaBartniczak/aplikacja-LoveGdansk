@@ -2,7 +2,9 @@
  * Created by tomaszwojcik on 05.07.17.
  */
 import React from 'react'
+import { connect } from 'react-redux'
 import {ButtonToolbar, Button, Grid, Row, Col} from 'react-bootstrap'
+import { fetchEventCategories } from '../state/eventcategories'
 import './EventCategories.css'
 
 const categories = {
