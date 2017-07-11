@@ -14,7 +14,8 @@ import { fetchSearchResults } from '../state/searchresults'
 
 export default connect(
   state => ({
-    searchresults: state.searchresults
+    searchresults: state.searchresults,
+    location: state.searchFilters.location
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults())
@@ -35,7 +36,7 @@ export default connect(
               { error === null ? null : <p>{error.message}</p> }
                { fetching === false ? null : <p>Fetching data...</p>}
               {
-                data !== null && data.slice(1,11).map(
+                data !== null && data.filter(item => item.range < this.props.location).map(
                   event => (
                       <Col xs={12} md={6}>
                         <Thumbnail src={event.image}>
