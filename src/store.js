@@ -3,10 +3,12 @@ import thunk from 'redux-thunk'
 
 import details from './state/details'
 import searchresults from './state/searchresults'
+import searchFilters from './state/searchFilters'
 
 const reducer = combineReducers({
   details,
-  searchresults
+  searchresults,
+  searchFilters
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
