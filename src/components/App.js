@@ -29,9 +29,11 @@ const App = () => (
           <Route path="/detale" component={EventDetails}/>
           <Route path="/mapa" component={DetailsMap}/>
         </div>
+        <div>
+          <MainSlider/>
+        </div>
         <Grid>
           <Row>
-            <MainSlider/>
             <TimeSlider/>
             <LocationSlider/>
             <SearchResults/>
