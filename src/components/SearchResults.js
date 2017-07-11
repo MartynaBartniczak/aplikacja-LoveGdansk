@@ -2,37 +2,40 @@
  * Created by tomaszwojcik on 05.07.17.
  */
 import React from 'react'
+import { connect } from 'react-redux'
 import {Grid,
         Row,
         Col,
         Thumbnail,
         Button} from 'react-bootstrap'
 import './SearchResults.css'
+import { Link } from 'react-router-dom'
+import { fetchSearchResults } from '../state/searchresults'
 
-export default class SearchResults extends React.Component {
+export default connect(
+  state => ({
+    searchresults: state.searchresults
+  }),
+  dispatch => ({
+    fetchSearchResults: () => dispatch(fetchSearchResults())
+  })
+)(
+  class SearchResults extends React.Component {
 
-  componentWillMount() {
-    fetch(
-      process.env.PUBLIC_URL + '/data/music.json'
-    ).then(
-      response => response.json()
-    ).then(
-      data => this.setState({
-        events: data
-      })
-    ).catch(
-      error => console.log(error.message)
-    )
-  }
+    componentWillMount() {
+      this.props.fetchSearchResults()
+    }
 
   render() {
+    const { data, fetching, error } = this.props.searchresults
     return (
       <div className="mainresults">
       <Grid>
         <Row>
-              { this.state === null ? <p>Fetching data ....</p> : null}
+              { error === null ? null : <p>{error.message}</p> }
+               { fetching === false ? null : <p>Fetching data...</p>}
               {
-                this.state !== null && this.state.events.slice(1,11).map(
+                data !== null && data.slice(1,11).map(
                   event => (
                       <Col xs={12} md={6}>
                         <Thumbnail src={event.image}>
@@ -55,3 +58,4 @@ export default class SearchResults extends React.Component {
     )
   }
 }
+)
