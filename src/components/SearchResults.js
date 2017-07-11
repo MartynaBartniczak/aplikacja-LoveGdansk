@@ -13,7 +13,7 @@ export default class SearchResults extends React.Component {
 
   componentWillMount() {
     fetch(
-      'http://localhost:3000/data/music.json'
+      process.env.PUBLIC_URL + '/data/music.json'
     ).then(
       response => response.json()
     ).then(
