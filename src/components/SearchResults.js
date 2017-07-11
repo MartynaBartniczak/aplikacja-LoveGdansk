@@ -7,8 +7,6 @@ import {Grid,
         Col,
         Thumbnail,
         Button} from 'react-bootstrap'
-
-import balloonImg from './img/baloons.jpg';
 import './SearchResults.css'
 
 export default class SearchResults extends React.Component {
@@ -37,9 +35,11 @@ export default class SearchResults extends React.Component {
                 this.state !== null && this.state.events.slice(1,11).map(
                   event => (
                       <Col xs={12} md={6}>
-                        <Thumbnail src={event.image} alt="242x200">
-                          <h2>{event.first_name}</h2>
-                          <p>{event.category}</p>
+                        <Thumbnail src={event.image}>
+                          <h2>Impreza: {event.category}</h2>
+                          <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
+                          <h4>Za ile wjazd: {event.cost} PLN</h4>
+                          <p>{event.place} | {event.city}  </p>
                           <p>
                             <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
                             <Button bsStyle="default">Dodaj do kalendarza</Button>

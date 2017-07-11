@@ -13,6 +13,7 @@
     "react-big-calendar": "^0.14.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",
+    "react-fontawesome": "^1.6.1",
     "react-geolocated": "^2.0.0",
     "react-google-maps": "^7.1.0",
     "react-image": "^1.0.1",

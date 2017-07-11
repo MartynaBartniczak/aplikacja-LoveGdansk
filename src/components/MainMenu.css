@@ -1,14 +1,37 @@
 .navbar-default
 {
-    background-color: #4CAF50;
+    background-color:  #fc4a1a;
     background-image: none;
     background-repeat: no-repeat;
     color: white;
     box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.4);
-    border-color: #4CAF50;
+    border-color: #fc4a1a;
+    border-radius: 0px;
+    font-size: 18px;
 }
 
 .navbar-default .navbar-nav > li > a
 {
     color: white;
+}
+
+.navbar-default .navbar-nav>.active>a
+{
+    color: white;
+    background-color:  #fc4a1a;
+}
+
+
+.navbar-default .navbar-nav > li > a:hover{
+    border-bottom: 1px solid white;
+    transition: 0.5s ease;
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 0.2em;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    background-image: url('./img/baloons.jpg');
+    border-radius:30px;
 }
