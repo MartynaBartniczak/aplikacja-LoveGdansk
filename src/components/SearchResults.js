@@ -23,8 +23,8 @@ export default connect(
   class SearchResults extends React.Component {
 
     componentWillMount() {
-      this.props.fetchSearchResults()
-    }
+    this.props.fetchSearchResults()
+  }
 
   render() {
     const { data, fetching, error } = this.props.searchresults
