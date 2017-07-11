@@ -8,6 +8,8 @@ import {Grid,
         Thumbnail,
         Button} from 'react-bootstrap'
 import './SearchResults.css'
+import { Link } from 'react-router-dom'
+import { fetchSearchResults } from '../state/searchresults'
 
 export default class SearchResults extends React.Component {
 
