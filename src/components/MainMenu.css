@@ -23,8 +23,8 @@
 
 
 .navbar-default .navbar-nav > li > a:hover{
-    border-bottom: 1px solid white;
-    transition: 0.5s ease;
+    border-bottom: 1px solid #333;
+    transition: 0.5s ease-in;
 }
 
 .navbar-nav > li > a {
@@ -32,6 +32,8 @@
 }
 
 .navbar-default .navbar-nav > .active > a {
-    background-image: url('./img/baloons.jpg');
-    border-radius:30px;
+    border-radius:0px;
+    background-image: linear-gradient(to bottom, #fc4a1a 100%, #fc4a1a 100%);
+    color: #333;
+    box-shadow: none;
 }

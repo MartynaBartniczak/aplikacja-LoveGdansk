@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "google-font-import": "^0.1.2",
     "google-map-react": "^0.24.0",
     "google-maps-react": "^1.0.19",
+    "install": "^0.10.1",
     "moment": "^2.18.1",
+    "npm": "^5.2.0",
     "point-geometry": "^0.1.0",
     "rc-slider": "^8.2.0",
     "react": "^15.6.1",
@@ -24,7 +27,8 @@
     "react-scripts": "1.0.10",
     "react-slider": "^0.8.0",
     "react-time": "^4.3.0",
-    "redux": "^3.7.1"
+    "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

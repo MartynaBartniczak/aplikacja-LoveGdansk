@@ -22,9 +22,30 @@
     background: #ECECEC;
     border: none;
     border-radius: 30px;
+    box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.4);
+
 }
 
 .thumbnail > img, .thumbnail a > img
 {
     border-radius: 30px;
+    padding: 0.5em;
+}
+
+.rc-slider-handle
+{
+    border: solid 2px #f46b45;
+    -webkit-box-shadow: 0 0 5px #f46b45;
+    box-shadow: 0 0 5px #f46b45;
+}
+
+.rc-slider-handle:active {
+    border-color: #f46b45;
+    -webkit-box-shadow: 0 0 5px #f46b45;
+    box-shadow: 0 0 5px #f46b45;
+}
+
+.rc-slider-track
+{
+    background-color: #f46b45;
 }

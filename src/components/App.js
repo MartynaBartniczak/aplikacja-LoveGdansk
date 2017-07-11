@@ -12,11 +12,10 @@ import SearchResults from './SearchResults'
 import EventCategories from './EventCategories'
 import EventDetails from './EventDetails'
 import DetailsMap from "./DetailsMap";
-import Geolocation from "./Geolocation";
 import EventCalendar from './EventCalendar'
+import MainSlider from './MainSlider'
 import {Grid,
-  Row,
-  Col,} from 'react-bootstrap'
+  Row,} from 'react-bootstrap'
 
 const App = () => (
       <Router>
@@ -32,6 +31,7 @@ const App = () => (
         </div>
         <Grid>
           <Row>
+            <MainSlider/>
             <TimeSlider/>
             <LocationSlider/>
             <SearchResults/>
