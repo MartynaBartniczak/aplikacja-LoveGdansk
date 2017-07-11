@@ -15,7 +15,7 @@ export default class DetailsMap extends React.Component {
 
   render() {
     return (
-      <div style={{width:600, height:600,}}>
+      <div className="center-block" style={{width:600, height:600,}}>
       <GoogleMapReact
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
