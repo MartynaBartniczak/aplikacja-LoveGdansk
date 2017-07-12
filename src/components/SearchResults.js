@@ -17,7 +17,8 @@ import moment from 'moment'
 export default connect(
   state => ({
     searchresults: state.searchresults,
-    location: state.searchFilters.location
+    location: state.searchFilters.location,
+    searchDate: state.searchFilters.searchDate
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults())
@@ -38,12 +39,18 @@ export default connect(
               { error === null ? null : <p>{error.message}</p> }
                { fetching === false ? null : <p>Fetching data...</p>}
               {
-                data !== null && data.filter(item => item.range < this.props.location)
-                  .filter(
-                    item => moment(item.startdate).isAfter(
-                      moment().add(this.props.searchDate, 'days')
-                    )
-                  ).map(
+                data !== null && data.filter(
+                  item => item.range < this.props.location
+                ).filter(
+                    item => {
+                      const result = moment(item.startdate).isAfter(
+                        moment().add(this.props.searchDate, 'days')
+                      )
+                      console.log(result)
+
+                      return result
+                    }
+                ).map(
                   event => (
                       <Col xs={12} md={6}>
                         <Thumbnail src={event.image}>

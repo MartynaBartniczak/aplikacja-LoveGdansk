@@ -24,7 +24,7 @@ export default connect(
       <Col xs={12} sm={6}>
         <h3>Wybierz datę:</h3>
         <p>{moment().add(this.props.searchDate, 'days').format('L')}</p>
-        <Slider min={0} max={10} value={this.props.searchDate} onChange={this.props.updateSearchDate()} />
+        <Slider min={0} max={10} value={this.props.searchDate} onChange={this.props.updateSearchDate} />
       </Col>
     )
   }

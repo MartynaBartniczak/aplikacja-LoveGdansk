@@ -27,7 +27,7 @@ export default (state = initialState, action = {}) => {
     case UPDATE_SEARCH_DATE:
       return {
         ...state,
-
+        searchDate: action.searchDate
       }
     default:
       return state
