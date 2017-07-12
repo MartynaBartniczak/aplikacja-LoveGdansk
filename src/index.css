@@ -1,9 +1,7 @@
-@font-face {
-  src: url('https://fonts.googleapis.com/css?family=Advent+Pro|Roboto+Condensed');
-}
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro');
 
 body {
   padding: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Advent Pro', sans-serif;
   background: linear-gradient(to left, #eef2f3, #8e9eab);
 }
