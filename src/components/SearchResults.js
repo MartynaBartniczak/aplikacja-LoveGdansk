@@ -45,14 +45,9 @@ export default connect(
                 data !== null && data.filter(
                   item => item.range < this.props.location
                 ).filter(
-                    item => {
-                      const result = moment(item.startdate).isAfter(
+                    item => moment(item.startdate).isAfter(
                         moment().add(this.props.searchDate, 'days')
                       )
-                      console.log(result)
-
-                      return result
-                    }
                 ).filter(
                   event => event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
                 ).map(
