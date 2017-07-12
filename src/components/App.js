@@ -17,7 +17,7 @@ const App = () => (
       <Router>
       <div className="App">
         <div>
-          <SearchEngine/>
+
           <MainMenu/>
           <Route path="/kategorie" component={EventCategories}/>
           <Route path="/kalendarz" component={EventCalendar}/>
@@ -33,6 +33,7 @@ const App = () => (
         </div>
         <Grid>
           <Row>
+            <SearchEngine/>
             <TimeSlider/>
             <LocationSlider/>
             <SearchResults/>

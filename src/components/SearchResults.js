@@ -8,9 +8,11 @@ import {Grid,
         Col,
         Thumbnail,
         Button} from 'react-bootstrap'
+import SearchEngine from './SearchEngine'
 import './SearchResults.css'
 import { Link } from 'react-router-dom'
 import { fetchSearchResults } from '../state/searchresults'
+
 
 export default connect(
   state => ({
@@ -36,7 +38,20 @@ export default connect(
               { error === null ? null : <p>{error.message}</p> }
                { fetching === false ? null : <p>Fetching data...</p>}
               {
-                data !== null && data.filter(item => item.range < this.props.location).map(
+                data !== null && data.filter(
+                  item => item.range < this.props.location
+                ).filter(
+
+                  /*searchengine*/
+
+
+
+
+
+
+
+
+                ).map(
                   event => (
                       <Col xs={12} md={6}>
                         <Thumbnail src={event.image}>
