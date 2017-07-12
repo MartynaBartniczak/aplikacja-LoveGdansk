@@ -2,9 +2,10 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 import {connect} from "react-redux";
 import {fetchDetailsMap} from "../state/detailsmap";
+import Icon from "./img/Marker.png";
 
 
-const AnyReactComponent = ({text}) => <div>{text}</div>;
+const AnyReactComponent = ({text}) => <div><img src={Icon}/></div>;
 
 export default connect(
   state => ({
