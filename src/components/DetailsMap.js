@@ -1,11 +1,10 @@
-import React, {Component} from 'react'
-import GoogleMapReact from 'google-map-react'
-import {} from 'react-bootstrap'
-import {connect} from 'react-redux'
-import {fetchDetailsMap} from '../state/detailsmap'
+import React from "react";
+import GoogleMapReact from "google-map-react";
+import {connect} from "react-redux";
+import {fetchDetailsMap} from "../state/detailsmap";
 
 
-const AnyReactComponent = ({text}) => <div>{text}</div>
+const AnyReactComponent = ({text}) => <div>{text}</div>;
 
 export default connect(
   state => ({
@@ -18,16 +17,16 @@ export default connect(
   class DetailsMap extends React.Component {
 
     static defaultProps = {
-      center: {lat: 54.4033754, lng: 18.5700186},
+      center: {lat: 20.4033754, lng: 18.5700186},
       zoom: 14
-    }
+    };
 
     componentWillMount() {
       this.props.fetchDetailsMap()
     }
 
     render() {
-      const {data, fetching, error} = this.props.detailsmap
+      const {data, fetching, error} = this.props.detailsmap;
       return (
         <div>
           { error === null ? null : <p>{error.message}</p> }
