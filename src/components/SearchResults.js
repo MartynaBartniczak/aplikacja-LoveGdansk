@@ -17,7 +17,8 @@ import { fetchSearchResults } from '../state/searchresults'
 export default connect(
   state => ({
     searchresults: state.searchresults,
-    location: state.searchFilters.location
+    location: state.searchFilters.location,
+    searchPhrase: state.searchengine.searchPhrase
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults())
@@ -42,14 +43,8 @@ export default connect(
                   item => item.range < this.props.location
                 ).filter(
 
-                  /*searchengine*/
 
-
-
-
-
-
-
+                    event => event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
 
                 ).map(
                   event => (
