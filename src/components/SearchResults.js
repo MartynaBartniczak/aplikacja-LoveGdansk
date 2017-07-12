@@ -12,12 +12,15 @@ import SearchEngine from './SearchEngine'
 import './SearchResults.css'
 import { Link } from 'react-router-dom'
 import { fetchSearchResults } from '../state/searchresults'
+import moment from 'moment'
+
 
 
 export default connect(
   state => ({
     searchresults: state.searchresults,
     location: state.searchFilters.location,
+    searchDate: state.searchFilters.searchDate,
     searchPhrase: state.searchengine.searchPhrase
   }),
   dispatch => ({
@@ -42,10 +45,11 @@ export default connect(
                 data !== null && data.filter(
                   item => item.range < this.props.location
                 ).filter(
-
-
-                    event => event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
-
+                    item => moment(item.startdate).isAfter(
+                        moment().add(this.props.searchDate, 'days')
+                      )
+                ).filter(
+                  event => event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
                 ).map(
                   event => (
                       <Col xs={12} md={6}>

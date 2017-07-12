@@ -1,15 +1,20 @@
 const UPDATE_LOCATION = 'searchFilters/UPDATE_LOCATION'
-const UPDATE_TIME = 'searchFilters/UPDATE_TIME'
+const UPDATE_SEARCH_DATE = 'searchFilters/UPDATE_SEARCH_DATE'
 
 export const updateLocation = location => ({
   type: UPDATE_LOCATION,
   location
 })
 
+export const updateSearchDate = searchDate => ({
+  type: UPDATE_SEARCH_DATE,
+  searchDate
+})
+
 
 const initialState = {
   location: 1,
-  time: 0
+  searchDate: 0
 }
 
 export default (state = initialState, action = {}) => {
@@ -18,6 +23,11 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         location: action.location
+      }
+    case UPDATE_SEARCH_DATE:
+      return {
+        ...state,
+        searchDate: action.searchDate
       }
     default:
       return state
