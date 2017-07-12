@@ -3,12 +3,13 @@ import thunk from 'redux-thunk'
 
 import details from './state/details'
 import searchresults from './state/searchresults'
+import searchengine from './state/searchengine'
 import detailsmap from './state/detailsmap'
 import searchFilters from './state/searchFilters'
 
 const reducer = combineReducers({
   details,
-  searchresults,
+  searchengine,
   detailsmap,
   searchresults,
   searchFilters

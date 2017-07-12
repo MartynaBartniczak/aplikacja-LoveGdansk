@@ -17,6 +17,7 @@ const App = () => (
       <Router>
       <div className="App">
         <div>
+
           <MainMenu/>
           <Route path="/kategorie" component={EventCategories}/>
           <Route path="/kalendarz" component={EventCalendar}/>
@@ -26,10 +27,13 @@ const App = () => (
           <Route path="/mapa" component={Geolocation}/>
         </div>
         <div>
+
           <MainSlider/>
+
         </div>
         <Grid>
           <Row>
+            <SearchEngine/>
             <TimeSlider/>
             <LocationSlider/>
             <SearchResults/>
