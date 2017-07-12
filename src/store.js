@@ -9,8 +9,7 @@ import searchFilters from './state/searchFilters'
 
 const reducer = combineReducers({
   details,
-  searchengine
-  searchresults,
+  searchengine,
   detailsmap,
   searchresults,
   searchFilters
