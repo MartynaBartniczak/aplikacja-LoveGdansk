@@ -6,21 +6,27 @@ import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import {Col} from 'react-bootstrap'
 import moment from 'moment'
+import {connect} from 'react-redux'
 
-export default class TimeSlider extends React.Component {
-  state = {
-    sliderValue: 0
-  }
+import { updateSearchDate } from '../state/searchFilters'
 
-  handleChange = value => this.setState({
-    sliderValue: value
+export default connect(
+  state => ({
+    searchDate: state.searchFilters.searchDate
+  }),
+  dispatch => ({
+    updateSearchDate: (searchDate) => dispatch(updateSearchDate(searchDate))
   })
-
+)(
+  class TimeSlider extends React.Component {
   render() {
     return (
-      <Col xs={12} sm={6}><h3>Wybierz datę:</h3><p>{moment().add(this.state.sliderValue, 'days').format('L')}</p>
-        <Slider min={0} max={10} value={this.state.sliderValue} onChange={this.handleChange} />
+      <Col xs={12} sm={6}>
+        <h3>Wybierz datę:</h3>
+        <p>{moment().add(this.props.searchDate, 'days').format('L')}</p>
+        <Slider min={0} max={10} value={this.props.searchDate} onChange={this.props.updateSearchDate()} />
       </Col>
     )
   }
 }
+)
