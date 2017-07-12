@@ -8,17 +8,20 @@ import {Grid,
         Col,
         Thumbnail,
         Button} from 'react-bootstrap'
+import SearchEngine from './SearchEngine'
 import './SearchResults.css'
 import { Link } from 'react-router-dom'
 import { fetchSearchResults } from '../state/searchresults'
 import moment from 'moment'
 
 
+
 export default connect(
   state => ({
     searchresults: state.searchresults,
     location: state.searchFilters.location,
-    searchDate: state.searchFilters.searchDate
+    searchDate: state.searchFilters.searchDate,
+    searchPhrase: state.searchengine.searchPhrase
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults())
@@ -50,6 +53,8 @@ export default connect(
 
                       return result
                     }
+                ).filter(
+                  event => event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
                 ).map(
                   event => (
                       <Col xs={12} md={6}>
