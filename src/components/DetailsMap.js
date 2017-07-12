@@ -2,10 +2,11 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 import {connect} from "react-redux";
 import {fetchDetailsMap} from "../state/detailsmap";
-import Icon from "./img/Marker.png";
+import "./DetailsMap.css";
+import FontAwesome from "react-fontawesome";
 
 
-const AnyReactComponent = ({text}) => <div><img src={Icon}/></div>;
+const AnyReactComponent = ({text}) => <div><span className="tex">{text}</span><FontAwesome className="fa fa-map-marker" size='5x' /></div>;
 
 export default connect(
   state => ({
@@ -34,7 +35,7 @@ export default connect(
           {
             fetching === false ? null : <p>Fetching data...</p>
           }
-          <div className="center-block" style={{width: 600, height: 600,}}>
+          <div className="center-block" style={{maxWidth:'100%', height: 600,}}>
             <GoogleMapReact
               defaultCenter={this.props.center}
               defaultZoom={this.props.zoom}
