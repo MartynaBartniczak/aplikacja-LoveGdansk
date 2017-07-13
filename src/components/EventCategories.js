@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import {ButtonToolbar, Button, Grid, Row, Col} from 'react-bootstrap'
 import { fetchEventCategories } from '../state/eventcategories'
 import './EventCategories.css'
+import {toggleCategory} from '../state/categoryButtons'
 
 const categories = {
   techno: 'Techno',
@@ -19,17 +20,15 @@ const categories = {
   metal: 'Metal'
 }
 
-export default class EventCategories extends React.Component {
-
-  state = {
-    activeFilterNames: []
-  }
-
-  handleClick = (event) => this.setState({
-    activeFilterNames: this.state.activeFilterNames.includes(event.target.dataset.category) ?
-      this.state.activeFilterNames.filter(item => item !== event.target.dataset.category) :
-      this.state.activeFilterNames.concat(event.target.dataset.category)
+export default connect(
+  state => ({
+      activeCategoryNames:state.categoryButtons.activeCategoryNames
+    }),
+  dispatch => ({
+    activateCategory: categoryName =>dispatch(toggleCategory(categoryName))
   })
+)(
+class EventCategories extends React.Component {
 
 
   render() {
@@ -42,9 +41,9 @@ export default class EventCategories extends React.Component {
                 key => (
                   <Col xs={4} className="padded">
                     <Button
-                      onClick ={this.handleClick}
+                      onClick ={() => this.props.activateCategory(key)}
                       bsClass="btn-block btn-warning btn-lg btn-new"
-                      active ={this.state.activeFilterNames.includes(key)}
+                      active ={this.props.activeCategoryNames.includes(key)}
                       data-category={key}
                     >
                       {categories[key]}
@@ -59,4 +58,4 @@ export default class EventCategories extends React.Component {
     )
   }
 }
-
+)

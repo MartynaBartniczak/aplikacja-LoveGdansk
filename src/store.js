@@ -6,13 +6,16 @@ import searchresults from './state/searchresults'
 import searchengine from './state/searchengine'
 import detailsmap from './state/detailsmap'
 import searchFilters from './state/searchFilters'
+import categoryButtons from './state/categoryButtons'
+
 
 const reducer = combineReducers({
   details,
   searchengine,
   detailsmap,
   searchresults,
-  searchFilters
+  searchFilters,
+  categoryButtons
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
