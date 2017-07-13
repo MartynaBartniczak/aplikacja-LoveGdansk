@@ -13,7 +13,6 @@ import EventCategories from './EventCategories'
 import EventDetails from './EventDetails'
 import DetailsMap from "./DetailsMap";
 import EventCalendar from './EventCalendar'
-import MainSlider from './MainSlider'
 import {Grid,
   Row,} from 'react-bootstrap'
 
@@ -30,7 +29,6 @@ const App = () => (
           <Route path="/mapa" component={DetailsMap}/>
         </div>
         <div>
-          <MainSlider/>
         </div>
         <Grid>
           <Row>

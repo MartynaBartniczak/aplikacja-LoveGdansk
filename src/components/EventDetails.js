@@ -9,6 +9,7 @@ import EventCalendar from "./EventCalendar";
 import MainMenu from "./MainMenu"
 import Time from 'react-time'
 import { PageHeader } from 'react-bootstrap'
+import MainSlider from './MainSlider'
 import { connect } from 'react-redux'
 import {Grid,
   Row,
@@ -37,7 +38,8 @@ export default connect(
       const { data, fetching, error } = this.props.searchresults;
       let now = new Date();
       return (
-        <div className="mainresults">
+        <div>
+          <MainSlider/>
           <Grid>
             <h1>Jesteś w Trójmieście <small>zobacz co się dzieje</small></h1>
             <h2><small>szczegóły Twojej imprezy w dniu </small><Time value={now} format="YYYY/MM/DD" /></h2>
