@@ -2,21 +2,19 @@
  * Created by tomaszwojcik on 05.07.17.
  */
 import React from 'react';
-import DetailsIntro from "./DetailsIntro";
-import DetailsDescription from "./DetailsDescription";
 import Geolocation from "./Geolocation";
-import EventCalendar from "./EventCalendar";
-import MainMenu from "./MainMenu"
 import Time from 'react-time'
-import { PageHeader } from 'react-bootstrap'
 import MainSlider from './MainSlider'
 import { connect } from 'react-redux'
 import {Grid,
   Row,
-  Col}
+  Col,
+Panel,
+  Accordion}
   from 'react-bootstrap'
 import './SearchResults.css'
 import { fetchSearchResults } from '../state/searchresults'
+import FontAwesome from "react-fontawesome";
 
 export default connect(
   state => ({
@@ -41,6 +39,7 @@ export default connect(
           <Grid>
             <h1>Jesteś w Trójmieście <small>zobacz co się dzieje</small></h1>
             <h2><small>szczegóły Twojej imprezy w dniu </small><Time value={now} format="YYYY/MM/DD" /></h2>
+            <hr/>
           </Grid>
           <Grid>
               { error === null ? null : <p>{error.message}</p> }
@@ -52,29 +51,37 @@ export default connect(
                 <Row className="show-grid">
                   <Col xs={6} md={6}>
 
-                <h2>Rodzaj imprezy: {event.category}</h2>
-                <h1>Kiedy: {event.startdate}</h1>
-                <h3>Godzina: {event.starttime}</h3>
-                <h1>Za ile wjazd: {event.cost} PLN</h1>
-                    <p> </p>
-                    <p> </p>
-                    <p>szczegóły Twojej imprezy</p>
-                    {event.place}
-                    {event.city}
-
+                    <h3>Rodzaj imprezy: <b>{event.category}</b></h3>
+                    <br/><FontAwesome className="fa fa-clock-o" size='2x' />
+                    <h2>Kiedy: <b>{event.startdate}</b></h2>
+                    <h2>Godzina: <b>{event.starttime}</b></h2>
+                    <h2>Za ile wjazd: <b>{event.cost} PLN</b></h2>
+                    <br/><FontAwesome className="fa fa-location-arrow" size='2x' />
+                    <h4><small>SZCZEGÓŁY TWOJEJ IMPREZY:</small></h4>
+                    <h4><small>Klub: </small>{event.place}</h4>
+                    <h4><small>Miasto: </small>{event.city}</h4>
+                    <br/>
+                    <Accordion>
+                      <Panel header="więcej o imprezie"eventKey="1">
+                        {event.place}
+                      </Panel><br/>
+                      <Panel header="więcej o klubie" eventKey="2">
+                        {event.place}
+                      </Panel><br/>
+                      <Panel header="więcej o klubie" eventKey="3">
+                        {event.place}
+                      </Panel>
+                    </Accordion>
                 </Col>
-
                 <Col xs={6} md={6}>
-
-                  <Geolocation/>
-
+                  <Geolocation />
                   </Col>
                 </Row>
                   )
                 )
               }
+            <hr/>
           </Grid>
-
         </div>
       )
     }
