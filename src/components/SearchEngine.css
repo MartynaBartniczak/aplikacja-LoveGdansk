@@ -1,3 +1,14 @@
-.searchbar {
-    padding-top: 3%;
+.searchbarengine {
+    margin-top: 2.1em;
+    letter-spacing: 0.3em;
+    text-align: center;
+    border-radius: 30px;
+    border: 2px solid #3C887E;
+    padding: 1.5em;
+    color: #3C887E;
+}
+
+.form-control:focus {
+    border-color: #3C887E;
+    box-shadow: 0px 1px 2px #3C887E;
 }
