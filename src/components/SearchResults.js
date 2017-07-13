@@ -10,11 +10,10 @@ import {
   Thumbnail,
   Button
 } from 'react-bootstrap'
-import SearchEngine from './SearchEngine'
 import './SearchResults.css'
-import {Link} from 'react-router-dom'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
+import FontAwesome from 'react-fontawesome'
 import { add } from '../state/calendarAdd'
 
 import categories from '../_utils/categories'
@@ -69,7 +68,7 @@ export default connect(
                         <h2>Impreza: {event.category}</h2>
                         <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
                         <h4>Za ile wjazd: {event.cost} PLN</h4>
-                        <p>{event.place} | {event.city} </p>
+                        <p>{event.place} | {event.city}  </p>
                         <p>
                           <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
                           <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do kalendarza</Button>

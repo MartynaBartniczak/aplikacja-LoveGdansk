@@ -38,7 +38,7 @@ export default connect(
           <MainSlider/>
           <Grid>
             <h1>Jesteś w Trójmieście <small>zobacz co się dzieje</small></h1>
-            <h2><small>szczegóły Twojej imprezy w dniu </small><Time value={now} format="YYYY/MM/DD" /></h2>
+            <h2><small>Dzisiaj jest </small><Time value={now} format="YYYY/MM/DD" /></h2>
             <hr/>
           </Grid>
           <Grid>
@@ -66,9 +66,6 @@ export default connect(
                         {event.place}
                       </Panel><br/>
                       <Panel header="więcej o klubie" eventKey="2">
-                        {event.place}
-                      </Panel><br/>
-                      <Panel header="więcej o klubie" eventKey="3">
                         {event.place}
                       </Panel>
                     </Accordion>

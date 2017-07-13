@@ -7,6 +7,7 @@ import 'rc-slider/assets/index.css'
 import {Col} from 'react-bootstrap'
 import moment from 'moment'
 import {connect} from 'react-redux'
+import FontAwesome from 'react-fontawesome'
 
 import { updateSearchDate } from '../state/searchFilters'
 
@@ -22,6 +23,7 @@ export default connect(
   render() {
     return (
       <Col xs={12} sm={6}>
+          <FontAwesome className="fa fa-calendar-o" size='2x' />
         <h3>Wybierz datę:</h3>
         <p>{moment().add(this.props.searchDate, 'days').format('L')}</p>
         <Slider min={0} max={10} value={this.props.searchDate} onChange={this.props.updateSearchDate} />
