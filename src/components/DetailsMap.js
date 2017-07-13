@@ -6,7 +6,8 @@ import "./DetailsMap.css";
 import FontAwesome from "react-fontawesome";
 
 
-const AnyReactComponent = ({text, $hover}) => <div><span style={{display: $hover ? 'inline' : 'none'}}>{text}</span><FontAwesome className="fa fa-map-marker" size='5x' /></div>;
+const AnyReactComponent = ({text}) => <div><span>{text}</span><FontAwesome className="fa fa-map-marker" size='5x' /></div>;
+
 
 export default connect(
   state => ({
@@ -20,7 +21,7 @@ export default connect(
 
     static defaultProps = {
       center: {lat: 20.4033754, lng: 18.5700186},
-      zoom: 14
+      zoom: 15
     };
 
     componentWillMount() {
@@ -39,22 +40,25 @@ export default connect(
             <GoogleMapReact
               defaultCenter={this.props.center}
               defaultZoom={this.props.zoom}
-              hoverDistance={10}
+
             >
               {
                 data !== null && data.map(
                   event => (
-
-
                     <AnyReactComponent
                       lat={parseFloat(event.lat)}
                       lng={parseFloat(event.lng)}
                       text={event.place}
                     />
-
                   )
                 )
               }
+
+              <AnyReactComponent
+                lat={this.props.center.lat}
+                lng={this.props.center.lng}
+                text="Your location"
+              />
             </GoogleMapReact>
           </div>
         </div>
