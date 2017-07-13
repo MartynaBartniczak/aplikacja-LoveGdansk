@@ -6,6 +6,7 @@ import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import {Col} from 'react-bootstrap'
 import {connect} from 'react-redux'
+import FontAwesome from 'react-fontawesome'
 
 import { updateLocation } from '../state/searchFilters'
 
@@ -22,7 +23,8 @@ export default connect(
       return (
 
         <Col xs={12} sm={6}>
-          <h3>Wybierz odległość:</h3>
+            <FontAwesome className="fa fa-calendar-o" size='2x' />
+            <h3>Wybierz odległość:</h3>
           <p>{this.props.location} km</p>
           <Slider min={1} max={10} value={this.props.location} onChange={this.props.updateLocation}/>
         </Col>

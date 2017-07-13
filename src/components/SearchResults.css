@@ -6,15 +6,35 @@
 {
     border-color: #E3B505;
     background-image: linear-gradient(to right, #E3B505, #E3B505);
+    background-color: #E3B505;
     border-radius: 30px;
+    margin: 0.4em;
+}
+
+.btn-primary:hover{
+    border-color: #E3B505;
+    background-color: #E3B505;
+    box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.4);
 }
 
 .btn-default
 {
-    background-color: #4CAF50;
     border: none;
-    color: black;
+    color: white;
     border-radius: 30px;
+    background-image: linear-gradient(to bottom, #000 100%, #000 100%);
+    border-color: #000;
+}
+
+.btn-default:hover
+{
+    background-color: black;
+    border: none;
+    box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.4);
+    border-radius: 30px;
+    background-image: linear-gradient(to bottom, #000 100%, #000 100%);
+    border-color: #000;
+    color:white;
 }
 
 .thumbnail, .img-thumbnail
