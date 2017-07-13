@@ -15,7 +15,6 @@ import { fetchSearchResults } from '../state/searchresults'
 import moment from 'moment'
 
 
-
 export default connect(
   state => ({
     searchresults: state.searchresults,

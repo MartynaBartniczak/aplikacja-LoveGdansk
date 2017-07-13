@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import {ButtonToolbar, Button, Grid, Row, Col} from 'react-bootstrap'
 import { fetchEventCategories } from '../state/eventcategories'
 import './EventCategories.css'
+import {activateCategory} from '../state/categoryButtons'
 
 const categories = {
   techno: 'Techno',
@@ -19,7 +20,19 @@ const categories = {
   metal: 'Metal'
 }
 
-export default class EventCategories extends React.Component {
+export default connect(
+  state => ({
+      activeCategoryNames:state.categoryButtons.activeCategoryNames
+    }),
+  dispatch => ({
+    activeCategory: ()=>dispatch()activateCategory
+  })
+
+
+
+
+)(
+class EventCategories extends React.Component {
 
   state = {
     activeFilterNames: []
@@ -32,6 +45,7 @@ export default class EventCategories extends React.Component {
   })
 
 
+
   render() {
     return (
       <div className="EventCategories">
@@ -42,7 +56,7 @@ export default class EventCategories extends React.Component {
                 key => (
                   <Col xs={4} className="padded">
                     <Button
-                      onClick ={this.handleClick}
+                      onClick ={() => this.props.activateCategory(key)}
                       bsClass="btn-block btn-warning btn-lg btn-new"
                       active ={this.state.activeFilterNames.includes(key)}
                       data-category={key}
@@ -59,4 +73,4 @@ export default class EventCategories extends React.Component {
     )
   }
 }
-
+)
