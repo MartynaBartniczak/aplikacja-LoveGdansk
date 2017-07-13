@@ -4,7 +4,7 @@
 import React from 'react';
 import DetailsIntro from "./DetailsIntro";
 import DetailsDescription from "./DetailsDescription";
-import DetailsMap from "./DetailsMap";
+import Geolocation from "./Geolocation";
 import EventCalendar from "./EventCalendar";
 import MainMenu from "./MainMenu"
 import Time from 'react-time'
@@ -13,11 +13,9 @@ import MainSlider from './MainSlider'
 import { connect } from 'react-redux'
 import {Grid,
   Row,
-  Col,
-  Thumbnail,
-  Button} from 'react-bootstrap'
+  Col}
+  from 'react-bootstrap'
 import './SearchResults.css'
-import { Link } from 'react-router-dom'
 import { fetchSearchResults } from '../state/searchresults'
 
 export default connect(
@@ -54,19 +52,21 @@ export default connect(
                 <Row className="show-grid">
                   <Col xs={6} md={6}>
 
-                <h2>Impreza: {event.category}</h2>
-                <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
-                <h4>Za ile wjazd: {event.cost} PLN</h4>
-                <p>{event.place} | {event.city}  </p>
+                <h2>Rodzaj imprezy: {event.category}</h2>
+                <h1>Kiedy: {event.startdate}</h1>
+                <h3>Godzina: {event.starttime}</h3>
+                <h1>Za ile wjazd: {event.cost} PLN</h1>
+                    <p> </p>
+                    <p> </p>
+                    <p>szczegóły Twojej imprezy</p>
+                    {event.place}
+                    {event.city}
 
                 </Col>
 
                 <Col xs={6} md={6}>
 
-                  <h2>Impreza: {event.category}</h2>
-                  <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
-                  <h4>Za ile wjazd: {event.cost} PLN</h4>
-                  <p>{event.place} | {event.city}  </p>
+                  <Geolocation/>
 
                   </Col>
                 </Row>
