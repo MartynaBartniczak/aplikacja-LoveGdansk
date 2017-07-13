@@ -1,4 +1,4 @@
-o kurc/**
+/**
  * Created by tomaszwojcik on 05.07.17.
  */
 import React from 'react'
