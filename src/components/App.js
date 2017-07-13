@@ -34,7 +34,7 @@ const App = () => (
             <TimeSlider/>
             <LocationSlider/>
             <SearchResults/>
-        <EventCategories/>
+            <EventCategories/>
           </Row>
         </Grid>
 

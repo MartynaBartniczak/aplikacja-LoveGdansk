@@ -20,22 +20,15 @@ const MainMenu = (props) =>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav pullRight>
-      <LinkContainer to="/kategorie">
-        <NavItem>Kategorie</NavItem>
-      </LinkContainer>
       <LinkContainer to="/kalendarz">
-        <NavItem>Twój kalendarz</NavItem>
+        <NavItem>Twój Kalendarz Wydarzeń</NavItem>
       </LinkContainer>
       <LinkContainer to="/detale">
         <NavItem>Detale wydarzenia</NavItem>
       </LinkContainer>
       <LinkContainer to="/mapa">
-        <NavItem>Mapa Google</NavItem>
+        <NavItem>Sprawdź w Okolicy</NavItem>
       </LinkContainer>
-      <NavDropdown eventKey={3} title="Konto" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>Moje imprezy</MenuItem>
-        <MenuItem eventKey={3.2}>Historia</MenuItem>
-      </NavDropdown>
     </Nav>
   </Navbar>
 

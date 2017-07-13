@@ -16,3 +16,11 @@
   background-image: linear-gradient(to right, #E3B505, #E3B505);
   border-radius: 30px;
 }
+
+
+.btn-warning:hover, .btn-warning:focus
+
+{
+  box-shadow: 0px 5px 9px 0px rgba(0,0,0,0.4);
+  background-color: #E3B505;
+}
