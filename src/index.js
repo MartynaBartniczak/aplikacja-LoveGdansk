@@ -5,11 +5,9 @@ import "./index.css";
 import store from "./store";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap-theme.css";
-
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import App from "./components/App";
 import "react-fontawesome";
-
 
 ReactDOM.render(
   <Provider store={store}>
