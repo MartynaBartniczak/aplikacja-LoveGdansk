@@ -12,10 +12,10 @@
 }
 .tex {
     display: none;
-
 }
+
 .tex:hover{
-    display: block;
+    display: inline;
 }
 
 @keyframes App-logo-spin {
