@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import App from './components/App'
+import EventCalendar from "./components/EventCalendar";
 
 
 ReactDOM.render(
