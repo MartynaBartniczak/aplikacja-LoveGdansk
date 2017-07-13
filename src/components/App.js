@@ -27,9 +27,6 @@ const App = () => (
           <Route path="/mapa" component={Geolocation}/>
         </div>
         <div>
-
-          <MainSlider/>
-
         </div>
         <Grid>
           <Row>

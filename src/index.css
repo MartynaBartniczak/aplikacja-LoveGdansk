@@ -1,9 +1,4 @@
-@font-face {
-  font-family: 'Advent Pro', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  src: url('https://fonts.googleapis.com/css?family=Advent+Pro');
-}
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro');
 
 body {
   padding: 0;
