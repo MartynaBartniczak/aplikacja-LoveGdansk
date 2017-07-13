@@ -22,7 +22,7 @@ export default connect(
       return (
 
         <Col xs={12} sm={6}>
-          <h3>Wybierz odległość</h3>
+          <h3>Wybierz odległość:</h3>
           <p>{this.props.location} km</p>
           <Slider min={1} max={10} value={this.props.location} onChange={this.props.updateLocation}/>
         </Col>

@@ -3,19 +3,36 @@
  */
 import React from 'react'
 import { connect } from 'react-redux'
-import {Navbar,
+import {Grid,
         FormGroup,
-        FormControl} from 'react-bootstrap'
+        FormControl,
+        ControlLabel,
+        Col
+        }
+from 'react-bootstrap'
 import './SearchEngine.css'
 import { updateSearchPhrase } from '../state/searchengine'
 
 const SearchEngine = props => (
-  <FormControl
-    value={props.searchPhrase}
-    onChange={props.update}
-    // style={{marginBottom: 20}}
-  />
+  <Grid>
+    <FormGroup>
+        <Col sm={2}>
+        </Col>
+        <Col sm={8}>
+            <FormControl
+                value={props.searchPhrase}
+                onChange={props.update}
+                className="searchbarengine"
+                placeholder="szukaj imprezy w swojej okolicy"
+            />
+        </Col>
+        <Col sm={2}>
+        </Col>
+     </FormGroup>
+  </Grid>
 )
+
+
 
 export default connect(
   state => ({
@@ -25,15 +42,3 @@ export default connect(
     update: event => dispatch(updateSearchPhrase(event.target.value))
   })
 )(SearchEngine)
-
-// export default class SearchEngine extends React.Component {
-//   render() {
-//     return (
-//       <Navbar>
-//             <FormGroup className="searchbar">
-//               <FormControl type="text" placeholder="Search" />
-//             </FormGroup>
-//       </Navbar>
-//     )
-//   }
-// }

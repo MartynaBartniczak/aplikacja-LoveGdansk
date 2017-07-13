@@ -24,7 +24,9 @@ class EventCategories extends React.Component {
   render() {
     return (
       <div className="EventCategories">
-        <Grid>
+        <hr/>
+          <h2><small>Sprawdź swoją ulubioną muzę!</small></h2>
+          <Grid>
           <Row>
             {
               Object.keys(categories).map(

@@ -1,11 +1,11 @@
 .navbar-default
 {
-    background-color:  #fc4a1a;
+    background-color:  #000000;
     background-image: none;
     background-repeat: no-repeat;
     color: white;
     box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.4);
-    border-color: #fc4a1a;
+    border-color: #000;
     border-radius: 0px;
     font-size: 18px;
 }
@@ -23,7 +23,7 @@
 .navbar-default .navbar-nav>.active>a
 {
     color: white;
-    background-color:  #fc4a1a;
+    background-color:  #E3B505;
 }
 
 
@@ -38,7 +38,7 @@
 
 .navbar-default .navbar-nav > .active > a {
     border-radius:0px;
-    background-image: linear-gradient(to bottom, #fc4a1a 100%, #fc4a1a 100%);
-    color: #333;
+    background-image: linear-gradient(to bottom, #000 100%, #000 100%);
+    color: #E3B505;
     box-shadow: none;
 }

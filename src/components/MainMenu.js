@@ -26,9 +26,6 @@ const MainMenu = (props) =>
       <LinkContainer to="/kalendarz">
         <NavItem>Twój kalendarz</NavItem>
       </LinkContainer>
-      <LinkContainer to="/szukaj">
-        <NavItem>Szukaj w pobliżu</NavItem>
-      </LinkContainer>
       <LinkContainer to="/detale">
         <NavItem>Detale wydarzenia</NavItem>
       </LinkContainer>

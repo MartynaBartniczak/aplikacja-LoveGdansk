@@ -6,13 +6,13 @@
 }
 .btn-new
 {
-  border-color: #f46b45;
-  background-image: linear-gradient(to right, #f46b45, #eea849);
+  border-color: #E3B505;
+  background-image: linear-gradient(to right, #E3B505, #E3B505);
   border-radius: 30px;
 }
 .btn-new:hover
 {
-  border-color: #f46b45;
-  background-image: linear-gradient(to right, #eea849, #f46b45);
+  border-color: #E3B505;
+  background-image: linear-gradient(to right, #E3B505, #E3B505);
   border-radius: 30px;
 }
