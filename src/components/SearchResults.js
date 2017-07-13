@@ -15,6 +15,7 @@ import './SearchResults.css'
 import {Link} from 'react-router-dom'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
+import { add } from '../state/calendarAdd'
 
 import categories from '../_utils/categories'
 
@@ -24,10 +25,12 @@ export default connect(
     location: state.searchFilters.location,
     searchDate: state.searchFilters.searchDate,
     searchPhrase: state.searchengine.searchPhrase,
-    activeCategoryNames: state.categoryButtons.activeCategoryNames
+    activeCategoryNames: state.categoryButtons.activeCategoryNames,
+    favouriteEventIds: state.calendarAdd.favouriteEventId
   }),
   dispatch => ({
-    fetchSearchResults: () => dispatch(fetchSearchResults())
+    fetchSearchResults: () => dispatch(fetchSearchResults()),
+      addToFav: id => dispatch(add(id))
   })
 )(
   class SearchResults extends React.Component {
@@ -66,10 +69,10 @@ export default connect(
                         <h2>Impreza: {event.category}</h2>
                         <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
                         <h4>Za ile wjazd: {event.cost} PLN</h4>
-                        <p>{event.place} | {event.city}  </p>
+                        <p>{event.place} | {event.city} </p>
                         <p>
                           <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
-                          <Button bsStyle="default">Dodaj do kalendarza</Button>
+                          <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do kalendarza</Button>
                         </p>
                       </Thumbnail>
                     </Col>
