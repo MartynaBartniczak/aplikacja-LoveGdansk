@@ -8,17 +8,7 @@ import { fetchEventCategories } from '../state/eventcategories'
 import './EventCategories.css'
 import {toggleCategory} from '../state/categoryButtons'
 
-const categories = {
-  techno: 'Techno',
-  rock: 'Rock',
-  house: 'House',
-  blues: 'Blues',
-  drumnbase: 'Drum&Base',
-  hipHop: 'HipHop',
-  disco: 'Disco',
-  pop: 'Pop',
-  metal: 'Metal'
-}
+import categories from '../_utils/categories'
 
 export default connect(
   state => ({
