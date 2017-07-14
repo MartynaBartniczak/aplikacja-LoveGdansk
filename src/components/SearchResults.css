@@ -50,7 +50,7 @@
 
 .thumbnail:hover
 {
-    box-shadow: 0px 5px 9px 0px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 10px 3px rgba(227, 181, 5, 0.5);
 }
 
 h2 {
