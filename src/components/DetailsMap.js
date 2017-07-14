@@ -40,7 +40,7 @@ export default connect(
             <GoogleMapReact
               defaultCenter={this.props.center}
               defaultZoom={this.props.zoom}
-
+              apiKey={'AIzaSyD91qKDKvraWUaYomGzmd4cLuR653anaDs'}
             >
               {
                 data !== null && data.map(

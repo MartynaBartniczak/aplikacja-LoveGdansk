@@ -1,5 +1,14 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
+import Geolocation from "./Geolocation"
+import Time from 'react-time'
+import MainSlider from './MainSlider'
+import {Grid,
+  Row,
+  Col,
+  Panel,
+  Accordion}
+  from 'react-bootstrap'
 
 export default class EventDetail extends React.Component {
 
@@ -20,7 +29,8 @@ export default class EventDetail extends React.Component {
   }
 
   render() {
-    const eventId = parseInt(this.props.match.params.studentId, 10)
+    let now = new Date();
+    const eventId = parseInt(this.props.match.params.eventId, 10)
     const event = this.state.events.find(
       event => event.id === eventId
     )
@@ -44,7 +54,7 @@ export default class EventDetail extends React.Component {
         <Grid>
                 <Row className="show-grid">
                   <Col xs={6} md={6}>
-
+                    <h2>{event.id}</h2>
                     <h3>Rodzaj imprezy: <b>{event.category}</b></h3>
                     <br/><FontAwesome className="fa fa-clock-o" size='2x' />
                     <h2>Kiedy: <b>{event.startdate}</b></h2>
