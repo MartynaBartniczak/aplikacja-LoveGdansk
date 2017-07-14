@@ -11,35 +11,41 @@ import Geolocation from "./Geolocation";
 import EventCalendar from "./EventCalendar";
 import {Grid, Row} from "react-bootstrap";
 import SearchEngine from './SearchEngine'
+import EventDetail from './EventDetail'
+
 const App = () => (
-      <Router>
-      <div className="App">
-        <div>
+  <Router>
+    <div className="App">
+      <div>
 
-          <MainMenu/>
-          <SearchEngine/>
-          <Grid>
-          <hr/>
-          </Grid>
-          <Route path="/kategorie" component={EventCategories}/>
-          <Route path="/kalendarz" component={EventCalendar}/>
-          <Route path="/wydarzenia" component={EventCategories}/>
-          <Route path="/detale" component={EventDetails}/>
-          <Route path="/mapa" component={Geolocation}/>
-        </div>
-        <div>
-        </div>
+        <MainMenu/>
+        <SearchEngine/>
         <Grid>
-          <Row>
-            <TimeSlider/>
-            <LocationSlider/>
-            <SearchResults/>
-            <EventCategories/>
-          </Row>
+          <hr/>
         </Grid>
-
+        <Route exact path="/" component={() => (
+          <Grid>
+            <Row>
+              <TimeSlider/>
+              <LocationSlider/>
+              <SearchResults/>
+              <EventCategories/>
+            </Row>
+          </Grid>
+        )}/>
+        <Route path="/kategorie" component={EventCategories}/>
+        <Route path="/kalendarz" component={EventCalendar}/>
+        <Route path="/wydarzenia" component={EventCategories}/>
+        <Route exact path="/detale" component={EventDetails}/>
+        <Route path="/mapa" component={Geolocation}/>
+        <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
-      </Router>
-    );
+      <div>
+      </div>
+
+
+    </div>
+  </Router>
+);
 
 export default App

@@ -10,6 +10,7 @@ import {
   Thumbnail,
   Button
 } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import './SearchResults.css'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
@@ -70,7 +71,9 @@ export default connect(
                         <h4>Za ile wjazd: {event.cost} PLN</h4>
                         <p>{event.place} | {event.city}  </p>
                         <p>
-                          <Button key={event.id} onClick={'/details/' + event.id} bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
+                          <Link to={'/detale/' + event.id}>
+                            <Button bsStyle="primary">Zobacz szczegóły</Button>
+                          </Link>&nbsp;
                           <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do kalendarza</Button>
                         </p>
                       </Thumbnail>
