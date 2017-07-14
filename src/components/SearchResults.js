@@ -70,7 +70,7 @@ export default connect(
                         <h4>Za ile wjazd: {event.cost} PLN</h4>
                         <p>{event.place} | {event.city}  </p>
                         <p>
-                          <Button bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
+                          <Button key={event.id} onClick={'/details/' + event.id} bsStyle="primary">Zobacz szczegóły</Button>&nbsp;
                           <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do kalendarza</Button>
                         </p>
                       </Thumbnail>
