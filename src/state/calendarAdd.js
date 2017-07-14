@@ -1,6 +1,6 @@
 const ADD = 'calendarAdd/ADD'
 
-export const add = (eventId, startDate) => ({
+export const add = eventId => ({
     type: ADD,
     eventId
 })
