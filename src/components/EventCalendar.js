@@ -4,6 +4,8 @@
 import React from 'react'
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import { Grid } from 'react-bootstrap'
+import './EventCalendar.css'
 
 
 BigCalendar.momentLocalizer(moment);
