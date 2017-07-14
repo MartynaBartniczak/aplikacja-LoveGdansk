@@ -7,7 +7,7 @@ import 'rc-slider/assets/index.css'
 import {Col} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import FontAwesome from 'react-fontawesome'
-
+import './LocationSlider.css'
 import { updateLocation } from '../state/searchFilters'
 
 export default connect(
@@ -24,8 +24,8 @@ export default connect(
 
         <Col xs={12} sm={6}>
             <FontAwesome className="fa fa-search" size='2x' />
-            <h3>Wybierz odległość:</h3>
-          <p>{this.props.location} km</p>
+            <h3 className="choose_range">Wybierz odległość:</h3>
+          <p className="choose_range">{this.props.location} km</p>
           <Slider min={1} max={10} value={this.props.location} onChange={this.props.updateLocation}/>
         </Col>
       )
