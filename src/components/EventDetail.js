@@ -25,14 +25,13 @@ export default class EventDetail extends React.Component {
       event => event.id === eventId
     )
 
-    if (student === undefined) {
+    if (event === undefined) {
       return (
         <div>
           <h1>Not found yet...</h1>
         </div>
       )
     }
-
 
     return (
       <div>
@@ -43,12 +42,6 @@ export default class EventDetail extends React.Component {
           <hr/>
         </Grid>
         <Grid>
-          { error === null ? null : <p>{error.message}</p> }
-          { fetching === false ? null : <p>Fetching data...</p>}
-          {
-            data !== null && data.slice(1,2).map(
-              event => (
-
                 <Row className="show-grid">
                   <Col xs={6} md={6}>
 
