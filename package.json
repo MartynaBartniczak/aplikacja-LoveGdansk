@@ -30,6 +30,7 @@
     "react-slider": "^0.8.0",
     "react-time": "^4.3.0",
     "redux": "^3.7.1",
+    "redux-localstorage": "^0.4.1",
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
