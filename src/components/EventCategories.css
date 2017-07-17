@@ -1,6 +1,9 @@
 .EventCategories .padded {
   padding-bottom: 10px;
 }
+.EventCategories {
+  padding-top: 5%;
+}
 .categoryClicked{
   color: darkgray;
 }

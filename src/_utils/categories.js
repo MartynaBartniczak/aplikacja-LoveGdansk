@@ -3,7 +3,7 @@ export default {
   rock: 'Rock',
   house: 'House',
   blues: 'Blues',
-  drumnbase: 'Drum&Base',
+  drumnbase: 'D&B',
   hipHop: 'HipHop',
   disco: 'Disco',
   pop: 'Pop',
