@@ -30,7 +30,7 @@ class EventCategories extends React.Component {
             {
               Object.keys(categories).map(
                 key => (
-                  <Col xs={4} className="padded">
+                  <Col xs={6} sm={4} className="padded">
                     <Button
                       onClick ={() => this.props.activateCategory(key)}
                       bsClass="btn-block btn-warning btn-lg btn-new"
