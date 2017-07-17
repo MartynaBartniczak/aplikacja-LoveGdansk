@@ -28,6 +28,8 @@ const App = () => (
             <Row>
               <TimeSlider/>
               <LocationSlider/>
+            </Row>
+            <Row>
               <EventCategories/>
               <SearchResults/>
             </Row>

@@ -24,7 +24,6 @@ class EventCategories extends React.Component {
   render() {
     return (
       <div className="EventCategories">
-        <hr/>
           <h2><small>Sprawdź swoją ulubioną muzę!</small></h2>
           <Grid>
           <Row>
