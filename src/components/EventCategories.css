@@ -28,6 +28,11 @@
   background-color: #E3B505;
 }
 
+.btn-warning:active:hover, .btn-warning.active:hover {
+   background-color: #E3B505;
+   border-color: #E3B505;
+}
+
 h2 small
 {
   color: #fff;
