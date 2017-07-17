@@ -54,7 +54,6 @@ export default class EventDetail extends React.Component {
         <Grid>
                 <Row className="show-grid">
                   <Col xs={6} md={6}>
-                    <h2>{event.id}</h2>
                     <h3>Rodzaj imprezy: <b>{event.category}</b></h3>
                     <br/><FontAwesome className="fa fa-clock-o" size='2x' />
                     <h2>Kiedy: <b>{event.startdate}</b></h2>
@@ -78,9 +77,6 @@ export default class EventDetail extends React.Component {
                     <Geolocation />
                   </Col>
                 </Row>
-              )
-            )
-          }
           <hr/>
         </Grid>
       </div>
