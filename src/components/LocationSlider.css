@@ -9,4 +9,14 @@
 
 {
     color:#fff;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+.choose_range_km
+{
+    color:#fff;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
 }

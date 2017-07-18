@@ -7,7 +7,9 @@ import {Grid,
   Row,
   Col,
   Panel,
-  Accordion}
+  Accordion,
+Carousel,
+CarouselItem}
   from 'react-bootstrap'
 
 export default class EventDetail extends React.Component {
@@ -45,16 +47,26 @@ export default class EventDetail extends React.Component {
 
     return (
       <div>
-        <MainSlider/>
+        <Carousel>
+          <Carousel.Item>
+            <img width={1920} height={450} alt="1900x450" src={event.image}/>
+            <Carousel.Caption>
+              <h1>{event.category} | Zaczynamy o {event.starttime}</h1>
+              <h3>Sprawdź, co ciekawego dzieje się wokół Ciebie.</h3>
+              <p>{event.city} | {event.place}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
         <Grid>
-          <h1>Jesteś w Trójmieście <small>zobacz co się dzieje</small></h1>
+
+          <h1 classID="event_detail_h1">Jesteś w Trójmieście <small classID="event_detail_small">zobacz co się dzieje</small></h1>
           <h2><small>Dzisiaj jest </small><Time value={now} format="YYYY/MM/DD" /></h2>
           <hr/>
         </Grid>
         <Grid>
                 <Row className="show-grid">
                   <Col xs={6} md={6}>
-                    <h3>Rodzaj imprezy: <b>{event.category}</b></h3>
+                    <h3 classID="event_detail_h2">Rodzaj imprezy: <b>{event.category}</b></h3>
                     <br/><FontAwesome className="fa fa-clock-o" size='2x' />
                     <h2>Kiedy: <b>{event.startdate}</b></h2>
                     <h2>Godzina: <b>{event.starttime}</b></h2>
