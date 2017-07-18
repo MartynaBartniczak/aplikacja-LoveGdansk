@@ -36,8 +36,8 @@ class EventCategories extends React.Component {
           <p className="App-intro">
               <Button
                   onClick={ () => this.handleClick() }
-                  bsStyle="default">
-                  Pokaż filtry dodatkowe</Button>
+                  bsStyle="btn-block btn-warning btn-md btn-new">
+                  Filtry dodatkowe</Button>
           </p>
           <ToggleDisplay show={this.state.show}>
           <h2><small>Sprawdź swoją ulubioną muzę!</small></h2>

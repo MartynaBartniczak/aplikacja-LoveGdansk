@@ -42,22 +42,3 @@ h2 small
 {
   padding-top: 3%;
 }
-.btn-default
-{
-  border: none;
-  color: black;
-  border-radius: 30px;
-  background-image: linear-gradient(to bottom, #fff 100%, #fff 100%);
-  border-color: #000;
-}
-
-.btn-default:hover
-{
-  background-color: white;
-  border: none;
-  box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.4);
-  border-radius: 30px;
-  background-image: linear-gradient(to bottom, #fff 100%, #fff 100%);
-  border-color: #000;
-  color:black;
-}
