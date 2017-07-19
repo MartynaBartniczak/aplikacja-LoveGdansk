@@ -10,8 +10,18 @@
     background-color: yellow;
 
 }
-.tex {
+.asd {
     display: none;
+}
+
+.fa.fa-map-marker{
+    color:black;
+
+}
+.markers{
+    position: absolute;
+    bottom: -20px;
+    right:-25px;
 }
 
 .tex:hover{
