@@ -21,8 +21,9 @@ export default connect(
 
     static defaultProps = {
       center: {lat: 20.4033754, lng: 18.5700186},
-      zoom: 15
+      zoom: 15,
     };
+
 
     componentWillMount() {
       this.props.fetchDetailsMap()
@@ -40,6 +41,7 @@ export default connect(
             <GoogleMapReact
               defaultCenter={this.props.center}
               defaultZoom={this.props.zoom}
+              options={{scrollwheel: false}}
               apiKey={'AIzaSyD91qKDKvraWUaYomGzmd4cLuR653anaDs'}
             >
               {
@@ -49,6 +51,7 @@ export default connect(
                       lat={parseFloat(event.lat)}
                       lng={parseFloat(event.lng)}
                       text={event.place}
+
                     />
                   )
                 )
