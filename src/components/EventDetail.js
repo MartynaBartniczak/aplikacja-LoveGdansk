@@ -61,7 +61,7 @@ export default class EventDetail extends React.Component {
         </Carousel>
         <Grid>
           <h1 classID="event_detail_h1" style={{color:'white'}}>Jesteś w Trójmieście <small classID="event_detail_small">zobacz co się dzieje</small></h1>
-          <h2><small>Dzisiaj jest </small><Time value={now} format="YYYY/MM/DD" /></h2>
+          <h2><small>Dzisiaj jest: </small><Time value={now} format="YYYY - MM - DD" /></h2>
           <hr/>
         </Grid>
         <Grid>
