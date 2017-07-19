@@ -9,7 +9,6 @@ import './EventCategories.css'
 import {toggleCategory} from '../state/categoryButtons'
 
 import categories from '../_utils/categories'
-import ToggleDisplay from 'react-toggle-display';
 
 export default connect(
   state => ({
@@ -20,26 +19,11 @@ export default connect(
   })
 )(
 class EventCategories extends React.Component {
-    constructor() {
-        super();
-        this.state = { show: false };
-    }
-
-    handleClick() {
-        this.setState({
-            show: !this.state.show
-        });
-    }
   render() {
     return (
       <div className="EventCategories">
           <p className="App-intro">
-              <Button
-                  onClick={ () => this.handleClick() }
-                  bsStyle="btn-block btn-warning btn-md btn-new">
-                  Filtry dodatkowe</Button>
           </p>
-          <ToggleDisplay show={this.state.show}>
           <h2><small>Sprawdź swoją ulubioną muzę!</small></h2>
           <Grid>
           <Row>
@@ -61,7 +45,6 @@ class EventCategories extends React.Component {
             }
           </Row>
         </Grid>
-          </ToggleDisplay>
       </div>
     )
   }

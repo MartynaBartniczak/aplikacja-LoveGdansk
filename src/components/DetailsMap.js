@@ -6,7 +6,7 @@ import "./DetailsMap.css";
 import FontAwesome from "react-fontawesome";
 
 
-const AnyReactComponent = ({text}) => <div><span>{text}</span><FontAwesome className="fa fa-map-marker" size='5x' /></div>;
+const AnyReactComponent = ({text}) => <div className="markers"><span className="asd">{text}</span><FontAwesome className="fa fa-map-marker" size='5x' /></div>;
 
 
 export default connect(
@@ -21,7 +21,7 @@ export default connect(
 
     static defaultProps = {
       center: {lat: 20.4033754, lng: 18.5700186},
-      zoom: 15,
+      zoom: 11,
     };
 
 

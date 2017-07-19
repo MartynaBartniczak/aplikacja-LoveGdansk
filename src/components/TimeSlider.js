@@ -23,12 +23,14 @@ export default connect(
   class TimeSlider extends React.Component {
   render() {
     return (
+      <div className="TimeSlider">
       <Col xs={12} sm={6}>
           <FontAwesome className="fa fa-calendar-o" size='3x'/>
         <h3 className="choose_date">Wybierz datę:</h3>
         <p className="choose_date_mm">{moment().add(this.props.searchDate, 'days').format('L')}</p>
         <Slider min={0} max={10} value={this.props.searchDate} onChange={this.props.updateSearchDate} />
       </Col>
+      </div>
     )
   }
 }
