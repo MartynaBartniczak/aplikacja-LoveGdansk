@@ -11,7 +11,10 @@
 
 }
 .asd {
-    display: none;
+    /*display: none;*/
+    position: absolute;
+    left:35px;
+    /*font-weight: bold;*/
 }
 
 .fa.fa-map-marker{
@@ -22,6 +25,7 @@
     position: absolute;
     bottom: -20px;
     right:-25px;
+    font-weight: bold
 }
 
 .tex:hover{
