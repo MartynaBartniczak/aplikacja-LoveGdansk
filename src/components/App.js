@@ -12,6 +12,7 @@ import EventCalendar from "./EventCalendar";
 import {Grid, Row} from "react-bootstrap";
 import SearchEngine from './SearchEngine'
 import EventDetail from './EventDetail'
+import AdditionalSearches from './AdditionalSearches'
 
 const App = () => (
   <Router>
@@ -25,12 +26,8 @@ const App = () => (
         </Grid>
         <Route exact path="/" component={() => (
           <Grid>
+            <AdditionalSearches/>
             <Row>
-              <TimeSlider/>
-              <LocationSlider/>
-            </Row>
-            <Row>
-              <EventCategories/>
               <SearchResults/>
             </Row>
           </Grid>
