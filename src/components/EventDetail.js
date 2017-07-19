@@ -3,13 +3,15 @@ import FontAwesome from 'react-fontawesome'
 import Geolocation from "./Geolocation"
 import Time from 'react-time'
 import MainSlider from './MainSlider'
+import './EventDetail.css'
 import {Grid,
-  Row,
-  Col,
-  Panel,
-  Accordion,
-Carousel,
-CarouselItem}
+        Row,
+        Col,
+        Panel,
+        Accordion,
+        Carousel,
+        Button
+        }
   from 'react-bootstrap'
 
 export default class EventDetail extends React.Component {
@@ -58,40 +60,41 @@ export default class EventDetail extends React.Component {
           </Carousel.Item>
         </Carousel>
         <Grid>
-
-          <h1 classID="event_detail_h1">Jesteś w Trójmieście <small classID="event_detail_small">zobacz co się dzieje</small></h1>
+          <h1 classID="event_detail_h1" style={{color:'white'}}>Jesteś w Trójmieście <small classID="event_detail_small">zobacz co się dzieje</small></h1>
           <h2><small>Dzisiaj jest </small><Time value={now} format="YYYY/MM/DD" /></h2>
           <hr/>
         </Grid>
         <Grid>
                 <Row className="show-grid">
-                  <Col xs={6} md={6}>
-                    <h3 classID="event_detail_h2">Rodzaj imprezy: <b>{event.category}</b></h3>
+                  <Col xs={12} md={6}>
+                    <h2 classID="event_detail_h2" style={{color:'white'}}><small>Wybrałeś imprezę:</small> <b>{event.category}</b></h2>
                     <br/><FontAwesome className="fa fa-clock-o" size='2x' />
-                    <h2>Kiedy: <b>{event.startdate}</b></h2>
-                    <h2>Godzina: <b>{event.starttime}</b></h2>
-                    <h2>Za ile wjazd: <b>{event.cost} PLN</b></h2>
+                    <h2><small>Kiedy:</small> <b>{event.startdate}</b></h2>
+                    <h2><small>Godzina:</small> <b>{event.starttime}</b></h2>
+                    <h2><small>Za ile wjazd:</small> <b>{event.cost} PLN</b></h2>
                     <br/><FontAwesome className="fa fa-location-arrow" size='2x' />
-                    <h4><small>SZCZEGÓŁY TWOJEJ IMPREZY:</small></h4>
-                    <h4><small>Klub: </small>{event.place}</h4>
-                    <h4><small>Miasto: </small>{event.city}</h4>
+                    <h4><small style={{color:'white'}}>SZCZEGÓŁY TWOJEJ IMPREZY:</small></h4>
+                    <h4 style={{color:'white'}}><small>Klub: </small>{event.place}</h4>
+                    <h4 style={{color:'white'}}><small>Miasto: </small>{event.city}</h4>
                     <br/>
                     <Accordion>
-                      <Panel header="więcej o imprezie"eventKey="1">
+                      <Panel header="więcej o imprezie"eventKey="1" classID="event_detail_toggle" trigger="click">
                         {event.place}
                       </Panel><br/>
-                      <Panel header="więcej o klubie" eventKey="2">
+                      <Panel header="więcej o klubie" eventKey="2" trigger="click">
                         {event.place}
                       </Panel>
                     </Accordion>
                   </Col>
-                  <Col xs={6} md={6}>
+                  <Col xs={12} md={6}>
                     <Geolocation />
                   </Col>
                 </Row>
           <hr/>
         </Grid>
       </div>
+
+
     )
   }
 }

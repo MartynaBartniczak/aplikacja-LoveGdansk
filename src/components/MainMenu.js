@@ -19,6 +19,7 @@ const MainMenu = (props) =>
         <Link to="/"><img src={LogoImg} height={25}/></Link>
       </Navbar.Brand>
     </Navbar.Header>
+    <Navbar.Collapse>
     <Nav pullRight>
       <LinkContainer to="/kalendarz">
         <NavItem>Twój Kalendarz Wydarzeń</NavItem>
@@ -30,7 +31,11 @@ const MainMenu = (props) =>
         <NavItem>Sprawdź w Okolicy</NavItem>
       </LinkContainer>
     </Nav>
+  </Navbar.Collapse>
   </Navbar>
+
+
+
 
 )
 
