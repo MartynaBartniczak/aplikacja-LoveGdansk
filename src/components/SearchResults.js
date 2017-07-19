@@ -66,7 +66,7 @@ export default connect(
                   event => (
                     <Col xs={12} md={6}>
                       <Thumbnail src={event.image}>
-                        <h2>Ireza: {event.category}</h2>
+                        <h2>Impreza: {event.category}</h2>
                         <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
                         <h4>Za ile wjazd: {event.cost} PLN</h4>
                         <p>{event.place} | {event.city}  </p>
