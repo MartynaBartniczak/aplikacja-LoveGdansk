@@ -58,7 +58,6 @@ export default connect(
                   event => words.every(
                     word => [event.city, event.place, event.category].map(n => n.toLowerCase()).some(item => item.includes(word))
                   )
-                  // event => event.city.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
                 ).filter(
                   event => this.props.activeCategoryNames.length === 0 ?
                     true :
