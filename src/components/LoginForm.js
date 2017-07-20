@@ -5,8 +5,11 @@ import TextField from 'material-ui/TextField';
 
 
 const LoginArea = {
-  color: 'white',
-};
+  palette: {
+    textColor: 'white',
+      primaryColor: 'orange'
+  }
+}
 
 class LoginForm extends React.Component {
   constructor(props){
