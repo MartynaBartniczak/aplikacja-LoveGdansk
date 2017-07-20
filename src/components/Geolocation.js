@@ -4,8 +4,20 @@
 import React from "react";
 import {geolocated} from "react-geolocated";
 import DetailsMap from "./DetailsMap";
+import {connect} from "react-redux";
+import {fetchDistance} from "../state/distance";
 
+
+export default connect(
+  state => ({
+    distance: state.distance
+  }),
+  dispatch => ({
+    fetchDistance: () => dispatch(fetchDistance())
+  })
+)(
 class Geolocation extends React.Component {
+
   render() {
     return !this.props.isGeolocationAvailable
       ? <div>Your browser does not support Geolocation</div>
@@ -23,8 +35,9 @@ class Geolocation extends React.Component {
           //   </tbody>
           // </table>
           : <div>Getting the location data&hellip; </div>;
+
   }
-}
+})
 
 export default geolocated({
   positionOptions: {

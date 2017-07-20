@@ -1,24 +1,15 @@
-import React from 'react'
-import FontAwesome from 'react-fontawesome'
-import Geolocation from "./Geolocation"
-import Time from 'react-time'
-import MainSlider from './MainSlider'
-import './EventDetail.css'
-import {Grid,
-        Row,
-        Col,
-        Panel,
-        Accordion,
-        Carousel,
-        Button
-        }
-  from 'react-bootstrap'
+import React from "react";
+import FontAwesome from "react-fontawesome";
+import Geolocation from "./Geolocation";
+import Time from "react-time";
+import "./EventDetail.css";
+import {Accordion, Carousel, Col, Grid, Panel, Row} from "react-bootstrap";
 
 export default class EventDetail extends React.Component {
 
   state = {
     events: []
-  }
+  };
 
   componentWillMount() {
     fetch(
@@ -34,10 +25,10 @@ export default class EventDetail extends React.Component {
 
   render() {
     let now = new Date();
-    const eventId = parseInt(this.props.match.params.eventId, 10)
+    const eventId = parseInt(this.props.match.params.eventId, 10);
     const event = this.state.events.find(
       event => event.id === eventId
-    )
+    );
 
     if (event === undefined) {
       return (
@@ -87,7 +78,7 @@ export default class EventDetail extends React.Component {
                     </Accordion>
                   </Col>
                   <Col xs={12} md={6}>
-                    <Geolocation />
+                    <Geolocation/>
                   </Col>
                 </Row>
           <hr/>

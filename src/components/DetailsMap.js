@@ -65,6 +65,9 @@ export default connect(
             </GoogleMapReact>
           </div>
         </div>
+        <div>
+
+          </div>
       )
     }
   }
