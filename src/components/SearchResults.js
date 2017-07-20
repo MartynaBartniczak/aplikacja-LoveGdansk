@@ -69,7 +69,9 @@ export default connect(
               { fetching === false ? null : <p>Fetching data...</p>}
               {
                 data !== null && data.filter(
-                  item => item.place === "Sfinks 700 Aleja Franciszka Mamuszki 1" && distanceSfinks < this.props.location
+                  item => item.place === "Sfinks 700 Aleja Franciszka Mamuszki 1" && distanceSfinks < this.props.location ||
+                  item.place === "Ucho. Klub muzyczny Świętego Piotra 2" && distanceUcho < this.props.location ||
+                  item.place === "Klub B90 Stocznia Gdańska Elektryków 1" && distanceB90 < this.props.location
                 ).filter(
                   item => moment(item.startdate).isAfter(
                     moment().add(this.props.searchDate, 'days'))
