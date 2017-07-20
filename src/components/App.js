@@ -10,9 +10,10 @@ import EventDetails from "./EventDetails";
 import Geolocation from "./Geolocation";
 import EventCalendar from "./EventCalendar";
 import {Grid, Row} from "react-bootstrap";
-import SearchEngine from './SearchEngine'
-import EventDetail from './EventDetail'
-import AdditionalSearches from './AdditionalSearches'
+import SearchEngine from './SearchEngine';
+import EventDetail from './EventDetail';
+import AdditionalSearches from './AdditionalSearches';
+import LoginToApp from './LoginToApp';
 
 const App = () => (
   <Router>
@@ -37,6 +38,7 @@ const App = () => (
         <Route path="/wydarzenia" component={EventCategories}/>
         <Route exact path="/detale" component={EventDetails}/>
         <Route path="/mapa" component={Geolocation}/>
+        <Route path="/login" component={LoginToApp}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
       <div>
