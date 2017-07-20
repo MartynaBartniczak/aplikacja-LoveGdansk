@@ -10,12 +10,12 @@ import {
   Thumbnail,
   Button
 } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import './SearchResults.css'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
 import FontAwesome from 'react-fontawesome'
-import { add } from '../state/calendarAdd'
+import {add} from '../state/calendarAdd'
 
 import categories from '../_utils/categories'
 
@@ -30,7 +30,7 @@ export default connect(
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
-      addToFav: id => dispatch(add(id))
+    addToFav: id => dispatch(add(id))
   })
 )(
   class SearchResults extends React.Component {
@@ -41,6 +41,7 @@ export default connect(
 
     render() {
       const {data, fetching, error} = this.props.searchresults
+      const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
         <div className="mainresults">
           <Grid>
@@ -52,16 +53,17 @@ export default connect(
                   item => item.range < this.props.location
                 ).filter(
                   item => moment(item.startdate).isAfter(
-                    moment().add(this.props.searchDate, 'days')
-                  )
+                    moment().add(this.props.searchDate, 'days'))
                 ).filter(
-                  event => event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
+                  event => words.every(
+                    word => [event.city, event.place, event.category].map(n => n.toLowerCase()).some(item => item.includes(word))
+                  )
                 ).filter(
                   event => this.props.activeCategoryNames.length === 0 ?
                     true :
                     this.props.activeCategoryNames.includes(
                       Object.keys(categories).find(key => categories[key] === event.category)
-                      )
+                    )
                 ).map(
                   event => (
                     <Col xs={12} md={6}>
@@ -74,7 +76,8 @@ export default connect(
                           <Link to={'/detale/' + event.id}>
                             <Button bsStyle="primary">Zobacz szczegóły</Button>
                           </Link>&nbsp;
-                          <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do kalendarza</Button>
+                          <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
+                            kalendarza</Button>
                         </p>
                       </Thumbnail>
                     </Col>
