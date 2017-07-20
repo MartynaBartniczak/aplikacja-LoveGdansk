@@ -52,10 +52,16 @@ export default connect(
                   item => item.range < this.props.location
                 ).filter(
                   item => moment(item.startdate).isAfter(
-                    moment().add(this.props.searchDate, 'days')
-                  )
+                    moment().add(this.props.searchDate, 'days'))
                 ).filter(
-                  event => event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
+                // const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
+                //
+                // const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
+                //
+                // const dataToShow = data !== null ? data.filter(place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions)) : []
+
+               event => event.city.toLowerCase().includes(this.props.searchPhrase.toLowerCase()) || event.place.toLowerCase().includes(this.props.searchPhrase.toLowerCase())||event.category.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
+
                 ).filter(
                   event => this.props.activeCategoryNames.length === 0 ?
                     true :
@@ -79,7 +85,7 @@ export default connect(
                       </Thumbnail>
                     </Col>
                   )
-                )
+               )
               }
             </Row>
           </Grid>
