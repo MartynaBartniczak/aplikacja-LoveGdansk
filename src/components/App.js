@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, IndexLink } from 'react-router';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "./App.css";
 import MainMenu from "./MainMenu";
@@ -10,9 +11,11 @@ import EventDetails from "./EventDetails";
 import Geolocation from "./Geolocation";
 import EventCalendar from "./EventCalendar";
 import {Grid, Row} from "react-bootstrap";
-import SearchEngine from './SearchEngine'
-import EventDetail from './EventDetail'
-import AdditionalSearches from './AdditionalSearches'
+import SearchEngine from './SearchEngine';
+import EventDetail from './EventDetail';
+import AdditionalSearches from './AdditionalSearches';
+import SignUpForm from './SignUpForm';
+import LoginForm from './LoginForm';
 
 const App = () => (
   <Router>
@@ -37,6 +40,7 @@ const App = () => (
         <Route path="/wydarzenia" component={EventCategories}/>
         <Route exact path="/detale" component={EventDetails}/>
         <Route path="/mapa" component={Geolocation}/>
+        <Route path="/login" component={LoginForm}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
       <div>
