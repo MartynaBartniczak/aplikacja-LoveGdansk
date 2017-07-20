@@ -69,7 +69,7 @@ export default connect(
               { fetching === false ? null : <p>Fetching data...</p>}
               {
                 data !== null && data.filter(
-                  item => item.range < this.props.location
+                  item => item.place === "Sfinks 700 Aleja Franciszka Mamuszki 1" && distanceSfinks < this.props.location
                 ).filter(
                   item => moment(item.startdate).isAfter(
                     moment().add(this.props.searchDate, 'days'))
