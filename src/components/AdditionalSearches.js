@@ -33,8 +33,8 @@ export default class AdditionalSearches extends React.Component {
 
           <CSSTransitionGroup
             transitionName="example"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
+            transitionEnterTimeout={800}
+            transitionLeaveTimeout={800}>
             {
               this.state.show === false ?
                 null :
