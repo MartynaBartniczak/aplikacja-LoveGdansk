@@ -5,7 +5,7 @@ import MainMenu from "./MainMenu";
 import SearchResults from "./SearchResults";
 import EventCategories from "./EventCategories";
 import EventDetails from "./EventDetails";
-import Geolocation from "./Geolocation";
+import DetailsMap from "./DetailsMap";
 import EventCalendar from "./EventCalendar";
 import {Grid, Row} from "react-bootstrap";
 import SearchEngine from "./SearchEngine";
@@ -15,7 +15,7 @@ import AdditionalSearches from "./AdditionalSearches";
 const App = () => (
   <Router>
     <div className="App">
-      <Geolocation/>
+      <DetailsMap/>
       <div>
 
         <MainMenu/>
@@ -35,7 +35,7 @@ const App = () => (
         <Route path="/kalendarz" component={EventCalendar}/>
         <Route path="/wydarzenia" component={EventCategories}/>
         <Route exact path="/detale" component={EventDetails}/>
-        <Route path="/mapa" component={Geolocation}/>
+        <Route path="/mapa" component={DetailsMap}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
       <div>
