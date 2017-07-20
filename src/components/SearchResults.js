@@ -47,19 +47,16 @@ export default connect(
             {latitude: 54.3646976, longitude: 18.6468462},
             100, 1
         )/1000
-        console.log("odległość B90" + distanceB90)
         const distanceSfinks = geolib.getDistance(
             {latitude: 54.403365, longitude: 18.569880},
             {latitude: 54.4485431, longitude: 18.5649742},
             100, 1
         )/1000
-        console.log("odległość Sfinks" + distanceSfinks)
         const distanceUcho = geolib.getDistance(
             {latitude: 54.403365, longitude: 18.569880},
             {latitude: 54.524391, longitude: 18.5445571},
             100, 1
         )/1000
-        console.log("odległość Ucho" + distanceUcho)
       const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
         <div className="mainresults">
