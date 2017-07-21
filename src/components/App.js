@@ -13,9 +13,6 @@ import EventDetail from './EventDetail';
 import AdditionalSearches from './AdditionalSearches';
 import SignUpForm from './SignUpForm';
 import LoginForm from './LoginForm';
-import SearchEngine from "./SearchEngine";
-import EventDetail from "./EventDetail";
-import AdditionalSearches from "./AdditionalSearches";
 
 const App = () => (
   <Router>
