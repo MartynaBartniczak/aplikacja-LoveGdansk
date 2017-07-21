@@ -28,6 +28,9 @@ const divStyle = {
   marginTop: '2em',
 };
 
+function refreshPage(){
+  window.location.replace("/");
+}
 
 
 class SignUpForm extends React.Component {
@@ -143,6 +146,8 @@ class SignUpForm extends React.Component {
                 <Button
                   style={formButton}
                   bsStyle="success"
+                  type="submit"
+                  onClick={ refreshPage }
                 >
                   Zakładam konto
                 </Button>

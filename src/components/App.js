@@ -17,12 +17,15 @@ import SignInForm from './SignInForm';
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 
-const App = () => (
+const App = ({user}) => (
   <Router>
     <div className="App">
       <div>
 
         <MainMenu/>
+        <h1
+          style={{color:'white'}}
+        >Siemanko {user.displayName}</h1>
         <SearchEngine/>
         <Grid>
           <hr/>

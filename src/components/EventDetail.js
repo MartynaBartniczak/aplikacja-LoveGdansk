@@ -2,7 +2,6 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import Geolocation from "./Geolocation"
 import Time from 'react-time'
-import MainSlider from './MainSlider'
 import './EventDetail.css'
 import {Grid,
         Row,
@@ -10,7 +9,6 @@ import {Grid,
         Panel,
         Accordion,
         Carousel,
-        Button
         }
   from 'react-bootstrap'
 
