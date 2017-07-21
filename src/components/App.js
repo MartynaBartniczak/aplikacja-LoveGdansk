@@ -13,7 +13,7 @@ import SearchEngine from './SearchEngine';
 import EventDetail from './EventDetail';
 import AdditionalSearches from './AdditionalSearches';
 import SignUpForm from './SignUpForm';
-import LoginForm from './LoginForm1';
+import SignInForm from './SignInForm';
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 
@@ -40,7 +40,7 @@ const App = () => (
         <Route path="/wydarzenia" component={EventCategories}/>
         <Route exact path="/detale" component={EventDetails}/>
         <Route path="/mapa" component={Geolocation}/>
-        <Route path="/login" component={LoginForm}/>
+        <Route path="/signin" component={SignInForm}/>
         <Route path="/signup" component={SignUpForm}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>

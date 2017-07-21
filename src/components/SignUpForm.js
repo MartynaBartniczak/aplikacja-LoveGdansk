@@ -1,5 +1,9 @@
 import React from 'react'
 import firebase from 'firebase'
+import {Button,
+        InputGroup,
+  FormControl,Row}
+        from 'react-bootstrap'
 
 class SignUpForm extends React.Component {
   state = {
@@ -34,19 +38,23 @@ class SignUpForm extends React.Component {
 
   render() {
     return (
+      <div>
+        <Row>
       <form onSubmit={this.handleSubmit}>
         <p>{this.state.message}</p>
-        <input
+        <FormControl
           type="text"
           value={this.state.email}
           onChange={this.handleEmailChange}
         />
-        <input type="password"
+        <FormControl type="password"
           value={this.state.password}
                onChange={this.handlePasswordChange}
         />
-        <button>Sign Up</button>
+        <Button>Sign Up</Button>
       </form>
+        </Row>
+      </div>
     )
   }
 }

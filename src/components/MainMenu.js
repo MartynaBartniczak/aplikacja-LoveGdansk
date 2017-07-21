@@ -47,21 +47,17 @@ const MainMenu = (props) =>
         <NavItem><FontAwesome className="fa fa-info" size='1x'/></NavItem>
       </LinkContainer>
       <LinkContainer to="/mapa" style={menuStyle}>
-        <NavItem><FontAwesome className="fa fa-street-view" size='1x'/></NavItem>
+        <NavItem><FontAwesome className="fa fa-map-o" size='1x'/></NavItem>
       </LinkContainer>
-      <LinkContainer to="/mapa" style={menuStyle}>
+      <LinkContainer to="/signup" style={menuStyle}>
+        <NavItem><FontAwesome className="fa fa-user-plus" size='1x'/></NavItem>
+      </LinkContainer>
+      <LinkContainer to="/signin" style={menuStyle}>
         <NavItem><FontAwesome className="fa fa-sign-in" size='1x'/></NavItem>
       </LinkContainer>
       <Navbar.Text style={loginMenu}>
         Zalogowany jako: <Navbar.Link href="#">MKAPZ</Navbar.Link>
       </Navbar.Text>
-      <LinkContainer to="/login" style={menuStyle}>
-        <NavItem><FontAwesome className="fa fa-sign-in" size='1x'/></NavItem>
-      </LinkContainer>
-      <LinkContainer to="/signup" style={menuStyle}>
-        <NavItem><FontAwesome className="fa fa-sign-out" size='1x'/></NavItem>
-      </LinkContainer>
-
     </Nav>
   </Navbar.Collapse>
   </Navbar>
