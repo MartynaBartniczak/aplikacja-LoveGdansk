@@ -15,7 +15,6 @@ import AdditionalSearches from "./AdditionalSearches";
 const App = () => (
   <Router>
     <div className="App">
-      <DetailsMap/>
       <div>
 
         <MainMenu/>
