@@ -13,12 +13,12 @@ import firebase from 'firebase'
 
 
 firebase.initializeApp({
-  apiKey: "AIzaSyCCIYZTEiOvWsmHy9F3s1RNuKh0YYDEW1g",
-  authDomain: "jfdd7-app-jeziorski.firebaseapp.com",
-  databaseURL: "https://jfdd7-app-jeziorski.firebaseio.com",
-  projectId: "jfdd7-app-jeziorski",
-  storageBucket: "jfdd7-app-jeziorski.appspot.com",
-  messagingSenderId: "385655041946"
+  apiKey: "AIzaSyAUN0F63ycOYJEde2PDXs7f2b2_sdP9Ku4",
+  authDomain: "jfdd7-mkapz-app.firebaseapp.com",
+  databaseURL: "https://jfdd7-mkapz-app.firebaseio.com",
+  projectId: "jfdd7-mkapz-app",
+  storageBucket: "jfdd7-mkapz-app.appspot.com",
+  messagingSenderId: "834845185297"
 })
 
 ReactDOM.render(
