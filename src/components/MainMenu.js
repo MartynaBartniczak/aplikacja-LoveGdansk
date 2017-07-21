@@ -58,6 +58,9 @@ const MainMenu = (props) =>
       <LinkContainer to="/login" style={menuStyle}>
         <NavItem><FontAwesome className="fa fa-sign-in" size='1x'/></NavItem>
       </LinkContainer>
+      <LinkContainer to="/signup" style={menuStyle}>
+        <NavItem><FontAwesome className="fa fa-sign-out" size='1x'/></NavItem>
+      </LinkContainer>
 
     </Nav>
   </Navbar.Collapse>
