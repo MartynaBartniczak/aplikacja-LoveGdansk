@@ -3,10 +3,25 @@ import firebase from 'firebase'
 import {Button,
         Grid,
         FormControl,
-        Row}
+        Row,
+Form, Col, ControlLabel, Checkbox, FormGroup}
   from 'react-bootstrap'
 import {connect} from 'react-redux'
 import { syncUser } from '../state/auth'
+
+const formText = {
+  color: 'white'
+};
+
+const formTextPlaceholder = {
+  textAlign: 'center'
+};
+
+const formButton = {
+  textAlign: 'center',
+  borderRadius: '30px',
+};
+
 
 
 class SignUpForm extends React.Component {
@@ -47,28 +62,78 @@ class SignUpForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <Row>
-          <Grid>
-      <form onSubmit={this.handleSubmit}>
-        <p>{this.state.message}</p>
-        <FormControl
-          type="text"
-          value={this.state.email}
-          onChange={this.handleEmailChange}
-          placeholder="podaj swój login"
-        /><br/>
-        <FormControl
-          type="password"
-          value={this.state.password}
-          onChange={this.handlePasswordChange}
-          placeholder="podaj hasło"
-        /><br/>
-        <Button>Sign Up</Button><br/>
-      </form><br/>
-          </Grid>
-        </Row>
-      </div>
+        <div>
+          <Row>
+            <Grid>
+          <Form
+            onSubmit={this.handleSubmit}
+            horizontal
+          >
+            <p>{this.state.message}</p>
+            <FormGroup controlId="formHorizontalEmail">
+              <Col
+                componentClass={ControlLabel}
+                sm={3}
+                style={formText}
+              >
+                Email:
+              </Col>
+              <Col sm={7}>
+                <FormControl
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.handleEmailChange}
+                  placeholder="e-mail"
+                  style={formTextPlaceholder}
+                />
+              </Col>
+            </FormGroup>
+
+            <FormGroup controlId="formHorizontalPassword">
+              <Col
+                componentClass={ControlLabel}
+                sm={3}
+                style={formText}
+              >
+                Hasło:
+              </Col>
+              <Col sm={7}>
+                <FormControl
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handlePasswordChange}
+                  placeholder="hasło powinno zawierać: jedną wielką literę, jedną małą literę, jedną cyfrę, od 8 do 16 znaków."
+                  style={formTextPlaceholder}
+                />
+              </Col>
+            </FormGroup>
+
+            <FormGroup>
+              <Col
+                smOffset={2}
+                sm={7}
+                style={formText}
+              >
+                <Checkbox>zapamiętaj mnie</Checkbox>
+              </Col>
+            </FormGroup>
+
+            <FormGroup>
+              <Col
+                smOffset={2}
+                sm={7}>
+                <Button
+                  style={formButton}
+                  bsStyle="success"
+                >
+                  Zakładam konto
+                </Button>
+              </Col>
+            </FormGroup>
+          </Form>
+        </Grid>
+      </Row>
+        </div>
     )
   }
 }
