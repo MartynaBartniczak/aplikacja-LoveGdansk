@@ -6,3 +6,17 @@
 .rbc-toolbar button {
     color: white;
 }
+.rbc-today {
+    background-color: #3C887E;
+}
+
+.rbc-toolbar button:hover{
+    background-color: #3C887E;
+    color: #373a3c;
+}
+button:active{
+    color: #373a3c;
+}
+.rbc-toolbar button:active {
+    color: #373a3c;
+}
