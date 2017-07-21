@@ -55,12 +55,13 @@ const MainMenu = (props) =>
       <Navbar.Text style={loginMenu}>
         Zalogowany jako: <Navbar.Link href="#">MKAPZ</Navbar.Link>
       </Navbar.Text>
+      <LinkContainer to="/login" style={menuStyle}>
+        <NavItem><FontAwesome className="fa fa-sign-in" size='1x'/></NavItem>
+      </LinkContainer>
+
     </Nav>
   </Navbar.Collapse>
   </Navbar>
-
-
-
 
 )
 

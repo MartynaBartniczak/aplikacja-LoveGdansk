@@ -3,3 +3,6 @@
 .rbc-calendar, .rbc-btn-group {
     color: white;
 }
+.rbc-toolbar button {
+    color: white;
+}

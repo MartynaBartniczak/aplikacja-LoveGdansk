@@ -8,6 +8,11 @@ import EventDetails from "./EventDetails";
 import DetailsMap from "./DetailsMap";
 import EventCalendar from "./EventCalendar";
 import {Grid, Row} from "react-bootstrap";
+import SearchEngine from './SearchEngine';
+import EventDetail from './EventDetail';
+import AdditionalSearches from './AdditionalSearches';
+import SignUpForm from './SignUpForm';
+import LoginForm from './LoginForm';
 import SearchEngine from "./SearchEngine";
 import EventDetail from "./EventDetail";
 import AdditionalSearches from "./AdditionalSearches";
@@ -35,6 +40,8 @@ const App = () => (
         <Route path="/wydarzenia" component={EventCategories}/>
         <Route exact path="/detale" component={EventDetails}/>
         <Route path="/mapa" component={DetailsMap}/>
+
+        <Route path="/login" component={LoginForm}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
       <div>
