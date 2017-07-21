@@ -27,7 +27,8 @@ export default connect(
     searchDate: state.searchFilters.searchDate,
     searchPhrase: state.searchengine.searchPhrase,
     activeCategoryNames: state.categoryButtons.activeCategoryNames,
-    favouriteEventIds: state.calendarAdd.favouriteEventId
+    favouriteEventIds: state.calendarAdd.favouriteEventId,
+    coords: state.geolocation.position
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
@@ -57,6 +58,8 @@ export default connect(
             {latitude: 54.524391, longitude: 18.5445571},
             100, 1
         )/1000
+      const locationCurrent = this.props.coords
+      console.log(locationCurrent)
       const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
         <div className="mainresults">
