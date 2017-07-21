@@ -38,9 +38,9 @@ firebase.auth().onAuthStateChanged(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Auth>
+
       <App/>
-    </Auth>
+
   </Provider>,
   document.getElementById('root')
 );

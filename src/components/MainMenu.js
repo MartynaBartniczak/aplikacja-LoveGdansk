@@ -59,7 +59,7 @@ const MainMenu = ({ user}) =>
         <NavItem><FontAwesome className="fa fa-sign-in" size='1x'/></NavItem>
       </LinkContainer>
       <Navbar.Text style={loginMenu}>
-        Zalogowany jako: <Navbar.Link href="#">{user.displayName}</Navbar.Link>
+        Zalogowany jako: <Navbar.Link href="#"></Navbar.Link>
       </Navbar.Text>
     </Nav>
   </Navbar.Collapse>

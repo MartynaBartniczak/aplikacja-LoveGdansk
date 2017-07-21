@@ -25,7 +25,7 @@ const App = ({user}) => (
         <MainMenu/>
         <h1
           style={{color:'white'}}
-        >Siemanko {user.displayName}</h1>
+        >Siemanko </h1>
         <SearchEngine/>
         <Grid>
           <hr/>
