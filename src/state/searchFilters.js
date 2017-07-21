@@ -13,7 +13,7 @@ export const updateSearchDate = searchDate => ({
 
 
 const initialState = {
-  location: 1,
+  location: 7,
   searchDate: 0
 }
 
