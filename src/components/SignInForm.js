@@ -1,11 +1,10 @@
 import React from 'react'
 import firebase from 'firebase'
 
-class SignUpForm extends React.Component {
+class SignInForm extends React.Component {
   state = {
     email: '',
-    password: '',
-    message: null
+    password: ''
   }
 
   handleEmailChange = event => {
@@ -22,20 +21,15 @@ class SignUpForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    firebase.auth().createUserWithEmailAndPassword(
+    firebase.auth().signInWithEmailAndPassword(
       this.state.email,
       this.state.password
-    ).then(
-      () => this.setState({ message: 'User created!' })
-    ).catch(
-      error => this.setState({ message: error.message })
     )
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <p>{this.state.message}</p>
         <input
           type="text"
           value={this.state.email}
@@ -45,10 +39,10 @@ class SignUpForm extends React.Component {
           value={this.state.password}
                onChange={this.handlePasswordChange}
         />
-        <button>Sign Up</button>
+        <button>Sign In</button>
       </form>
     )
   }
 }
 
-export default SignUpForm
+export default SignInForm

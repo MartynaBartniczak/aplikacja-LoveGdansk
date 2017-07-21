@@ -12,9 +12,10 @@ import {Grid, Row} from "react-bootstrap";
 import SearchEngine from './SearchEngine';
 import EventDetail from './EventDetail';
 import AdditionalSearches from './AdditionalSearches';
-import SignUpForm from './SignUpForm1';
+import SignUpForm from './SignUpForm';
 import LoginForm from './LoginForm1';
 import { connect } from 'react-redux'
+import firebase from 'firebase'
 
 const App = () => (
   <Router>

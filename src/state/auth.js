@@ -1,10 +1,8 @@
 const SYNC_USER = 'auth/SYNC_USER'
 
-export  const syncUser = (user) => ({
-
+export const syncUser = (user) => ({
   type: SYNC_USER,
   user
-
 })
 
 const initialState = {
