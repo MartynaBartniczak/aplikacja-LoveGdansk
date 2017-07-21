@@ -8,6 +8,7 @@ Form, Col, ControlLabel, Checkbox, FormGroup}
   from 'react-bootstrap'
 import {connect} from 'react-redux'
 import { syncUser } from '../state/auth'
+import FontAwesome from 'react-fontawesome'
 
 const formText = {
   color: 'white'
@@ -20,6 +21,11 @@ const formTextPlaceholder = {
 const formButton = {
   textAlign: 'center',
   borderRadius: '30px',
+};
+
+const divStyle = {
+  marginBottom: '2em',
+  marginTop: '2em',
 };
 
 
@@ -62,11 +68,23 @@ class SignUpForm extends React.Component {
 
   render() {
     return (
-        <div>
+        <div
+
+          style={divStyle}
+        >
+          <h3
+            style={{color:'white'}}
+          >
+            ZAŁÓŻ KONTO
+          </h3>
+          <FontAwesome
+            className="fa fa-user-plus"
+            size='5x'
+            style={{marginTop:'0.4em', marginBottom: '0.5em'}}
+          />
           <Row>
             <Grid>
-          <Form
-            onSubmit={this.handleSubmit}
+          <Form onSubmit={this.handleSubmit}
             horizontal
           >
             <p>{this.state.message}</p>

@@ -11,6 +11,9 @@ import {
   NavDropdown
 } from 'react-bootstrap'
 
+import firebase from 'firebase'
+import { connect } from 'react-redux'
+
 import FontAwesome from 'react-fontawesome'
 
 const menuStyle = {
@@ -29,7 +32,7 @@ const loginMenu = {
 };
 
 
-const MainMenu = (props) =>
+const MainMenu = ({ user}) =>
   (
   <Navbar>
     <Navbar.Header>
@@ -56,7 +59,7 @@ const MainMenu = (props) =>
         <NavItem><FontAwesome className="fa fa-sign-in" size='1x'/></NavItem>
       </LinkContainer>
       <Navbar.Text style={loginMenu}>
-        Zalogowany jako: <Navbar.Link href="#">MKAPZ</Navbar.Link>
+        Zalogowany jako: <Navbar.Link href="#">{user.displayName}</Navbar.Link>
       </Navbar.Text>
     </Nav>
   </Navbar.Collapse>
@@ -64,4 +67,8 @@ const MainMenu = (props) =>
 
 )
 
-export default MainMenu
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(MainMenu)
