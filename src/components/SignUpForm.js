@@ -1,9 +1,13 @@
 import React from 'react'
 import firebase from 'firebase'
 import {Button,
-        InputGroup,
-  FormControl,Row}
-        from 'react-bootstrap'
+        Grid,
+        FormControl,
+        Row}
+  from 'react-bootstrap'
+import {connect} from 'react-redux'
+import { syncUser } from '../state/auth'
+
 
 class SignUpForm extends React.Component {
   state = {
@@ -30,9 +34,14 @@ class SignUpForm extends React.Component {
       this.state.email,
       this.state.password
     ).then(
-      () => this.setState({ message: 'User created!' })
-    ).catch(
-      error => this.setState({ message: error.message })
+      user => {
+        //console.log(user)
+        user.updateProfile({
+          displayName: 'Janusz Kowalski'
+        }).then(
+          () => this.props.syncUser({...user})
+        )
+      }
     )
   }
 
@@ -40,23 +49,33 @@ class SignUpForm extends React.Component {
     return (
       <div>
         <Row>
+          <Grid>
       <form onSubmit={this.handleSubmit}>
         <p>{this.state.message}</p>
         <FormControl
           type="text"
           value={this.state.email}
           onChange={this.handleEmailChange}
-        />
-        <FormControl type="password"
+          placeholder="podaj swój login"
+        /><br/>
+        <FormControl
+          type="password"
           value={this.state.password}
-               onChange={this.handlePasswordChange}
-        />
-        <Button>Sign Up</Button>
-      </form>
+          onChange={this.handlePasswordChange}
+          placeholder="podaj hasło"
+        /><br/>
+        <Button>Sign Up</Button><br/>
+      </form><br/>
+          </Grid>
         </Row>
       </div>
     )
   }
 }
 
-export default SignUpForm
+export default connect(
+  null,
+  dispatch => ({
+    syncUser: (user) => dispatch(syncUser(user))
+  })
+)(SignUpForm)
