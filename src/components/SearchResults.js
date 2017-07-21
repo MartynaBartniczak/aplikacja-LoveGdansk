@@ -27,7 +27,8 @@ export default connect(
     searchDate: state.searchFilters.searchDate,
     searchPhrase: state.searchengine.searchPhrase,
     activeCategoryNames: state.categoryButtons.activeCategoryNames,
-    favouriteEventIds: state.calendarAdd.favouriteEventId
+    favouriteEventIds: state.calendarAdd.favouriteEventId,
+    coords: state.geolocation.position
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
@@ -41,6 +42,12 @@ export default connect(
     }
 
     render() {
+      const locationCurrent = this.props.coords
+      if (this.props.coords === null) {
+        return <p>Ładowanko...</p>
+      }
+      console.log(locationCurrent)
+
       const {data, fetching, error} = this.props.searchresults
         const distanceB90 = geolib.getDistance(
             {latitude: 54.403365, longitude: 18.569880},
@@ -57,6 +64,7 @@ export default connect(
             {latitude: 54.524391, longitude: 18.5445571},
             100, 1
         )/1000
+
       const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
         <div className="mainresults">
