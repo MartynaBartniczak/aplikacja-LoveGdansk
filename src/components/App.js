@@ -14,8 +14,8 @@ import {Grid, Row} from "react-bootstrap";
 import SearchEngine from './SearchEngine';
 import EventDetail from './EventDetail';
 import AdditionalSearches from './AdditionalSearches';
-import SignUpForm1 from './SignUpForm1';
-import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm1';
+import LoginForm from './LoginForm1';
 
 const App = () => (
   <Router>
@@ -41,7 +41,7 @@ const App = () => (
         <Route exact path="/detale" component={EventDetails}/>
         <Route path="/mapa" component={Geolocation}/>
         <Route path="/login" component={LoginForm}/>
-        <Route path="/signup" component={SignUpForm1}/>
+        <Route path="/signup" component={SignUpForm}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
       <div>

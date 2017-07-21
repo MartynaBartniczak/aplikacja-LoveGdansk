@@ -1,7 +1,7 @@
 import React from 'react'
 import firebase from 'firebase'
 
-class SignUpForm1 extends React.Component{
+class LoginForm1 extends React.Component{
 
   state = {
     email: '',
@@ -22,9 +22,9 @@ class SignUpForm1 extends React.Component{
 
   handleSubmit = event => {
     event.preventDefault()
-    firebase.auth().createUserWithEmailAndPassword(
+    firebase.auth().signInWithEmailAndPassword(
       this.state.email,
-    this.state.password)
+      this.state.password)
   }
 
   render () {
@@ -35,16 +35,17 @@ class SignUpForm1 extends React.Component{
       type ="text"
       value={this.state.email}
       onChange={this.handleEmailChange}
-    />
+    /><br/><br/>
     <input
       type ="password"
       value={this.state.password}
       onChange={this.handlePasswordChange}
-    />
-    <button>REJESTRACJA</button>
+    /><br/><br/>
+    <button>LOGOWANIE</button><br/><br/>
+    <button onClick = {() => firebase.auth().singOut()}> WYLOGOWANIE </button>
     </form>
     )
 }
 }
 
-export default SignUpForm1
+export default LoginForm1

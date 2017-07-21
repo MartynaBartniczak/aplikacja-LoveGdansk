@@ -18,7 +18,7 @@ const reducer = combineReducers({
     searchresults,
     searchFilters,
     categoryButtons,
-    calendarAdd
+    calendarAdd0
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

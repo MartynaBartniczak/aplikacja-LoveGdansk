@@ -21,6 +21,8 @@ firebase.initializeApp({
   messagingSenderId: "834845185297"
 })
 
+firebase.auth().onAuthStateChanged(user => console.log(user))
+
 ReactDOM.render(
   <Provider store={store}>
     <App/>
