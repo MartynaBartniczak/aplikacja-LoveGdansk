@@ -26,7 +26,7 @@ export default connect(
             <FontAwesome className="fa fa-location-arrow" size='3x' />
             <h3 className="choose_range">Wybierz odległość:</h3>
           <p className="choose_range_km">{this.props.location} km</p>
-          <Slider min={1} max={10} value={this.props.location} onChange={this.props.updateLocation}/>
+          <Slider min={1} max={15} value={this.props.location} onChange={this.props.updateLocation}/>
         </Col>
         </div>
       )

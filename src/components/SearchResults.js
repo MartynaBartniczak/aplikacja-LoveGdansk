@@ -16,6 +16,7 @@ import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
 import FontAwesome from 'react-fontawesome'
 import {add} from '../state/calendarAdd'
+import geolib from 'geolib'
 
 import categories from '../_utils/categories'
 
@@ -41,6 +42,21 @@ export default connect(
 
     render() {
       const {data, fetching, error} = this.props.searchresults
+        const distanceB90 = geolib.getDistance(
+            {latitude: 54.403365, longitude: 18.569880},
+            {latitude: 54.3646976, longitude: 18.6468462},
+            100, 1
+        )/1000
+        const distanceSfinks = geolib.getDistance(
+            {latitude: 54.403365, longitude: 18.569880},
+            {latitude: 54.4485431, longitude: 18.5649742},
+            100, 1
+        )/1000
+        const distanceUcho = geolib.getDistance(
+            {latitude: 54.403365, longitude: 18.569880},
+            {latitude: 54.524391, longitude: 18.5445571},
+            100, 1
+        )/1000
       const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
         <div className="mainresults">
@@ -50,7 +66,9 @@ export default connect(
               { fetching === false ? null : <p>Fetching data...</p>}
               {
                 data !== null && data.filter(
-                  item => item.range < this.props.location
+                  item => item.place === "Sfinks 700 Aleja Franciszka Mamuszki 1" && distanceSfinks < this.props.location ||
+                  item.place === "Ucho. Klub muzyczny Świętego Piotra 2" && distanceUcho < this.props.location ||
+                  item.place === "Klub B90 Stocznia Gdańska Elektryków 1" && distanceB90 < this.props.location
                 ).filter(
                   item => moment(item.startdate).isAfter(
                     moment().add(this.props.searchDate, 'days'))
