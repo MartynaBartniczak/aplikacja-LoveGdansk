@@ -3,8 +3,6 @@ import { Link, IndexLink } from 'react-router';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "./App.css";
 import MainMenu from "./MainMenu";
-import TimeSlider from "./TimeSlider";
-import LocationSlider from "./LocationSlider";
 import SearchResults from "./SearchResults";
 import EventCategories from "./EventCategories";
 import EventDetails from "./EventDetails";
@@ -16,6 +14,7 @@ import EventDetail from './EventDetail';
 import AdditionalSearches from './AdditionalSearches';
 import SignUpForm from './SignUpForm1';
 import LoginForm from './LoginForm1';
+import { connect } from 'react-redux'
 
 const App = () => (
   <Router>
@@ -52,4 +51,8 @@ const App = () => (
   </Router>
 );
 
-export default App
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(App)
