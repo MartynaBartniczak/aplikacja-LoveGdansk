@@ -8,12 +8,8 @@ import EventDetails from "./EventDetails";
 import DetailsMap from "./DetailsMap";
 import EventCalendar from "./EventCalendar";
 import {Grid, Row} from "react-bootstrap";
-import SearchEngine from './SearchEngine';
-import EventDetail from './EventDetail';
-import AdditionalSearches from './AdditionalSearches';
-import SignUpForm from './SignUpForm';
-import LoginForm from './LoginForm';
 import SearchEngine from "./SearchEngine";
+import LoginForm from "./LoginForm";
 import EventDetail from "./EventDetail";
 import AdditionalSearches from "./AdditionalSearches";
 
