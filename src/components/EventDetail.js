@@ -1,6 +1,6 @@
 import React from "react";
 import FontAwesome from "react-fontawesome";
-import Geolocation from "./Geolocation";
+import DetailsMap from "./DetailsMap";
 import Time from "react-time";
 import "./EventDetail.css";
 import {Accordion, Carousel, Col, Grid, Panel, Row} from "react-bootstrap";
@@ -78,7 +78,7 @@ export default class EventDetail extends React.Component {
                     </Accordion>
                   </Col>
                   <Col xs={12} md={6}>
-                    <Geolocation/>
+                    <DetailsMap target={{lat: event.lat, lng: event.lng}}/>
                   </Col>
                 </Row>
           <hr/>
