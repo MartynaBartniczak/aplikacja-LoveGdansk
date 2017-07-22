@@ -65,11 +65,6 @@ export default connect(
             {latitude: 54.524391, longitude: 18.5445571},
             100, 1
         )/1000
-
-        console.log('B90 ' + distanceB90)
-        console.log('Sfinks ' + distanceSfinks)
-        console.log('Ucho ' + distanceUcho)
-
       const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
         <div className="mainresults">
@@ -101,8 +96,8 @@ export default connect(
                       <Thumbnail src={event.image}>
                         <h2>Impreza: {event.category}</h2>
                         <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
-                        <h4>Za ile wjazd: {event.cost} PLN</h4>
-                        <p>{event.place} | {event.city}  </p>
+                        <h4>Za ile wjazd: {event.cost} PLN | Jak daleko: {event.place === "Sfinks 700 Aleja Franciszka Mamuszki 1" ? distanceSfinks : event.place === "Ucho. Klub muzyczny Świętego Piotra 2" ? distanceUcho : distanceB90} km</h4>
+                        <p>{event.place} | {event.city}</p>
                         <p>
                           <Link to={'/detale/' + event.id}>
                             <Button bsStyle="primary">Zobacz szczegóły</Button>
