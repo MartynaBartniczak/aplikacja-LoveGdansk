@@ -44,26 +44,31 @@ export default connect(
     render() {
       const locationCurrent = this.props.coords
       if (this.props.coords === null) {
-        return <p>Ładowanko...</p>
+        return <p>Loading data...</p>
       }
       console.log(locationCurrent)
 
+
       const {data, fetching, error} = this.props.searchresults
         const distanceB90 = geolib.getDistance(
-            {latitude: 54.403365, longitude: 18.569880},
+            {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
             {latitude: 54.3646976, longitude: 18.6468462},
             100, 1
         )/1000
         const distanceSfinks = geolib.getDistance(
-            {latitude: 54.403365, longitude: 18.569880},
+            {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
             {latitude: 54.4485431, longitude: 18.5649742},
             100, 1
         )/1000
         const distanceUcho = geolib.getDistance(
-            {latitude: 54.403365, longitude: 18.569880},
+            {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
             {latitude: 54.524391, longitude: 18.5445571},
             100, 1
         )/1000
+
+        console.log('B90 ' + distanceB90)
+        console.log('Sfinks ' + distanceSfinks)
+        console.log('Ucho ' + distanceUcho)
 
       const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
