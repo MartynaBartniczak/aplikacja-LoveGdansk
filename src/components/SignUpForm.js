@@ -1,66 +1,169 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
-import { Card, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import React from 'react'
+import firebase from 'firebase'
+import {Button,
+        Grid,
+        FormControl,
+        Row,
+Form, Col, ControlLabel, Checkbox, FormGroup}
+  from 'react-bootstrap'
+import {connect} from 'react-redux'
+import { syncUser } from '../state/auth'
+import FontAwesome from 'react-fontawesome'
 
-
-const SignUpForm = ({
-                      onSubmit,
-                      onChange,
-                      errors,
-                      user,
-                    }) => (
-  <Card className="container">
-    <form action="/" onSubmit={onSubmit}>
-      <h2 className="card-heading">Sign Up</h2>
-
-      {errors.summary && <p className="error-message">{errors.summary}</p>}
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="Name"
-          name="name"
-          errorText={errors.name}
-          onChange={onChange}
-          value={user.name}
-        />
-      </div>
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="Email"
-          name="email"
-          errorText={errors.email}
-          onChange={onChange}
-          value={user.email}
-        />
-      </div>
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="Password"
-          type="password"
-          name="password"
-          onChange={onChange}
-          errorText={errors.password}
-          value={user.password}
-        />
-      </div>
-
-      <div className="button-line">
-        <RaisedButton type="submit" label="Create New Account" primary />
-      </div>
-
-    </form>
-  </Card>
-);
-
-SignUpForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-  errors: PropTypes.object.isRequired,
-  user: PropTypes.object.isRequired
+const formText = {
+  color: 'white'
 };
 
-export default SignUpForm;
+const formTextPlaceholder = {
+  textAlign: 'center'
+};
+
+const formButton = {
+  textAlign: 'center',
+  borderRadius: '30px',
+};
+
+const divStyle = {
+  marginBottom: '2em',
+  marginTop: '2em',
+};
+
+function refreshPage(){
+  window.location.replace("/");
+}
+
+
+class SignUpForm extends React.Component {
+  state = {
+    email: '',
+    password: '',
+    message: null
+  }
+
+  handleEmailChange = event => {
+    this.setState({
+      email: event.target.value
+    })
+  }
+
+  handlePasswordChange = event => {
+    this.setState({
+      password: event.target.value
+    })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    firebase.auth().createUserWithEmailAndPassword(
+      this.state.email,
+      this.state.password
+    ).then(
+      user => {
+        //console.log(user)
+        user.updateProfile({
+          displayName: 'Janusz Kowalski'
+        }).then(
+          () => this.props.syncUser({...user})
+        )
+      }
+    )
+  }
+
+  render() {
+    return (
+        <div
+
+          style={divStyle}
+        >
+          <h3
+            style={{color:'white'}}
+          >
+            ZAŁÓŻ KONTO
+          </h3>
+          <FontAwesome
+            className="fa fa-user-plus"
+            size='5x'
+            style={{marginTop:'0.4em', marginBottom: '0.5em'}}
+          />
+          <Row>
+            <Grid>
+          <Form onSubmit={this.handleSubmit}
+            horizontal
+          >
+            <p>{this.state.message}</p>
+            <FormGroup controlId="formHorizontalEmail">
+              <Col
+                componentClass={ControlLabel}
+                sm={3}
+                style={formText}
+              >
+                Email:
+              </Col>
+              <Col sm={7}>
+                <FormControl
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.handleEmailChange}
+                  placeholder="e-mail"
+                  style={formTextPlaceholder}
+                />
+              </Col>
+            </FormGroup>
+
+            <FormGroup controlId="formHorizontalPassword">
+              <Col
+                componentClass={ControlLabel}
+                sm={3}
+                style={formText}
+              >
+                Hasło:
+              </Col>
+              <Col sm={7}>
+                <FormControl
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handlePasswordChange}
+                  placeholder="hasło powinno zawierać: jedną wielką literę, jedną małą literę, jedną cyfrę, od 8 do 16 znaków."
+                  style={formTextPlaceholder}
+                />
+              </Col>
+            </FormGroup>
+
+            <FormGroup>
+              <Col
+                smOffset={2}
+                sm={7}
+                style={formText}
+              >
+                <Checkbox>zapamiętaj mnie</Checkbox>
+              </Col>
+            </FormGroup>
+
+            <FormGroup>
+              <Col
+                smOffset={2}
+                sm={7}>
+                <Button
+                  style={formButton}
+                  bsStyle="success"
+                  type="submit"
+                  onClick={ refreshPage }
+                >
+                  Zakładam konto
+                </Button>
+              </Col>
+            </FormGroup>
+          </Form>
+        </Grid>
+      </Row>
+        </div>
+    )
+  }
+}
+
+export default connect(
+  null,
+  dispatch => ({
+    syncUser: (user) => dispatch(syncUser(user))
+  })
+)(SignUpForm)
