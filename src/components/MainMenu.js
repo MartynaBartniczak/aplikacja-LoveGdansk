@@ -6,7 +6,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import {
   Navbar,
   Nav,
-  MenuItem,
+  Button,
   NavItem,
   NavDropdown
 } from 'react-bootstrap'
@@ -25,6 +25,10 @@ const menuLogo = {
   height: '1.5em'
 };
 
+const menuButtonLogOut = {
+  marginTop: '1.5em'
+};
+
 const loginMenu = {
   padding: '0.6em',
   height: '2.5em',
@@ -32,7 +36,7 @@ const loginMenu = {
 };
 
 
-const MainMenu = ({ user}) =>
+const MainMenu = ({user}) =>
   (
   <Navbar>
     <Navbar.Header>
@@ -59,8 +63,15 @@ const MainMenu = ({ user}) =>
         <NavItem><FontAwesome className="fa fa-sign-in" size='1x'/></NavItem>
       </LinkContainer>
       <Navbar.Text style={loginMenu}>
-        Zalogowany jako: <Navbar.Link href="#">{user.email}</Navbar.Link>
+        <Navbar.Link href="/login">{user === null ? 'zaloguj': 'zalogowany jako ' + user.email}</Navbar.Link>
       </Navbar.Text>
+      <Button
+        style = {menuButtonLogOut}
+        bsStyle="success"
+        bsSize="xsmall"
+        onClick={() => firebase.auth().signOut()}>
+        Wyloguj
+      </Button>
     </Nav>
   </Navbar.Collapse>
   </Navbar>

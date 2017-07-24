@@ -17,13 +17,14 @@ import SignInForm from './SignInForm';
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 
-const App = () => (
+const App = ({user}) => (
   <Router>
     <div className="App">
       <div>
 
         <MainMenu/>
         <SearchEngine/>
+        <h3 style={{color: 'white'}} >{user === null ? '': 'Cześć ' + user.email}</h3>
         <Grid>
           <hr/>
         </Grid>
