@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, IndexLink } from 'react-router';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "./App.css";
 import MainMenu from "./MainMenu";
