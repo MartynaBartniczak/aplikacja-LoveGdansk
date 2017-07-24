@@ -36,7 +36,7 @@ const loginMenu = {
 };
 
 
-const MainMenu = ({user}) =>
+const MainMenu = ({ user}) =>
   (
   <Navbar>
     <Navbar.Header>
@@ -82,4 +82,4 @@ export default connect(
   state => ({
     user: state.auth.user
   })
-)(MainMenu)
+)(MainMenu)git

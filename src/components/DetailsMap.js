@@ -11,7 +11,9 @@ const AnyReactComponent = ({text}) => <div className="markers"><span className="
 
 export default connect(
   state => ({
-    detailsmap: state.detailsmap
+    detailsmap: state.detailsmap,
+    coords: state.geolocation.position,
+    searchPhrase: state.searchengine.searchPhrase
   }),
   dispatch => ({
     fetchDetailsMap: () => dispatch(fetchDetailsMap())
@@ -30,7 +32,9 @@ export default connect(
     }
 
     render() {
+
       const {data, fetching, error} = this.props.detailsmap;
+      const { searchPhrase } = this.props
       return (
         <div>
           { error === null ? null : <p>{error.message}</p> }
@@ -39,13 +43,13 @@ export default connect(
           }
           <div className="center-block" style={{maxWidth:'100%', height: 600,}}>
             <GoogleMapReact
-              defaultCenter={this.props.center}
+              center={this.props.coords}
               defaultZoom={this.props.zoom}
               options={{scrollwheel: false}}
               apiKey={'AIzaSyD91qKDKvraWUaYomGzmd4cLuR653anaDs'}
             >
               {
-                data !== null && data.map(
+                data !== null && data.filter(event => searchPhrase.toLowerCase() === '' ? true : event.place.toLowerCase().includes(searchPhrase)).map(
                   event => (
                     <AnyReactComponent
                       lat={parseFloat(event.lat)}
@@ -58,13 +62,13 @@ export default connect(
               }
 
               <AnyReactComponent
-                lat={this.props.center.lat}
-                lng={this.props.center.lng}
+                {...this.props.coords }
                 text="Your location"
               />
             </GoogleMapReact>
           </div>
         </div>
+
       )
     }
   }
