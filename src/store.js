@@ -12,6 +12,7 @@ import calendarAdd from "./state/calendarAdd";
 import persistState from "redux-localstorage";
 import geolocation, {set} from "./state/geolocation";
 import auth from './state/auth'
+import favevent from "./state/favevent"
 
 
 const reducer = combineReducers({
@@ -24,7 +25,8 @@ const reducer = combineReducers({
     auth,
     calendarAdd,
     distance,
-    geolocation
+    geolocation,
+    favevent
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
