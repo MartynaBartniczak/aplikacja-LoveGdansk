@@ -4,7 +4,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import {connect} from "react-redux";
-import {fetchDetailsMap} from "../state/detailsmap";
 import "./DetailsMap.css";
 import FontAwesome from "react-fontawesome";
 
@@ -14,11 +13,7 @@ const AnyReactComponent = ({text}) => <div className="markers"><span className="
 
 export default connect(
   state => ({
-    detailsmap: state.detailsmap,
     coords: state.geolocation.position
-  }),
-  dispatch => ({
-    fetchDetailsMap: () => dispatch(fetchDetailsMap())
   })
 )(
   class DetailMap extends React.Component {
@@ -28,19 +23,10 @@ export default connect(
       zoom: 11,
     };
 
-
-    componentWillMount() {
-      this.props.fetchDetailMap()
-    }
-
     render() {
-      const {data, fetching, error} = this.props.detailsmap;
+      const {event} = this.props;
       return (
         <div>
-          { error === null ? null : <p>{error.message}</p> }
-          {
-            fetching === false ? null : <p>Fetching data...</p>
-          }
           <div className="center-block" style={{maxWidth:'100%', height: 600,}}>
             <GoogleMapReact
               center={this.props.coords}
@@ -48,19 +34,12 @@ export default connect(
               options={{scrollwheel: false}}
               apiKey={'AIzaSyD91qKDKvraWUaYomGzmd4cLuR653anaDs'}
             >
-              {
-                data !== null && data.map(
-                  event => (
-                    <AnyReactComponent
-                      lat={parseFloat(event.lat)}
-                      lng={parseFloat(event.lng)}
-                      text={event.place}
+             <AnyReactComponent
+                lat={parseFloat(event.lat)}
+                lng={parseFloat(event.lng)}
+                text={event.place}
 
-                    />
-                  )
-                )
-              }
-
+              />
               <AnyReactComponent
                 {...this.props.coords }
                 text="Your location"
