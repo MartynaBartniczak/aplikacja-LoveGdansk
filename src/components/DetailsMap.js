@@ -12,7 +12,8 @@ const AnyReactComponent = ({text}) => <div className="markers"><span className="
 export default connect(
   state => ({
     detailsmap: state.detailsmap,
-    coords: state.geolocation.position
+    coords: state.geolocation.position,
+    searchPhrase: state.searchengine.searchPhrase
   }),
   dispatch => ({
     fetchDetailsMap: () => dispatch(fetchDetailsMap())
@@ -31,7 +32,9 @@ export default connect(
     }
 
     render() {
+
       const {data, fetching, error} = this.props.detailsmap;
+      const { searchPhrase } = this.props
       return (
         <div>
           { error === null ? null : <p>{error.message}</p> }
@@ -46,7 +49,7 @@ export default connect(
               apiKey={'AIzaSyD91qKDKvraWUaYomGzmd4cLuR653anaDs'}
             >
               {
-                data !== null && data.map(
+                data !== null && data.filter(event => searchPhrase.toLowerCase() === '' ? true : event.place.toLowerCase().includes(searchPhrase)).map(
                   event => (
                     <AnyReactComponent
                       lat={parseFloat(event.lat)}
