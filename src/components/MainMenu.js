@@ -82,4 +82,4 @@ export default connect(
   state => ({
     user: state.auth.user
   })
-)(MainMenu)git
+)(MainMenu)
