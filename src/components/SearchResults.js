@@ -27,7 +27,8 @@ export default connect(
     searchDate: state.searchFilters.searchDate,
     searchPhrase: state.searchengine.searchPhrase,
     activeCategoryNames: state.categoryButtons.activeCategoryNames,
-    favouriteEventIds: state.calendarAdd.favouriteEventId
+    favouriteEventIds: state.calendarAdd.favouriteEventId,
+    coords: state.geolocation.position
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
@@ -41,22 +42,14 @@ export default connect(
     }
 
     render() {
+      const locationCurrent = this.props.coords
+      if (this.props.coords === null) {
+        return <p>Loading data...</p>
+      }
+      console.log(locationCurrent.lat)
+
+
       const {data, fetching, error} = this.props.searchresults
-        const distanceB90 = geolib.getDistance(
-            {latitude: 54.403365, longitude: 18.569880},
-            {latitude: 54.3646976, longitude: 18.6468462},
-            100, 1
-        )/1000
-        const distanceSfinks = geolib.getDistance(
-            {latitude: 54.403365, longitude: 18.569880},
-            {latitude: 54.4485431, longitude: 18.5649742},
-            100, 1
-        )/1000
-        const distanceUcho = geolib.getDistance(
-            {latitude: 54.403365, longitude: 18.569880},
-            {latitude: 54.524391, longitude: 18.5445571},
-            100, 1
-        )/1000
       const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
         <div className="mainresults">
@@ -66,9 +59,11 @@ export default connect(
               { fetching === false ? null : <p>Fetching data...</p>}
               {
                 data !== null && data.filter(
-                  item => item.place === "Sfinks 700 Aleja Franciszka Mamuszki 1" && distanceSfinks < this.props.location ||
-                  item.place === "Ucho. Klub muzyczny Świętego Piotra 2" && distanceUcho < this.props.location ||
-                  item.place === "Klub B90 Stocznia Gdańska Elektryków 1" && distanceB90 < this.props.location
+                  item => geolib.getDistance(
+                    {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
+                    {latitude: item.lat, longitude: item.lng },
+                    100, 1
+                  ) / 1000 < this.props.location
                 ).filter(
                   item => moment(item.startdate).isAfter(
                     moment().add(this.props.searchDate, 'days'))
@@ -88,8 +83,16 @@ export default connect(
                       <Thumbnail src={event.image}>
                         <h2>Impreza: {event.category}</h2>
                         <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
-                        <h4>Za ile wjazd: {event.cost} PLN</h4>
-                        <p>{event.place} | {event.city}  </p>
+                        <h4>Za ile wjazd: {event.cost} PLN | Jak
+                          daleko: {
+                            geolib.getDistance(
+                              {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
+                              {latitude: event.lat, longitude: event.lng },
+                              100, 1
+                            ) / 1000
+                          }
+                          km</h4>
+                        <p>{event.place} | {event.city}</p>
                         <p>
                           <Link to={'/detale/' + event.id}>
                             <Button bsStyle="primary">Zobacz szczegóły</Button>

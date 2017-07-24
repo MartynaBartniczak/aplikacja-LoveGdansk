@@ -12,14 +12,19 @@ import SearchEngine from './SearchEngine';
 import EventDetail from './EventDetail';
 import AdditionalSearches from './AdditionalSearches';
 import SignUpForm from './SignUpForm';
-import LoginForm from './LoginForm';
+import SignInForm from './SignInForm';
+import { connect } from 'react-redux'
+import firebase from 'firebase'
 
-const App = () => (
+const App = ({user}) => (
   <Router>
     <div className="App">
       <div>
 
         <MainMenu/>
+        <h1
+          style={{color:'white'}}
+        >Siemanko </h1>
         <SearchEngine/>
         <Grid>
           <hr/>
@@ -37,8 +42,8 @@ const App = () => (
         <Route path="/wydarzenia" component={EventCategories}/>
         <Route exact path="/detale" component={EventDetails}/>
         <Route path="/mapa" component={DetailsMap}/>
-
-        <Route path="/login" component={LoginForm}/>
+        <Route path="/signin" component={SignInForm}/>
+        <Route path="/signup" component={SignUpForm}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
       <div>
@@ -49,4 +54,8 @@ const App = () => (
   </Router>
 );
 
-export default App
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(App)

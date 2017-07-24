@@ -9,6 +9,9 @@ import {connect} from "react-redux";
 class Geolocation extends React.Component {
 
   render() {
+      if (this.props.coords === null) {
+          return <p>Loading data...</p>
+      }
     return <DetailsMap center={{lat: this.props.coords.latitude, lng: this.props.coords.longitude}}/>
 
 
