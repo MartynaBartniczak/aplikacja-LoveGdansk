@@ -40,7 +40,7 @@ class EventCalendar extends React.Component {
       })
     )
     return (
-      <div style={{height:500}}>
+      <div style={{height:500, marginLeft:'2.5em', marginRight:'2.5em'}}>
         <BigCalendar
           events={events}
         />

@@ -6,3 +6,29 @@
 .rbc-toolbar button {
     color: white;
 }
+.rbc-today {
+    background-color: #3C887E;
+}
+
+.rbc-toolbar button:hover{
+    background-color: #3C887E;
+    color: #373a3c;
+}
+button:active{
+    color: #373a3c;
+}
+.rbc-toolbar button:active {
+    color: #373a3c;
+}
+.rbc-event rbc-selected rbc-event-allday {
+    background-color: #E3B505;
+    border:#E3B505;
+}
+.rbc-event-content{
+    background-color: #E3B505;
+    color:#373a3c;
+    border:#E3B505;
+}
+.rbc-event.rbc-selected, .rbc-event  {
+    background-color: #E3B505;
+}

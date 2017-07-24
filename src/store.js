@@ -11,6 +11,7 @@ import categoryButtons from "./state/categoryButtons";
 import calendarAdd from "./state/calendarAdd";
 import persistState from "redux-localstorage";
 import geolocation, {set} from "./state/geolocation";
+import auth from './state/auth'
 
 
 const reducer = combineReducers({
@@ -20,17 +21,18 @@ const reducer = combineReducers({
     searchresults,
     searchFilters,
     categoryButtons,
+    auth,
     calendarAdd,
     distance,
     geolocation
 });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, /* preloadedState, */ composeEnhancers(
     applyMiddleware(
         thunk
     ),
-  persistState(['calendarAdd','categoryButtons','details','detailsmap','eventcategories','searchengine','searchFilters','searchresults'])
+  persistState(['calendarAdd','categoryButtons','details','detailsmap','eventcategories','searchengine','searchFilters','searchresults', 'auth'])
 ));
 
 
