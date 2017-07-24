@@ -11,18 +11,18 @@ export const initFavsSync = () => dispatch => {
   const userUid = firebase.auth().currentUser.uid
   firebase.database().ref('favs/' + userUid).on(
     'value',
-    event => {
-      const favs = event.val() || {}
+    snapshot => {
+      const favs = snapshot.val() || {}
       dispatch(favsSync(favs))
     }
   )
 }
 
-// export const favEvent = eventUid => dispatch => {
-//   const userUid = firebase.auth().currentUser.uid
-//   const ref = firebase.database().ref('favs/' + userUid + '/eventIds/' + eventUid)
-//   ref.set(true)
-// }
+export const favEvent = eventId => dispatch => {
+  const userUid = firebase.auth().currentUser.uid
+  const ref = firebase.database().ref('favs/' + userUid + '/eventIds/' + eventId)
+  ref.set(true)
+}
 
 const initialState = {
   eventIds: null

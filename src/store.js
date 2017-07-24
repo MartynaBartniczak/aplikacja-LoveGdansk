@@ -11,8 +11,9 @@ import categoryButtons from "./state/categoryButtons";
 import calendarAdd from "./state/calendarAdd";
 import persistState from "redux-localstorage";
 import geolocation, {set} from "./state/geolocation";
-import auth from './state/auth'
+import auth, { initUserSync } from './state/auth'
 import favevent from "./state/favevent"
+import firebase from 'firebase'
 
 
 const reducer = combineReducers({
@@ -47,8 +48,16 @@ if (navigator.geolocation !== undefined) {
   })
 }
 
+firebase.initializeApp({
+  apiKey: "AIzaSyAUN0F63ycOYJEde2PDXs7f2b2_sdP9Ku4",
+  authDomain: "jfdd7-mkapz-app.firebaseapp.com",
+  databaseURL: "https://jfdd7-mkapz-app.firebaseio.com",
+  projectId: "jfdd7-mkapz-app",
+  storageBucket: "jfdd7-mkapz-app.appspot.com",
+  messagingSenderId: "834845185297"
+})
 
-
+store.dispatch(initUserSync())
 
 
 export default store

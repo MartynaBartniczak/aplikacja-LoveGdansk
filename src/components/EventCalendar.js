@@ -16,7 +16,7 @@ BigCalendar.momentLocalizer(moment);
 
 export default connect(
   state => ({
-      favouriteEventIds: state.calendarAdd.favouriteEventId,
+      favouriteEventIds: state.favevent.eventIds || [],
       events: state.searchresults
     }),
   dispatch => ({
