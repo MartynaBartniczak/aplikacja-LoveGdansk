@@ -26,6 +26,7 @@ const App = ({user}) => (
           style={{color:'white'}}
         >Siemanko </h1>
         <SearchEngine/>
+        <h3 style={{color: 'white'}} >{user === null ? '': 'Cześć ' + user.email}</h3>
         <Grid>
           <hr/>
         </Grid>

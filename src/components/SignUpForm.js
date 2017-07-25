@@ -143,14 +143,14 @@ class SignUpForm extends React.Component {
               <Col
                 smOffset={2}
                 sm={7}>
-                <Button
+                <button
                   style={formButton}
                   bsStyle="success"
                   type="submit"
                   onClick={ refreshPage }
                 >
                   Zakładam konto
-                </Button>
+                </button>
               </Col>
             </FormGroup>
           </Form>

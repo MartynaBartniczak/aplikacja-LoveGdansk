@@ -16,6 +16,7 @@ import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
 import FontAwesome from 'react-fontawesome'
 import {favEvent} from '../state/favevent'
+import {add} from '../state/calendarAdd'
 import geolib from 'geolib'
 
 import categories from '../_utils/categories'
