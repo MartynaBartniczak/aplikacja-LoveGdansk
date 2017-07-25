@@ -10,18 +10,22 @@ import { connect } from 'react-redux'
 import { add } from '../state/calendarAdd'
 import {fetchSearchResults} from '../state/searchresults'
 import {Link} from 'react-router-dom'
+import Auth from '../components/Auth';
+
 
 
 BigCalendar.momentLocalizer(moment);
 
 export default connect(
   state => ({
-      favouriteEventIds: state.calendarAdd.favouriteEventId,
+      favouriteEventIds: state.favevent.eventIds || [],
       events: state.searchresults
     }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
-    addToFav: id => dispatch(add(id))
+    addToFav: id => dispatch(add(id)),
+
+
   })
 
 )(
@@ -32,7 +36,7 @@ class EventCalendar extends React.Component {
   }
 
   render() {
-    const events = this.props.events.data === null ? [] : this.props.events.data.filter(event => this.props.favouriteEventIds.includes(event.id)).map(
+    const events = this.props.events.data === null ? [] : this.props.events.data.filter(event => this.props.favouriteEventIds[event.id]).map(
       event => ({
         id: event.id,
         allDay: true,
@@ -43,10 +47,12 @@ class EventCalendar extends React.Component {
     )
     return (
       <div style={{height:500, marginLeft:'2.5em', marginRight:'2.5em'}}>
+        <Auth>
         <BigCalendar
                  onSelectEvent={(event) => this.props.history.push('/detale/' + event.id)}
           events={events}
         />
+        </Auth>
       </div>
     );
   }

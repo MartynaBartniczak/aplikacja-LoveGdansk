@@ -28,10 +28,6 @@ const divStyle = {
   marginTop: '2em',
 };
 
-function refreshPage(){
-  window.location.replace("/");
-}
-
 
 class SignUpForm extends React.Component {
   state = {
@@ -61,7 +57,7 @@ class SignUpForm extends React.Component {
       user => {
         //console.log(user)
         user.updateProfile({
-          displayName: 'Janusz Kowalski'
+          displayName: ''
         }).then(
           () => this.props.syncUser({...user})
         )
@@ -147,7 +143,6 @@ class SignUpForm extends React.Component {
                   style={formButton}
                   bsStyle="success"
                   type="submit"
-                  onClick={ refreshPage }
                 >
                   Zakładam konto
                 </button>

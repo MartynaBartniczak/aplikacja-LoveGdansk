@@ -14,6 +14,8 @@ import {Link} from 'react-router-dom'
 import './SearchResults.css'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
+import FontAwesome from 'react-fontawesome'
+import {favEvent} from '../state/favevent'
 import {add} from '../state/calendarAdd'
 import geolib from 'geolib'
 
@@ -31,7 +33,7 @@ export default connect(
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
-    addToFav: id => dispatch(add(id))
+    addToFav: id => dispatch(favEvent(id))
   })
 )(
   class SearchResults extends React.Component {
