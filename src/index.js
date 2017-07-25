@@ -28,19 +28,16 @@ firebase.initializeApp({
 firebase.auth().onAuthStateChanged(
   user => {
     store.dispatch(
-      syncUser({
-        email: user.email,
-        displayName: user.displayName
-      })
+      syncUser(user)
     )
   }
 )
 
 ReactDOM.render(
   <Provider store={store}>
-    <Auth>
+
       <App/>
-    </Auth>
+
   </Provider>,
   document.getElementById('root')
 );
