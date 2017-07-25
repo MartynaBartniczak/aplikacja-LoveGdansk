@@ -15,9 +15,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-
+    <Auth>
       <App/>
-
+    </Auth>
   </Provider>,
   document.getElementById('root')
 );
