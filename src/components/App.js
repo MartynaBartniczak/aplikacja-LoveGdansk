@@ -16,6 +16,7 @@ import SignInForm from './SignInForm';
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 
+
 const App = ({user}) => (
   <Router>
     <div className="App">

@@ -57,7 +57,7 @@ class SignUpForm extends React.Component {
       user => {
         //console.log(user)
         user.updateProfile({
-          displayName: 'Janusz Kowalski'
+          displayName: ''
         }).then(
           () => this.props.syncUser({...user})
         )
