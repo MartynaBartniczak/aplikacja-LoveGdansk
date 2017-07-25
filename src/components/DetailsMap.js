@@ -63,7 +63,7 @@ export default connect(
 
               <AnyReactComponent
                 {...this.props.coords }
-                text="Your location"
+                text="Tu jesteś"
               />
             </GoogleMapReact>
           </div>
