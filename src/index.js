@@ -28,10 +28,7 @@ firebase.initializeApp({
 firebase.auth().onAuthStateChanged(
   user => {
     store.dispatch(
-      syncUser({
-        email: user.email,
-        displayName: user.displayName
-      })
+      syncUser(user)
     )
   }
 )

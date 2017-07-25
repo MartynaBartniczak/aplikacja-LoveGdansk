@@ -2,7 +2,7 @@ const SYNC_USER = 'auth/SYNC_USER'
 
 export const syncUser = (user) => ({
   type: SYNC_USER,
-  user
+  user: user && { email: user.email, displayName: user.displayName }
 })
 
 const initialState = {

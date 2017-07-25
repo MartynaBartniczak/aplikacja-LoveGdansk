@@ -14,7 +14,6 @@ import {Link} from 'react-router-dom'
 import './SearchResults.css'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
-import FontAwesome from 'react-fontawesome'
 import {add} from '../state/calendarAdd'
 import geolib from 'geolib'
 
