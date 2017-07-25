@@ -36,7 +36,7 @@ const loginMenu = {
 };
 
 
-const MainMenu = ({user}) =>
+const MainMenu = ({ user}) =>
   (
   <Navbar>
     <Navbar.Header>

@@ -15,6 +15,7 @@ import './SearchResults.css'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
 import {add} from '../state/calendarAdd'
+import geolib from 'geolib'
 
 import categories from '../_utils/categories'
 
@@ -25,7 +26,8 @@ export default connect(
     searchDate: state.searchFilters.searchDate,
     searchPhrase: state.searchengine.searchPhrase,
     activeCategoryNames: state.categoryButtons.activeCategoryNames,
-    favouriteEventIds: state.calendarAdd.favouriteEventId
+    favouriteEventIds: state.calendarAdd.favouriteEventId,
+    coords: state.geolocation.position
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
@@ -39,6 +41,13 @@ export default connect(
     }
 
     render() {
+      const locationCurrent = this.props.coords
+      if (this.props.coords === null) {
+        return <p>Loading data...</p>
+      }
+      console.log(locationCurrent.lat)
+
+
       const {data, fetching, error} = this.props.searchresults
       const words = this.props.searchPhrase.split(' ').map(word => word.toLowerCase())
       return (
@@ -49,7 +58,11 @@ export default connect(
               { fetching === false ? null : <p>Fetching data...</p>}
               {
                 data !== null && data.filter(
-                  item => item.range < this.props.location
+                  item => geolib.getDistance(
+                    {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
+                    {latitude: item.lat, longitude: item.lng },
+                    100, 1
+                  ) / 1000 < this.props.location
                 ).filter(
                   item => moment(item.startdate).isAfter(
                     moment().add(this.props.searchDate, 'days'))
@@ -69,8 +82,16 @@ export default connect(
                       <Thumbnail src={event.image}>
                         <h2>Impreza: {event.category}</h2>
                         <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
-                        <h4>Za ile wjazd: {event.cost} PLN</h4>
-                        <p>{event.place} | {event.city}  </p>
+                        <h4>Za ile wjazd: {event.cost} PLN | Jak
+                          daleko: {
+                            geolib.getDistance(
+                              {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
+                              {latitude: event.lat, longitude: event.lng },
+                              100, 1
+                            ) / 1000
+                          }
+                          km</h4>
+                        <p>{event.place} | {event.city}</p>
                         <p>
                           <Link to={'/detale/' + event.id}>
                             <Button bsStyle="primary">Zobacz szczegóły</Button>
