@@ -1,10 +1,15 @@
 import React from 'react'
 import firebase from 'firebase'
-import {Button,
-        Grid,
-        FormControl,
-        Row,
-Form, Col, ControlLabel, Checkbox, FormGroup}
+import {
+  Grid,
+  FormControl,
+  Row,
+  Form,
+  Col,
+  ControlLabel,
+  Checkbox,
+  FormGroup
+}
   from 'react-bootstrap'
 import {connect} from 'react-redux'
 import { syncUser } from '../state/auth'

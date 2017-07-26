@@ -9,7 +9,6 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import App from "./components/App";
 
 import "react-fontawesome";
-import { LoginLink } from 'react-stormpath';
 import registerServiceWorker from './registerServiceWorker';
 
 

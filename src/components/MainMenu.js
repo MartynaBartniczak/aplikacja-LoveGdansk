@@ -8,7 +8,8 @@ import {
   Nav,
   Button,
   NavItem,
-  NavDropdown
+  NavDropdown,
+  MenuItem
 } from 'react-bootstrap'
 
 import firebase from 'firebase'
@@ -26,7 +27,13 @@ const menuLogo = {
 };
 
 const menuButtonLogOut = {
-  marginTop: '1.5em'
+  marginTop: '1.2em',
+  borderRadius: '30px'
+};
+
+const menuButtonLogIn = {
+  marginTop: '1.2em',
+  borderRadius: '30px'
 };
 
 const loginMenu = {
@@ -38,12 +45,12 @@ const loginMenu = {
 
 const MainMenu = ({ user}) =>
   (
-  <Navbar>
+    <Navbar fixedTop>
     <Navbar.Header>
       <Navbar.Brand>
         <Link to="/"><img src={LogoImg} style={menuLogo}/></Link>
       </Navbar.Brand>
-
+      <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
     <Nav pullRight>
@@ -59,20 +66,22 @@ const MainMenu = ({ user}) =>
       <LinkContainer to="/signup" style={menuStyle}>
         <NavItem><FontAwesome className="fa fa-user-plus" size='1x'/></NavItem>
       </LinkContainer>
-      <LinkContainer to="/signin" style={menuStyle}>
-        <NavItem><FontAwesome className="fa fa-sign-in" size='1x'/></NavItem>
-      </LinkContainer>
-      <Navbar.Text style={loginMenu}>
-        <Navbar.Link href="/login">{user === null ? 'zaloguj': 'zalogowany jako ' + user.email}</Navbar.Link>
-      </Navbar.Text>
+      <Button
+        style = {menuButtonLogIn}
+        bsStyle="success"
+        bsSize="small"
+        onClick={() => firebase.auth().signOut()}>
+        {user === null ? 'zaloguj': 'zalogowany jako ' + user.email}
+      </Button>
       <Button
         style = {menuButtonLogOut}
         bsStyle="success"
-        bsSize="xsmall"
+        bsSize="small"
         onClick={() => firebase.auth().signOut()}>
         Wyloguj
       </Button>
-    </Nav>
+        </Nav>
+
   </Navbar.Collapse>
   </Navbar>
 
