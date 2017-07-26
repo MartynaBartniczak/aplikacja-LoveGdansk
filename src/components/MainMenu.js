@@ -19,7 +19,6 @@ import FontAwesome from 'react-fontawesome'
 
 const menuStyle = {
   color: 'white',
-  padding: '0.2em',
 };
 
 const menuLogo = {
@@ -27,7 +26,7 @@ const menuLogo = {
 };
 
 const menuButtonLogOut = {
-  marginTop: '1.2em',
+  marginTop: '0.8em',
   borderRadius: '30px'
 };
 
@@ -66,20 +65,25 @@ const MainMenu = ({ user}) =>
       <LinkContainer to="/signup" style={menuStyle}>
         <NavItem><FontAwesome className="fa fa-user-plus" size='1x'/></NavItem>
       </LinkContainer>
-      <Button
-        style = {menuButtonLogIn}
-        bsStyle="success"
-        bsSize="small"
-        onClick={() => firebase.auth().signOut()}>
-        {user === null ? 'zaloguj': 'zalogowany jako ' + user.email}
-      </Button>
-      <Button
-        style = {menuButtonLogOut}
-        bsStyle="success"
-        bsSize="small"
-        onClick={() => firebase.auth().signOut()}>
-        Wyloguj
-      </Button>
+        {user === null ?
+          <Link to={'/signUp'}>
+          <Button
+            style = {menuButtonLogIn}
+            bsStyle="success"
+            bsSize="small"
+          >
+            Zaloguj
+          </Button>
+          </Link>
+          :
+          <Button
+            style = {menuButtonLogOut}
+            bsStyle="success"
+            bsSize="small"
+            onClick={() => firebase.auth().signOut()}>
+            Wyloguj
+          </Button>
+          }
         </Nav>
 
   </Navbar.Collapse>

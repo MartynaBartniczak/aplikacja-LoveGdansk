@@ -7,7 +7,7 @@ import {
   Form,
   Col,
   ControlLabel,
-  Checkbox,
+  Button,
   FormGroup
 }
   from 'react-bootstrap'
@@ -136,7 +136,6 @@ class SignUpForm extends React.Component {
                 sm={7}
                 style={formText}
               >
-                <Checkbox>zapamiętaj mnie</Checkbox>
               </Col>
             </FormGroup>
 
@@ -144,13 +143,13 @@ class SignUpForm extends React.Component {
               <Col
                 smOffset={2}
                 sm={7}>
-                <button
+                <Button
                   style={formButton}
                   bsStyle="success"
                   type="submit"
                 >
                   Zakładam konto
-                </button>
+                </Button>
               </Col>
             </FormGroup>
           </Form>
