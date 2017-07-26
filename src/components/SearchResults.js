@@ -98,8 +98,12 @@ export default connect(
                           <Link to={'/detale/' + event.id}>
                             <Button bsStyle="primary">Zobacz szczegóły</Button>
                           </Link>&nbsp;
-                          <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
-                            kalendarza</Button>
+                          {this.props.favouriteEventIds[event.id] ?
+                            <Button onClick={() => this.props.addToFav(event.id)} bsStyle="success">Już dodane
+                            </Button>:
+                            <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
+                              kalendarza</Button>
+                          }
                         </p>
                       </Thumbnail>
                     </Col>
