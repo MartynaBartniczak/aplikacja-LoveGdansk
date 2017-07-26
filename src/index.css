@@ -7,7 +7,7 @@ html {
 body {
   padding: 0;
   font-family: 'Advent Pro', sans-serif;
-  background: linear-gradient(to top, #000000, #434343);
+  background-color: #434343!important;
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cbccc8');
   min-width: 100%;
 }

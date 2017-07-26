@@ -15,7 +15,6 @@ import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
 import { connect } from 'react-redux'
 
-
 const App = ({user}) => (
   <Router>
     <div className="App">
