@@ -4,6 +4,7 @@ import DetailMap from "./DetailMap";
 import Time from "react-time";
 import "./EventDetail.css";
 import {Accordion, Carousel, Col, Grid, Panel, Row} from "react-bootstrap";
+import {favEvent} from '../state/favevent'
 
 export default class EventDetail extends React.Component {
 
@@ -69,12 +70,16 @@ export default class EventDetail extends React.Component {
                     <h4 style={{color:'white'}}><small>Miasto: </small>{event.city}</h4>
                     <br/>
                     <Accordion>
-                      <Panel header="więcej o imprezie"eventKey="1" classID="event_detail_toggle" trigger="click">
-                        {event.place}
-                      </Panel><br/>
+
+
                       <Panel header="więcej o klubie" eventKey="2" trigger="click">
                         {event.place}
                       </Panel>
+
+                      <Panel header="więcej o imprezie"eventKey="1" classID="event_detail_toggle" trigger="click">
+                        {event.place}
+                      </Panel><br/>
+
                     </Accordion>
                   </Col>
                   <Col xs={12} md={6}>
