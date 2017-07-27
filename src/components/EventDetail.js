@@ -1,12 +1,21 @@
-import React from "react";
-import FontAwesome from "react-fontawesome";
-import DetailMap from "./DetailMap";
-import Time from "react-time";
-import "./EventDetail.css";
-import {Accordion, Carousel, Col, Grid, Panel, Row} from "react-bootstrap";
+import React from "react"
+import {connect} from 'react-redux'
+import FontAwesome from "react-fontawesome"
+import DetailMap from "./DetailMap"
+import Time from "react-time"
+import "./EventDetail.css"
+import {Accordion, Carousel, Col, Grid, Panel, Row, Button} from "react-bootstrap"
 import {favEvent} from '../state/favevent'
 
-export default class EventDetail extends React.Component {
+export default connect(
+  state => ({
+    favouriteEventIds: state.favevent.eventIds || []
+  }),
+  dispatch => ({
+    addToFav: id => dispatch(favEvent(id))
+  })
+)(
+  class EventDetail extends React.Component {
 
   state = {
     events: []
@@ -64,6 +73,14 @@ export default class EventDetail extends React.Component {
                     <h2><small>Kiedy:</small> <b>{event.startdate}</b></h2>
                     <h2><small>Godzina:</small> <b>{event.starttime}</b></h2>
                     <h2><small>Za ile wjazd:</small> <b>{event.cost} PLN</b></h2>
+                    <p>
+                      {this.props.favouriteEventIds[event.id] ?
+                        <Button onClick={() => this.props.addToFav(event.id)} bsStyle="success">Już dodane
+                        </Button>:
+                        <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
+                          kalendarza</Button>
+                      }
+                    </p>
                     <br/><FontAwesome className="fa fa-location-arrow" size='2x' />
                     <h4><small style={{color:'white'}}>SZCZEGÓŁY TWOJEJ IMPREZY:</small></h4>
                     <h4 style={{color:'white'}}><small>Klub: </small>{event.place}</h4>
@@ -77,9 +94,6 @@ export default class EventDetail extends React.Component {
                       <Panel header="więcej o imprezie" eventKey="2" trigger="click">
                         {event.place}
                       </Panel>
-
-
-
                     </Accordion>
                   </Col>
                   <Col xs={12} md={6}>
@@ -94,3 +108,4 @@ export default class EventDetail extends React.Component {
     )
   }
 }
+)
