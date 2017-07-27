@@ -102,7 +102,7 @@ export default connect(
                               <Button bsStyle="primary">Zobacz szczegóły</Button>
                             </Link>&nbsp;
                             {this.props.favouriteEventIds[event.id] ?
-                              <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Już dodane
+                              <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
                               </Button>:
                               <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
                                 kalendarza</Button>

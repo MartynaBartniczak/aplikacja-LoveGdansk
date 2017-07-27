@@ -6,6 +6,7 @@ import Time from "react-time"
 import "./EventDetail.css"
 import {Accordion, Carousel, Col, Grid, Panel, Row, Button} from "react-bootstrap"
 import {favEvent} from '../state/favevent'
+import {removeEvent} from '../state/favevent'
 
 export default connect(
   state => ({
@@ -75,7 +76,7 @@ export default connect(
                     <h2><small>Za ile wjazd:</small> <b>{event.cost} PLN</b></h2>
                     <p>
                       {this.props.favouriteEventIds[event.id] ?
-                        <Button onClick={() => this.props.addToFav(event.id)} bsStyle="success">Już dodane
+                        <Button onClick={() => this.props.addToFav(event.id)} bsStyle="success">Usuń z kalendarza
                         </Button>:
                         <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
                           kalendarza</Button>
