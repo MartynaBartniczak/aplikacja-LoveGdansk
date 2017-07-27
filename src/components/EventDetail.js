@@ -13,7 +13,8 @@ export default connect(
     favouriteEventIds: state.favevent.eventIds || []
   }),
   dispatch => ({
-    addToFav: id => dispatch(favEvent(id))
+    addToFav: id => dispatch(favEvent(id)),
+    removeFromFav: id => dispatch(removeEvent(id))
   })
 )(
   class EventDetail extends React.Component {
@@ -76,7 +77,7 @@ export default connect(
                     <h2><small>Za ile wjazd:</small> <b>{event.cost} PLN</b></h2>
                     <p>
                       {this.props.favouriteEventIds[event.id] ?
-                        <Button onClick={() => this.props.addToFav(event.id)} bsStyle="success">Usuń z kalendarza
+                        <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
                         </Button>:
                         <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
                           kalendarza</Button>
