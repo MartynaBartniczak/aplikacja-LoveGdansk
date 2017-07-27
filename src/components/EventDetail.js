@@ -6,13 +6,15 @@ import Time from "react-time"
 import "./EventDetail.css"
 import {Accordion, Carousel, Col, Grid, Panel, Row, Button} from "react-bootstrap"
 import {favEvent} from '../state/favevent'
+import {removeEvent} from '../state/favevent'
 
 export default connect(
   state => ({
     favouriteEventIds: state.favevent.eventIds || []
   }),
   dispatch => ({
-    addToFav: id => dispatch(favEvent(id))
+    addToFav: id => dispatch(favEvent(id)),
+    removeFromFav: id => dispatch(removeEvent(id))
   })
 )(
   class EventDetail extends React.Component {
@@ -75,7 +77,7 @@ export default connect(
                     <h2><small>Za ile wjazd:</small> <b>{event.cost} PLN</b></h2>
                     <p>
                       {this.props.favouriteEventIds[event.id] ?
-                        <Button onClick={() => this.props.addToFav(event.id)} bsStyle="success">Już dodane
+                        <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
                         </Button>:
                         <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
                           kalendarza</Button>
@@ -87,9 +89,10 @@ export default connect(
                     <h4 style={{color:'white'}}><small>Miasto: </small>{event.city}</h4>
                     <br/>
                     <Accordion>
-                      <Panel header="więcej o imprezie"eventKey="1" classID="event_detail_toggle" trigger="click">
+                      <Panel header="więcej o imprezie" eventKey="1" classID="event_detail_toggle" trigger="click">
                         {event.place}
                       </Panel><br/>
+
                       <Panel header="więcej o klubie" eventKey="2" trigger="click">
                         {event.place}
                       </Panel>

@@ -15,6 +15,7 @@ import './SearchResults.css'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
 import {favEvent} from '../state/favevent'
+import { removeEvent} from '../state/favevent'
 import geolib from 'geolib'
 
 import categories from '../_utils/categories'
@@ -31,7 +32,8 @@ export default connect(
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
-    addToFav: id => dispatch(favEvent(id))
+    addToFav: id => dispatch(favEvent(id)),
+    removeFromFav: id => dispatch(removeEvent(id))
   })
 )(
   class SearchResults extends React.Component {
@@ -100,7 +102,7 @@ export default connect(
                               <Button bsStyle="primary">Zobacz szczegóły</Button>
                             </Link>&nbsp;
                             {this.props.favouriteEventIds[event.id] ?
-                              <Button onClick={() => this.props.addToFav(event.id)} bsStyle="success">Już dodane
+                              <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
                               </Button>:
                               <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
                                 kalendarza</Button>
