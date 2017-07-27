@@ -37,12 +37,12 @@ export default connect(
              <AnyReactComponent
                 lat={parseFloat(event.lat)}
                 lng={parseFloat(event.lng)}
-                text="Tu jesteś"
+                text="Twoja impreza"
 
               />
               <AnyReactComponent
                 {...this.props.coords }
-                text="Twoja impreza"
+                text="Jesteś tutaj"
               />
             </GoogleMapReact>
           </div>
