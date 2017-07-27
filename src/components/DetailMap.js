@@ -27,7 +27,7 @@ export default connect(
       const {event} = this.props;
       return (
         <div>
-          <div className="center-block" style={{maxWidth:'100%', height: 600,}}>
+          <div className="center-block" style={{maxWidth:'100%', height: 660,}}>
             <GoogleMapReact
               center={this.props.coords}
               defaultZoom={this.props.zoom}
