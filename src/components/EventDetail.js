@@ -87,11 +87,11 @@ export default connect(
                     <h4 style={{color:'white'}}><small>Miasto: </small>{event.city}</h4>
                     <br/>
                     <Accordion>
-                      <Panel header="więcej o klubie"eventKey="1" classID="event_detail_toggle" trigger="click">
+                      <Panel header="więcej o imprezie" eventKey="1" classID="event_detail_toggle" trigger="click">
                         {event.place}
                       </Panel><br/>
 
-                      <Panel header="więcej o imprezie" eventKey="2" trigger="click">
+                      <Panel header="więcej o klubie" eventKey="2" trigger="click">
                         {event.place}
                       </Panel>
                     </Accordion>
