@@ -9,6 +9,7 @@ import FontAwesome from 'react-fontawesome'
 export default class Footer extends React.Component {
   render() {
     return (
+      <div className="mainbottom">
       <footer className="footer">
 
           <Col xs={6} md={6}>
@@ -18,6 +19,7 @@ export default class Footer extends React.Component {
             <FontAwesome className="fa fa-facebook" size='1x' />&nbsp;&nbsp;&nbsp;&nbsp;<FontAwesome className="fa fa-twitter" size='1x' />
           </Col>
       </footer>
+      </div>
     )
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import firebase from 'firebase'
 import {
-  Grid,
   FormControl,
   Row,
   Form,
@@ -75,7 +74,6 @@ class SignInForm extends React.Component {
           style={{marginTop:'0.4em', marginBottom: '0.85em'}}
         />
         <Row>
-      <Grid>
       <Form onSubmit={this.handleSubmit}
       horizontal
       >
@@ -135,7 +133,6 @@ class SignInForm extends React.Component {
           </Col>
         </FormGroup>
       </Form>
-      </Grid>
         </Row>
       </div>
     )
