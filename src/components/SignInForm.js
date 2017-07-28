@@ -6,8 +6,8 @@ import {
   Row,
   Form,
   Col,
+  Button,
   ControlLabel,
-  Checkbox,
   FormGroup
 }
   from 'react-bootstrap'
@@ -18,12 +18,13 @@ const formText = {
 };
 
 const formTextPlaceholder = {
-  textAlign: 'center'
+  textAlign: 'center',
 };
 
 const formButton = {
   textAlign: 'center',
   borderRadius: '30px',
+
 };
 
 const divStyle = {
@@ -71,15 +72,25 @@ class SignInForm extends React.Component {
         <FontAwesome
           className="fa fa-sign-in"
           size='5x'
-          style={{marginTop:'0.4em', marginBottom: '0.5em'}}
+          style={{marginTop:'0.4em', marginBottom: '0.85em'}}
         />
         <Row>
-          <Grid>
+      <Grid>
       <Form onSubmit={this.handleSubmit}
       horizontal
       >
+
+        <FormGroup controlId="formHorizontalEmail">
+          <Col
+            componentClass={ControlLabel}
+            sm={1}
+            style={formText}
+          >
         Email:
-            <Col sm={7}>
+          </Col>
+            <Col
+              sm={5}
+            >
         <FormControl
           type="text"
           value={this.state.email}
@@ -88,19 +99,43 @@ class SignInForm extends React.Component {
           style={formTextPlaceholder}
         />
             </Col>
-        Hasło:
-        <Col sm={7}>
+        </FormGroup>
+
+        <FormGroup controlId="formHorizontalPassword">
+          <Col
+            componentClass={ControlLabel}
+            sm={1}
+            style={formText}
+          >
+            Hasło:
+          </Col>
+
+        <Col
+          sm={5}
+        >
         <FormControl
           type="password"
           value={this.state.password}
           onChange={this.handlePasswordChange}
-          placeholder="hasło"
+          placeholder="twoje hasło"
           style={formTextPlaceholder}
         />
         </Col>
-        <button>Sign In</button>
+        </FormGroup>
+
+        <FormGroup>
+          <Col
+            smOffset={1}
+            sm={5}
+          >
+        <Button
+          style={formButton}
+          bsStyle="success"
+        >Zaloguj się</Button>
+          </Col>
+        </FormGroup>
       </Form>
-          </Grid>
+      </Grid>
         </Row>
       </div>
     )

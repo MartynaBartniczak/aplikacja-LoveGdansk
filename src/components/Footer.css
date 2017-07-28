@@ -1,8 +1,10 @@
 .footer {
-    bottom: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 0.8rem;
     margin-top: 3%;
     background-color: black;
-    padding:1em 1em 0;
     width: 100%;
     min-height: 3.5em;
     border-top: solid 1px #E3B505;

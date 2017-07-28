@@ -95,12 +95,14 @@ class SignUpForm extends React.Component {
             <FormGroup controlId="formHorizontalEmail">
               <Col
                 componentClass={ControlLabel}
-                sm={3}
+                sm={1}
                 style={formText}
               >
                 Email:
               </Col>
-              <Col sm={7}>
+              <Col
+                sm={5}
+              >
                 <FormControl
                   type="text"
                   value={this.state.email}
@@ -114,12 +116,14 @@ class SignUpForm extends React.Component {
             <FormGroup controlId="formHorizontalPassword">
               <Col
                 componentClass={ControlLabel}
-                sm={3}
+                sm={1}
                 style={formText}
               >
                 Hasło:
               </Col>
-              <Col sm={7}>
+              <Col
+                sm={5}
+              >
                 <FormControl
                   type="password"
                   value={this.state.password}
@@ -132,17 +136,9 @@ class SignUpForm extends React.Component {
 
             <FormGroup>
               <Col
-                smOffset={2}
-                sm={7}
-                style={formText}
-              >
-              </Col>
-            </FormGroup>
-
-            <FormGroup>
-              <Col
-                smOffset={2}
-                sm={7}>
+                smOffset={1}
+                sm={5}
+                >
                 <Button
                   style={formButton}
                   bsStyle="success"
@@ -153,7 +149,7 @@ class SignUpForm extends React.Component {
               </Col>
             </FormGroup>
           </Form>
-        </Grid>
+          </Grid>
       </Row>
         </div>
     )

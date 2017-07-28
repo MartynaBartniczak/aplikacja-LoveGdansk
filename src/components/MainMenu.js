@@ -20,7 +20,7 @@ const menuStyle = {
 };
 
 const menuLogo = {
-  height: '1.5em'
+  height: '1.2em'
 };
 
 const menuButtonLogOut = {
@@ -48,15 +48,12 @@ const MainMenu = ({ user}) =>
       <LinkContainer to="/kalendarz" style={menuStyle}>
         <NavItem><FontAwesome className="fa fa-calendar-o" size='1x'/></NavItem>
       </LinkContainer>
-      <LinkContainer to="/detale" style={menuStyle}>
-        <NavItem><FontAwesome className="fa fa-info" size='1x'/></NavItem>
-      </LinkContainer>
       <LinkContainer to="/mapa" style={menuStyle}>
         <NavItem><FontAwesome className="fa fa-map-o" size='1x'/></NavItem>
       </LinkContainer>
       <LinkContainer to="/signup" style={menuStyle}>
         <NavItem><FontAwesome className="fa fa-user-plus" size='1x'/></NavItem>
-      </LinkContainer>
+      </LinkContainer>&nbsp;&nbsp;&nbsp;&nbsp;
         {user === null ?
           <Link to={'/signUp'}>
           <Button

@@ -43,12 +43,11 @@ const App = ({user}) => (
         <Route path="/signup" component={SignUpForm}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
-      <Footer/>
       <div>
       </div>
-
-
+      <Footer/>
     </div>
+
   </Router>
 );
 
