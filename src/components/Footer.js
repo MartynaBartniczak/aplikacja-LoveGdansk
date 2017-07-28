@@ -5,9 +5,7 @@ import React from 'react'
 import './Footer.css'
 import {Col} from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
-import { LinkContainer } from 'react-router-bootstrap'
 
-// PLUS BUTTON (+)
 export default class Footer extends React.Component {
   render() {
     return (

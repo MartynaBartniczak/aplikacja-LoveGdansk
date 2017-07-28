@@ -8,8 +8,6 @@ import {
   Nav,
   Button,
   NavItem,
-  NavDropdown,
-  MenuItem
 } from 'react-bootstrap'
 
 import firebase from 'firebase'
@@ -35,19 +33,13 @@ const menuButtonLogIn = {
   borderRadius: '30px'
 };
 
-const loginMenu = {
-  padding: '0.6em',
-  height: '2.5em',
-  fontSize: '12px',
-};
-
 
 const MainMenu = ({ user}) =>
   (
     <Navbar fixedTop>
     <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/"><img src={LogoImg} style={menuLogo}/></Link>
+        <Link to="/"><img src={LogoImg} style={menuLogo} alt="logo"/></Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>

@@ -14,7 +14,9 @@
 .btn-primary:hover{
     border-color: #E3B505;
     background-color: #E3B505;
-    box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .btn-default
@@ -30,11 +32,27 @@
 {
     background-color: black;
     border: none;
-    box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
     background-image: linear-gradient(to bottom, #000 100%, #000 100%);
     border-color: #000;
     color:white;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn-primary:active:focus
+{
+    border-color: #E3B505;
+    background-color: #E3B505;
+    box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.4);
+}
+
+.btn-primary:focus
+{
+    border-color: #E3B505;
+    background-color: #E3B505;
+    box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.4);
 }
 
 .thumbnail, .img-thumbnail
@@ -54,6 +72,7 @@
     box-shadow: 1px 1px 10px 2px rgba(227, 181, 5, 0.5);
     -webkit-transition-timing-function: ease-in;
     transition-timing-function: linear;
+
 }
 
 h2 {
