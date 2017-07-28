@@ -47,7 +47,6 @@ const App = ({user}) => (
       </div>
       <Footer/>
     </div>
-
   </Router>
 );
 

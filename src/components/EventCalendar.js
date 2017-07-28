@@ -42,7 +42,7 @@ class EventCalendar extends React.Component {
       })
     )
     return (
-      <div style={{height:500, marginLeft:'2.5em', marginRight:'2.5em'}}>
+      <div style={{marginLeft:'2.5em', marginRight:'2.5em'}}>
         <Auth>
         <BigCalendar
                  onSelectEvent={(event) => this.props.history.push('/detale/' + event.id)}

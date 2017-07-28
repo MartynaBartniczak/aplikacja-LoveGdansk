@@ -11,8 +11,10 @@ const Auth = ({ user, children }) => (
     <h2>Aby dodać wydarzenie do kalendarza musisz być zalogowany</h2>
     <br/>
         <Grid>
+            <Row>
         <Col sm={6}><SignUpForm/></Col>
         <Col sm={6}><SignInForm/></Col>
+            </Row>
         </Grid>
 
     </div>

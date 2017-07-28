@@ -27,7 +27,8 @@ export default connect(
     searchPhrase: state.searchengine.searchPhrase,
     activeCategoryNames: state.categoryButtons.activeCategoryNames,
     favouriteEventIds: state.favevent.eventIds || [],
-    coords: state.geolocation.position
+    coords: state.geolocation.position,
+    user: state.auth.user
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
@@ -103,6 +104,11 @@ export default connect(
                             {this.props.favouriteEventIds[event.id] ?
                               <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
                               </Button>:
+                              this.props.user === null ?
+                                <Link to={'/signUp'}>
+                                <Button bsStyle="default">Dodaj do
+                                  kalendarza</Button>
+                                </Link>:
                               <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
                                 kalendarza</Button>
                             }
