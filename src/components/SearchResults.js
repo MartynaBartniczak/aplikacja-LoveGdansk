@@ -17,7 +17,6 @@ import moment from 'moment'
 import {favEvent} from '../state/favevent'
 import { removeEvent} from '../state/favevent'
 import geolib from 'geolib'
-
 import categories from '../_utils/categories'
 
 export default connect(

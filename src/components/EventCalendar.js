@@ -4,15 +4,11 @@
 import React from 'react'
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-import { Grid } from 'react-bootstrap'
 import './EventCalendar.css'
 import { connect } from 'react-redux'
 import { add } from '../state/calendarAdd'
 import {fetchSearchResults} from '../state/searchresults'
-import {Link} from 'react-router-dom'
 import Auth from '../components/Auth';
-
-
 
 BigCalendar.momentLocalizer(moment);
 

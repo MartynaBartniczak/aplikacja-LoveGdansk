@@ -1,10 +1,15 @@
 import React from 'react'
 import firebase from 'firebase'
-import {Button,
-        Grid,
-        FormControl,
-        Row,
-Form, Col, ControlLabel, Checkbox, FormGroup}
+import {
+  Grid,
+  FormControl,
+  Row,
+  Form,
+  Col,
+  ControlLabel,
+  Button,
+  FormGroup
+}
   from 'react-bootstrap'
 import {connect} from 'react-redux'
 import { syncUser } from '../state/auth'
@@ -90,12 +95,14 @@ class SignUpForm extends React.Component {
             <FormGroup controlId="formHorizontalEmail">
               <Col
                 componentClass={ControlLabel}
-                sm={3}
+                sm={1}
                 style={formText}
               >
                 Email:
               </Col>
-              <Col sm={7}>
+              <Col
+                sm={5}
+              >
                 <FormControl
                   type="text"
                   value={this.state.email}
@@ -109,12 +116,14 @@ class SignUpForm extends React.Component {
             <FormGroup controlId="formHorizontalPassword">
               <Col
                 componentClass={ControlLabel}
-                sm={3}
+                sm={1}
                 style={formText}
               >
                 Hasło:
               </Col>
-              <Col sm={7}>
+              <Col
+                sm={5}
+              >
                 <FormControl
                   type="password"
                   value={this.state.password}
@@ -127,29 +136,20 @@ class SignUpForm extends React.Component {
 
             <FormGroup>
               <Col
-                smOffset={2}
-                sm={7}
-                style={formText}
-              >
-                <Checkbox>zapamiętaj mnie</Checkbox>
-              </Col>
-            </FormGroup>
-
-            <FormGroup>
-              <Col
-                smOffset={2}
-                sm={7}>
-                <button
+                smOffset={1}
+                sm={5}
+                >
+                <Button
                   style={formButton}
                   bsStyle="success"
                   type="submit"
                 >
                   Zakładam konto
-                </button>
+                </Button>
               </Col>
             </FormGroup>
           </Form>
-        </Grid>
+          </Grid>
       </Row>
         </div>
     )

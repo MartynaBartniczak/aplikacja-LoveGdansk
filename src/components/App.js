@@ -14,20 +14,15 @@ import AdditionalSearches from './AdditionalSearches';
 import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
 import { connect } from 'react-redux'
-import firebase from 'firebase'
-
+import Footer from './Footer'
 
 const App = ({user}) => (
   <Router>
     <div className="App">
       <div>
-
         <MainMenu/>
-        <h1
-          style={{color:'white'}}
-        >Siemanko </h1>
+        <h2 style={{color: 'white'}} >{user === null ? '': 'Cześć ' + user.email}</h2>
         <SearchEngine/>
-        <h3 style={{color: 'white'}} >{user === null ? '': 'Cześć ' + user.email}</h3>
         <Grid>
           <hr/>
         </Grid>
@@ -50,9 +45,9 @@ const App = ({user}) => (
       </div>
       <div>
       </div>
-
-
+      <Footer/>
     </div>
+
   </Router>
 );
 

@@ -6,9 +6,7 @@ import { connect } from 'react-redux'
 import {Grid,
         FormGroup,
         FormControl,
-        ControlLabel,
         Col,
-        Button
         }
 from 'react-bootstrap'
 import './SearchEngine.css'

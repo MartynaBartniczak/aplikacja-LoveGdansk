@@ -5,9 +5,10 @@ import React from 'react'
 import EventCategories from "./EventCategories"
 import TimeSlider from "./TimeSlider"
 import LocationSlider from "./LocationSlider"
-import {ButtonToolbar, Button, Grid, Row, Col} from 'react-bootstrap'
+import {Button, Grid, Row} from 'react-bootstrap'
 import {CSSTransitionGroup} from 'react-transition-group'
 import './AddtionalSearches.css'
+import './SearchResults.css'
 
 export default class AdditionalSearches extends React.Component {
   constructor() {

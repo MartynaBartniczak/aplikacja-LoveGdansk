@@ -35,7 +35,7 @@ const store = createStore(reducer, /* preloadedState, */ composeEnhancers(
     applyMiddleware(
         thunk
     ),
-  persistState(['calendarAdd','categoryButtons','details','detailsmap','eventcategories','searchengine','searchFilters','searchresults', 'auth'])
+  persistState(['calendarAdd','categoryButtons','details','detailsmap','eventcategories','searchengine','searchFilters', 'auth'])
 ));
 
 

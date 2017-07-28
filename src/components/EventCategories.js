@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import { connect } from 'react-redux'
-import {ButtonToolbar, Button, Grid, Row, Col} from 'react-bootstrap'
+import {Button, Grid, Row, Col} from 'react-bootstrap'
 import { fetchEventCategories } from '../state/eventcategories'
 import './EventCategories.css'
 import {toggleCategory} from '../state/categoryButtons'
