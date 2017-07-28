@@ -24,6 +24,12 @@ export const favEvent = eventId => dispatch => {
   ref.set(true)
 }
 
+export const removeEvent = eventId => dispatch => {
+  const userUid = firebase.auth().currentUser.uid
+  const ref = firebase.database().ref('favs/' + userUid + '/eventIds/' + eventId)
+  ref.set(false)
+}
+
 const initialState = {
   eventIds: null
 }

@@ -14,9 +14,8 @@ import {Link} from 'react-router-dom'
 import './SearchResults.css'
 import {fetchSearchResults} from '../state/searchresults'
 import moment from 'moment'
-import FontAwesome from 'react-fontawesome'
 import {favEvent} from '../state/favevent'
-import {add} from '../state/calendarAdd'
+import { removeEvent} from '../state/favevent'
 import geolib from 'geolib'
 
 import categories from '../_utils/categories'
@@ -28,12 +27,13 @@ export default connect(
     searchDate: state.searchFilters.searchDate,
     searchPhrase: state.searchengine.searchPhrase,
     activeCategoryNames: state.categoryButtons.activeCategoryNames,
-    favouriteEventIds: state.calendarAdd.favouriteEventId,
+    favouriteEventIds: state.favevent.eventIds || [],
     coords: state.geolocation.position
   }),
   dispatch => ({
     fetchSearchResults: () => dispatch(fetchSearchResults()),
-    addToFav: id => dispatch(favEvent(id))
+    addToFav: id => dispatch(favEvent(id)),
+    removeFromFav: id => dispatch(removeEvent(id))
   })
 )(
   class SearchResults extends React.Component {
@@ -79,31 +79,39 @@ export default connect(
                       Object.keys(categories).find(key => categories[key] === event.category)
                     )
                 ).map(
-                  event => (
-                    <Col xs={12} md={6}>
-                      <Thumbnail src={event.image}>
-                        <h2>Impreza: {event.category}</h2>
-                        <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
-                        <h4>Za ile wjazd: {event.cost} PLN | Jak
-                          daleko: {
-                            geolib.getDistance(
-                              {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
-                              {latitude: event.lat, longitude: event.lng },
-                              100, 1
-                            ) / 1000
-                          }
-                          km</h4>
-                        <p>{event.place} | {event.city}</p>
-                        <p>
-                          <Link to={'/detale/' + event.id}>
-                            <Button bsStyle="primary">Zobacz szczegóły</Button>
-                          </Link>&nbsp;
-                          <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
-                            kalendarza</Button>
-                        </p>
-                      </Thumbnail>
-                    </Col>
-                  )
+                  event => {
+                    console.log(this.props.favouriteEventIds)
+                    console.log(event.id)
+                    return (
+                      <Col xs={12} md={6}>
+                        <Thumbnail src={event.image}>
+                          <h2>Impreza: {event.category}</h2>
+                          <h3>Kiedy: {event.startdate} | Godzina: {event.starttime}</h3>
+                          <h4>Za ile wjazd: {event.cost} PLN | Jak
+                            daleko: {
+                              geolib.getDistance(
+                                {latitude: locationCurrent.lat, longitude: locationCurrent.lng},
+                                {latitude: event.lat, longitude: event.lng },
+                                100, 1
+                              ) / 1000
+                            }
+                            km</h4>
+                          <p>{event.place} | {event.city}</p>
+                          <p>
+                            <Link to={'/detale/' + event.id}>
+                              <Button bsStyle="primary">Zobacz szczegóły</Button>
+                            </Link>&nbsp;
+                            {this.props.favouriteEventIds[event.id] ?
+                              <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
+                              </Button>:
+                              <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
+                                kalendarza</Button>
+                            }
+                          </p>
+                        </Thumbnail>
+                      </Col>
+                    )
+                  }
                 )
               }
             </Row>

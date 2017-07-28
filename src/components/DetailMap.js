@@ -24,25 +24,26 @@ export default connect(
     };
 
     render() {
-      const {event} = this.props;
+      const {event, coords} = this.props;
+      const center = coords === null ? null : {lat: (this.props.coords.lat + parseFloat(event.lat))/2, lng: (this.props.coords.lng + parseFloat(event.lng))/2 };
       return (
         <div>
-          <div className="center-block" style={{maxWidth:'100%', height: 600,}}>
+          <div className="center-block" style={{maxWidth:'100%', height: 660,}}>
             <GoogleMapReact
-              center={this.props.coords}
+              center={center}
               defaultZoom={this.props.zoom}
               options={{scrollwheel: false}}
               apiKey={'AIzaSyD91qKDKvraWUaYomGzmd4cLuR653anaDs'}
             >
-             <AnyReactComponent
+              <AnyReactComponent
                 lat={parseFloat(event.lat)}
                 lng={parseFloat(event.lng)}
-                text="Tu jesteś"
+                text="Twoja impreza"
 
               />
               <AnyReactComponent
                 {...this.props.coords }
-                text="Twoja impreza"
+                text="Jesteś tutaj"
               />
             </GoogleMapReact>
           </div>
