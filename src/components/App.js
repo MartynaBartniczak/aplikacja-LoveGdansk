@@ -14,6 +14,7 @@ import AdditionalSearches from './AdditionalSearches';
 import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
 import { connect } from 'react-redux'
+import Footer from './Footer'
 
 const App = ({user}) => (
   <Router>
@@ -42,6 +43,7 @@ const App = ({user}) => (
         <Route path="/signup" component={SignUpForm}/>
         <Route path="/detale/:eventId" component={EventDetail}/>
       </div>
+      <Footer/>
       <div>
       </div>
 

@@ -31,7 +31,7 @@ const menuButtonLogOut = {
 };
 
 const menuButtonLogIn = {
-  marginTop: '1.2em',
+  marginTop: '0.8em',
   borderRadius: '30px'
 };
 

@@ -44,13 +44,16 @@
     background: #fff;
     border: none;
     border-radius: 30px;
-
+    background: linear-gradient(to right, #f0f2f0, #ffffff);
+    box-shadow: 0 0.125rem 0.625rem rgba(105,123,140,.25);
     padding: 1em;
 }
 
 .thumbnail:hover
 {
     box-shadow: 1px 1px 10px 2px rgba(227, 181, 5, 0.5);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: linear;
 }
 
 h2 {
