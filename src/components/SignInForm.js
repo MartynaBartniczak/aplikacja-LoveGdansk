@@ -129,6 +129,7 @@ class SignInForm extends React.Component {
         <Button
           style={formButton}
           bsStyle="success"
+          type="submit"
         >Zaloguj się</Button>
           </Col>
         </FormGroup>
