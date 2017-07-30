@@ -1,3 +1,16 @@
+
+h2 {
+    color: #E3B505;
+    font-weight: 800;
+    padding-bottom: 0.5em;
+}
+
+p{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+
 .mainresults {
     margin-top: 4%;
 }
@@ -14,6 +27,24 @@
 .btn-primary:hover{
     border-color: #E3B505;
     background-color: #E3B505;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn-danger:hover{
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn-success:hover{
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn-warning:hover{
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -39,6 +70,11 @@
     color:white;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+.btn-default:hover, .btn-default:focus {
+    background-color: none;
+    background-position: 0 0px;
 }
 
 .btn-primary:active:focus
@@ -73,17 +109,6 @@
     -webkit-transition-timing-function: ease-in;
     transition-timing-function: linear;
 
-}
-
-h2 {
-    color: #E3B505;
-    font-weight: 800;
-    padding-bottom: 0.5em;
-}
-
-p{
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
 }
 
 

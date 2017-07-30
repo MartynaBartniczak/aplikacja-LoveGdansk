@@ -19,6 +19,18 @@ import { removeEvent} from '../state/favevent'
 import geolib from 'geolib'
 import categories from '../_utils/categories'
 
+const removeFavButton = {
+    textAlign: 'center',
+    borderRadius: '30px',
+
+};
+
+const AddtoFavButton = {
+    textAlign: 'center',
+    borderRadius: '30px',
+};
+
+
 export default connect(
   state => ({
     searchresults: state.searchresults,
@@ -102,15 +114,23 @@ export default connect(
                               <Button bsStyle="primary">Zobacz szczegóły</Button>
                             </Link>&nbsp;
                             {this.props.favouriteEventIds[event.id] ?
-                              <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
+                              <Button onClick={() => this.props.removeFromFav(event.id)}
+                                      bsStyle="danger"
+                                      style = {removeFavButton}
+                              >Usuń z kalendarza
                               </Button>:
                               this.props.user === null ?
                                 <Link to={'/signUp'}>
-                                <Button bsStyle="default">Dodaj do
-                                  kalendarza</Button>
+                                <Button
+                                    bsStyle="success"
+                                    style = {AddtoFavButton}
+                                >Dodaj do kalendarza</Button>
                                 </Link>:
-                              <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
-                                kalendarza</Button>
+                              <Button
+                                  onClick={() => this.props.addToFav(event.id)}
+                                  bsStyle="success"
+                                  style = {AddtoFavButton}
+                              >Dodaj do kalendarza</Button>
                             }
                           </p>
                         </Thumbnail>
