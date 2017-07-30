@@ -9,6 +9,18 @@ import {favEvent} from '../state/favevent'
 import {removeEvent} from '../state/favevent'
 import {Link} from 'react-router-dom'
 
+const removeFavButton = {
+    textAlign: 'center',
+    borderRadius: '30px',
+
+};
+
+const AddtoFavButton = {
+    textAlign: 'center',
+    borderRadius: '30px',
+};
+
+
 export default connect(
   state => ({
     favouriteEventIds: state.favevent.eventIds || [],
@@ -24,6 +36,9 @@ export default connect(
   state = {
     events: []
   };
+
+
+
 
   componentWillMount() {
     fetch(
@@ -79,15 +94,25 @@ export default connect(
                     <h2><small>Za ile wjazd:</small> <b>{event.cost} PLN</b></h2>
                     <p>
                         {this.props.favouriteEventIds[event.id] ?
-                            <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
+                            <Button onClick={() => this.props.removeFromFav(event.id)}
+                                    bsStyle="danger"
+                                    style = {removeFavButton}
+                            >
+                                Usuń z kalendarza
                             </Button>:
                             this.props.user === null ?
                                 <Link to={'/signUp'}>
-                                  <Button bsStyle="default">Dodaj do
-                                    kalendarza</Button>
+                                  <Button
+                                      bsStyle="default"
+                                      style = {AddtoFavButton}>
+                                      Dodaj do kalendarza</Button>
                                 </Link>:
-                                <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
-                                  kalendarza</Button>
+                                <Button
+                                    onClick={() => this.props.addToFav(event.id)}
+                                    bsStyle="success"
+                                    style = {AddtoFavButton}
+                                >
+                                    Dodaj do kalendarza</Button>
                         }
                     </p>
                     <br/><FontAwesome className="fa fa-location-arrow" size='2x' />

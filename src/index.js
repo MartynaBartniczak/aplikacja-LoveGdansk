@@ -12,7 +12,6 @@ import App from "./components/App";
 import "react-fontawesome";
 import registerServiceWorker from './registerServiceWorker';
 
-
 ReactDOM.render(
   <Provider store={store}>
 

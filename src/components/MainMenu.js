@@ -23,14 +23,21 @@ const menuLogo = {
   height: '1.2em'
 };
 
-const menuButtonLogOut = {
+const menuButtonSignOut = {
   marginTop: '0.8em',
   borderRadius: '30px'
 };
 
-const menuButtonLogIn = {
+const menuButtonSignIn = {
   marginTop: '0.8em',
   borderRadius: '30px'
+};
+
+const menuButtonSignUp = {
+    marginTop: '0.8em',
+    borderRadius: '30px',
+    backgroundColor: '#E3B505',
+    backgroundImage: 'linear-gradient(to bottom, #E3B505 100%, #E3B505 100%)',
 };
 
 
@@ -57,22 +64,36 @@ const MainMenu = ({ user}) =>
         {user === null ?
           <Link to={'/signUp'}>
           <Button
-            style = {menuButtonLogIn}
-            bsStyle="success"
+            style = {menuButtonSignUp}
+            bsStyle="warning"
             bsSize="small"
           >
-            Zaloguj
+            Zarejestruj się
           </Button>
           </Link>
-          :
-          <Button
-            style = {menuButtonLogOut}
-            bsStyle="success"
-            bsSize="small"
-            onClick={() => firebase.auth().signOut()}>
-            Wyloguj
-          </Button>
+          :''
           }
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        {user === null ?
+            <Link to={'/signIn'}>
+                <Button
+                    style = {menuButtonSignIn}
+                    bsStyle="success"
+                    bsSize="small"
+                >
+                    Zaloguj
+                </Button>
+            </Link>
+            :
+            <Button
+                style = {menuButtonSignOut}
+                bsStyle="danger"
+                bsSize="small"
+                onClick={() => firebase.auth().signOut()}>
+                Wyloguj
+            </Button>
+        }
+
         </Nav>
 
   </Navbar.Collapse>

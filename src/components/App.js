@@ -21,7 +21,7 @@ const App = ({user}) => (
     <div className="App">
       <div>
         <MainMenu/>
-        <h2 style={{color: 'white'}} >{user === null ? '': 'Cześć ' + user.email}</h2>
+        <h2 style={{color: 'white', marginTop: '3em'}} >{user === null ? '': 'Cześć ' + user.email}</h2>
         <SearchEngine/>
         <Grid>
           <hr/>
