@@ -57,9 +57,6 @@ const MainMenu = ({ user}) =>
       </LinkContainer>
       <LinkContainer to="/mapa" style={menuStyle}>
         <NavItem><FontAwesome className="fa fa-map-o" size='1x'/></NavItem>
-      </LinkContainer>
-      <LinkContainer to="/signup" style={menuStyle}>
-        <NavItem><FontAwesome className="fa fa-user-plus" size='1x'/></NavItem>
       </LinkContainer>&nbsp;&nbsp;&nbsp;&nbsp;
         {user === null ?
           <Link to={'/signUp'}>
