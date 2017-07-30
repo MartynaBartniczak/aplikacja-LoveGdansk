@@ -7,10 +7,12 @@ import "./EventDetail.css"
 import {Accordion, Carousel, Col, Grid, Panel, Row, Button} from "react-bootstrap"
 import {favEvent} from '../state/favevent'
 import {removeEvent} from '../state/favevent'
+import {Link} from 'react-router-dom'
 
 export default connect(
   state => ({
-    favouriteEventIds: state.favevent.eventIds || []
+    favouriteEventIds: state.favevent.eventIds || [],
+      user: state.auth.user
   }),
   dispatch => ({
     addToFav: id => dispatch(favEvent(id)),
@@ -76,12 +78,17 @@ export default connect(
                     <h2><small>Godzina:</small> <b>{event.starttime}</b></h2>
                     <h2><small>Za ile wjazd:</small> <b>{event.cost} PLN</b></h2>
                     <p>
-                      {this.props.favouriteEventIds[event.id] ?
-                        <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
-                        </Button>:
-                        <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
-                          kalendarza</Button>
-                      }
+                        {this.props.favouriteEventIds[event.id] ?
+                            <Button onClick={() => this.props.removeFromFav(event.id)} bsStyle="success">Usuń z kalendarza
+                            </Button>:
+                            this.props.user === null ?
+                                <Link to={'/signUp'}>
+                                  <Button bsStyle="default">Dodaj do
+                                    kalendarza</Button>
+                                </Link>:
+                                <Button onClick={() => this.props.addToFav(event.id)} bsStyle="default">Dodaj do
+                                  kalendarza</Button>
+                        }
                     </p>
                     <br/><FontAwesome className="fa fa-location-arrow" size='2x' />
                     <h4><small style={{color:'white'}}>SZCZEGÓŁY TWOJEJ IMPREZY:</small></h4>
