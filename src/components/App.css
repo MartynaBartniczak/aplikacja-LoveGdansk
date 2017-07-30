@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro');
+
 .App {
   text-align: center;
+  font-family: 'Advent Pro', sans-serif;
+  letter-spacing: 0.1em;
 }
 
 .App-logo {

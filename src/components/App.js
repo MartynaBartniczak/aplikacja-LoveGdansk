@@ -21,7 +21,11 @@ const App = ({user}) => (
     <div className="App">
       <div>
         <MainMenu/>
-        <h2 style={{color: 'white'}} >{user === null ? '': 'Cześć ' + user.email}</h2>
+        <h3 style={{color: 'white', marginTop: '2em'}}>
+            {user === null ? '':
+                <h3 style={{color: 'white', marginTop: '4em'}}>{'Cześć ' + user.email}</h3>
+            }
+        </h3>
         <SearchEngine/>
         <Grid>
           <hr/>
