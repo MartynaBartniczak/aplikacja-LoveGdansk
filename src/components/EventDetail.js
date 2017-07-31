@@ -101,7 +101,7 @@ export default connect(
                                 Usuń z kalendarza
                             </Button>:
                             this.props.user === null ?
-                                <Link to={'/signUp'}>
+                                <Link to={'/kalendarz'}>
                                   <Button
                                       bsStyle="default"
                                       style = {AddtoFavButton}>
