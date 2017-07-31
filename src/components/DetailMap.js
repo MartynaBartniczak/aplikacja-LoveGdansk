@@ -4,11 +4,11 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import {connect} from "react-redux";
-import "./DetailsMap.css";
+import "./DetailMap.css";
 import FontAwesome from "react-fontawesome";
 
 
-const AnyReactComponent = ({text}) => <div className="markers"><span className="asd">{text}</span><FontAwesome className="fa fa-map-marker" size='5x' /></div>;
+const AnyReactComponent = ({text}) => <div className="markers"><span className="markery">{text}</span><FontAwesome className="fa fa-map-marker" size='5x' /></div>;
 
 
 export default connect(
