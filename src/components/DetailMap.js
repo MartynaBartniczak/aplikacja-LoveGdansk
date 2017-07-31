@@ -4,7 +4,7 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import {connect} from "react-redux";
-import "./DetailsMap.css";
+import "./DetailMap.css";
 import FontAwesome from "react-fontawesome";
 
 

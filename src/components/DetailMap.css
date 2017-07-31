@@ -1,0 +1,39 @@
+.MapMarker {
+    animation: App-logo-spin infinite 5s linear;
+}
+.MapMarker:hover{
+    background-color: yellow;
+}
+
+.xd:hover {
+
+    background-color: yellow;
+
+}
+.markery {
+    /*display: none;*/
+    position: absolute;
+    left:35px;
+    /*bottom:-10px;*/
+    /*font-weight: bold;*/
+}
+
+.fa.fa-map-marker{
+    color:black;
+
+}
+.markers{
+    position: absolute;
+    bottom: -20px;
+    right:-25px;
+    font-weight: bold
+}
+
+.tex:hover{
+    display: inline;
+}
+
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
