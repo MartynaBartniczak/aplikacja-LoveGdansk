@@ -13,6 +13,7 @@ import {
 import {connect} from 'react-redux'
 import { syncUser } from '../state/auth'
 import FontAwesome from 'react-fontawesome'
+import { withRouter } from 'react-router'
 
 const formText = {
   color: 'white'
@@ -66,6 +67,8 @@ class SignUpForm extends React.Component {
           () => this.props.syncUser({...user})
         )
       }
+    ).then(
+      () => this.props.history.push('/')
     )
   }
 
@@ -159,3 +162,4 @@ export default connect(
     syncUser: (user) => dispatch(syncUser(user))
   })
 )(SignUpForm)
+
